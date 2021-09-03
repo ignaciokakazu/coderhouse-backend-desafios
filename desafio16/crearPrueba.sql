@@ -18,7 +18,7 @@ DELETE FROM prueba.items WHERE id=1;
 /*MODIFICO LOS DATOS*/
 UPDATE prueba.items SET stock=45 WHERE id=2;
 
-SELECT * FROM prueba.items;
+CREATE DATABASE desafio17 CHARACTER SET utf8mb4;
 
 /*Caso de que se quiera volver a probar*/
 #DROP DATABASE prueba;
