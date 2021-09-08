@@ -1,14 +1,17 @@
 const socket = io.connect('http://localhost:8080')//, {forceNew: true});
 
 function addPlayer(e) {
-  const obj = {
-    player: document.getElementById('player').value
+
+  if (document.getElementById('player').value) {
+    const obj = {player: document.getElementById('player').value}
+  } else {
+    alert('No puede seguir sin nombre');
+    return;
   }
 
   socket.emit('addPlayer', obj);
   return false;
 }
-
 
 function addProduct(e) {
   console.log('LLAMANDO ');

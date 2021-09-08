@@ -1,0 +1,19 @@
+use prueba
+db.items.insertMany({
+	nombre: "Fideos",
+	categoria: "Harina",
+	stock: 20	
+},
+{
+	nombre: "Leche",
+	categoria: "Lácteos",
+	stock: 30	
+},
+{
+	nombre: "Crema",
+	categoria: "Lácteos",
+	stock: 40
+})
+db.items.find()
+show tables
+show databases
