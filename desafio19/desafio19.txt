@@ -186,10 +186,10 @@ db.productos.insert({
 })
 
 /* CRUD Precio menor a 1000 */
-db.productosPrueba.find({precio: {$lt:1000}})
+db.productos.find({precio: {$lt:1000}})
 
 /* CRUD Precio menor a 1000 */
-db.productosPrueba.find({precio: {$lt:1000}})
+db.productos.find({precio: {$lt:1000}})
 
 /* CRUD Precio entre 1000 y 3000 */
 db.productos.find({ $and : [{precio: {$gt:1000}}, {precio: {$lt : 3000}}]});
