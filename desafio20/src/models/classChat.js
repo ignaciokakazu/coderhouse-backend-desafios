@@ -1,9 +1,9 @@
 import fs from 'fs';
 import moment from 'moment';
-import { DBService } from '../persistencia/mensajes';
+//import { DBService } from '../persistencia/mensajes';
+import {DBService} from '../persistencia/mongoMensajes';
 
 export default class classChat {
-    private messages: string[];
 
     constructor() {
         //this.url = "./chat.txt";
@@ -17,10 +17,10 @@ export default class classChat {
                 chat = await fs.promises.readFile(this.url, 'utf-8');
             }*/
             
-            let chat: any = DBService.getAll();
+            let chat = await DBService.getAll();
             chat? this.messages = JSON.parse(chat) : this.messages = []; 
             return this.messages;
-        } catch (err:any) {
+        } catch (err) {
             console.log(err.message);
         }
     }
@@ -29,22 +29,22 @@ export default class classChat {
         return this.messages;
     }
 
-    async connect(name:string) {
+    async connect(name) {
         try {
-            const obj: object = {
+            const obj = {
                 username: name,
                 message: `Bienvenido/a ${name}`,
                 timestamp: new Date()
             }
             await DBService.insert(obj);
             return obj;
-        } catch (err: any) {
+        } catch (err) {
             console.log(`error: ${err.message}`)
         }
     }
 
-    async disconnect(name:any) {
-        const obj:any = {
+    async disconnect(name) {
+        const obj = {
             username: name,
             message: `${name} se ha desconectado`,
             timestamp: new Date()
@@ -53,8 +53,8 @@ export default class classChat {
         return obj;
     }
 
-    async setMessage(data:any) {
-        const obj:any = {
+    async setMessage(data) {
+        const obj = {
             username: data.username,
             message: data.message,
             timestamp: new Date()
