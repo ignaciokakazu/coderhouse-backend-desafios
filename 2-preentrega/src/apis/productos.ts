@@ -38,23 +38,6 @@ class prodAPI {
    async updateProducto(id:number, data:any) {
     return this.productos.updateProducto(id, data);
    }
-//   async addProduct(productData: newProductI): Promise<ProductI> {
-//     const newProduct = await this.productos.add(productData);
-//     return newProduct;
-//   }
-
-//   async updateProduct(id: string, productData: newProductI) {
-//     const updatedProduct = await this.productos.update(id, productData);
-//     return updatedProduct;
-//   }
-
-//   async deleteProduct(id: string) {
-//     await this.productos.delete(id);
-//   }
-
-//   async query(options: ProductQuery) {
-//     return await this.productos.query(options);
-//   }
 }
 
 export const productosAPI = new prodAPI();

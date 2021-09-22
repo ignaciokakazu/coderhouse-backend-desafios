@@ -16,11 +16,11 @@ router.get('/admin/error', (req, res)=> {
 })
 
 router.get('/admin/index', async (req, res)=> {
-    //  const prod = await Productos.readProducto();
-    //  const datos = {
-    //      prod: prod //solo se puede mandar un objeto, no arrays
-    //  }
-     res.render('crud');
+     const prod = await Productos.getProductosAll(req, res);
+     const datos = {
+         prod: prod //solo se puede mandar un objeto, no arrays
+     }
+     res.render('crud', datos);
  })
 
 

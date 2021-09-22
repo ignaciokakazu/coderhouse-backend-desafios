@@ -29,46 +29,49 @@ export class ProductosFirebaseDAO {//implements ProductBaseClass {
   async getProductosAll() {
     const resultado:any = await this.db.collection('productos').get();
     const docs:any = resultado.docs;
-    console.log(docs);
-    // const output:any = docs.map((aDoc:any) => ({
-    //     id: aDoc.data().id,
-    //     nombre: aDoc.data().nombre,
-    //     precio: aDoc.data().precio,
-    //     stock: aDoc.data().stock,
-    //     descripcion: aDoc.data().descripcion,
-    //     foto: aDoc.data().foto,
-    //     thumbnail: aDoc.data().thumbnail,
-    //     timestamp: aDoc.data().timestamp
-    // }))
-    const output:string="hola"
+    const output:any = docs.map((aDoc:any) => ({
+        id: aDoc.data().id,
+        nombre: aDoc.data().nombre,
+        precio: aDoc.data().precio,
+        stock: aDoc.data().stock,
+        descripcion: aDoc.data().descripcion,
+        foto: aDoc.data().foto,
+        thumbnail: aDoc.data().thumbnail,
+        timestamp: aDoc.data().timestamp
+    }))
+    
     return output;
   }
 
   async getProductosById(id:number) {
-    const aDoc:any = await this.db.collection('productos').get(id);
-    const docs:any = aDoc.docs;
+    const docs:any = await this.db.collection('productos').where('id', '==', id).get();
+    let producto:any;
 
-    return ({
-        id: docs.data().id,
-        nombre: docs.data().nombre,
-        precio: docs.data().precio,
-        stock: docs.data().stock,
-        descripcion: docs.data().descripcion,
-        foto: docs.data().foto,
-        thumbnail: docs.data().thumbnail,
-        timestamp: docs.data().timestamp        
+    docs.forEach((doc:any) => {
+      // console.log(doc.id, ' => ', doc.data());
+      producto = doc.data();
     });
+    console.log(producto);
+    if (docs.empty) {
+      return ({error: `No hay documentos de id ${id}`});
+    } else {
+      return (producto);
+    }
+  
   }
 
   async insertProducto(data: any) {
     let size:number = 0;
-    this.db.collection('productos').get().then((snap:any) => {
-        size = snap.size // will return the collection size
-      });
-    
-    const id :number = size++;
+    let id:number = 0;
 
-    const obj = {
+    this.db.collection('productos').get().then((snap:any) => {
+        id = snap.length
+        console.log(id)
+        id = snap.size
+        console.log(id)
+      });
+      console.log(id);
+      const obj = {
         id: id,
         nombre: data.nombre,
         descripcion: data.descripcion,
@@ -77,12 +80,13 @@ export class ProductosFirebaseDAO {//implements ProductBaseClass {
         precio: data.precio,
         stock: data.stock,
         timestamp: new Date()
-    }
-
-    const userDocument:any = this.db.doc();
-    await userDocument.create(data);
+    }    
     
-    return id;
+    // console.log(id);
+    const userDocument:any = this.db.collection('productos').doc();
+    await userDocument.create(obj);
+    
+    return obj;
   }
 
   async updateProducto(id: number, newProductData: NewProductoInterface) {

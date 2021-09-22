@@ -1,13 +1,10 @@
 // import moment from 'moment';
-// import {db} from '../models/DAO/productos/fileSystem';
 
 // class ClassCarrito {
-//     private lista: Array<Object>;
-//     private carrito: Array<Object>;
-
+//     private lista: any;
+    
 //     constructor() {
-//         this.lista = [];
-//         this.carrito = [];
+    
 //     }
 
 //     async getCarritoById(id:number) {

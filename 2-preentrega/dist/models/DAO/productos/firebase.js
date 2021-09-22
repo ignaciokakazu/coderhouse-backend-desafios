@@ -86,8 +86,16 @@ var ProductosFirebaseDAO = /** @class */ (function () {
                     case 1:
                         resultado = _a.sent();
                         docs = resultado.docs;
-                        console.log(docs);
-                        output = "hola";
+                        output = docs.map(function (aDoc) { return ({
+                            id: aDoc.data().id,
+                            nombre: aDoc.data().nombre,
+                            precio: aDoc.data().precio,
+                            stock: aDoc.data().stock,
+                            descripcion: aDoc.data().descripcion,
+                            foto: aDoc.data().foto,
+                            thumbnail: aDoc.data().thumbnail,
+                            timestamp: aDoc.data().timestamp
+                        }); });
                         return [2 /*return*/, output];
                 }
             });
@@ -95,23 +103,24 @@ var ProductosFirebaseDAO = /** @class */ (function () {
     };
     ProductosFirebaseDAO.prototype.getProductosById = function (id) {
         return __awaiter(this, void 0, void 0, function () {
-            var aDoc, docs;
+            var docs, producto;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.db.collection('productos').get(id)];
+                    case 0: return [4 /*yield*/, this.db.collection('productos').where('id', '==', id).get()];
                     case 1:
-                        aDoc = _a.sent();
-                        docs = aDoc.docs;
-                        return [2 /*return*/, ({
-                                id: docs.data().id,
-                                nombre: docs.data().nombre,
-                                precio: docs.data().precio,
-                                stock: docs.data().stock,
-                                descripcion: docs.data().descripcion,
-                                foto: docs.data().foto,
-                                thumbnail: docs.data().thumbnail,
-                                timestamp: docs.data().timestamp
-                            })];
+                        docs = _a.sent();
+                        docs.forEach(function (doc) {
+                            // console.log(doc.id, ' => ', doc.data());
+                            producto = doc.data();
+                        });
+                        console.log(producto);
+                        if (docs.empty) {
+                            return [2 /*return*/, ({ error: "No hay documentos de id " + id })];
+                        }
+                        else {
+                            return [2 /*return*/, (producto)];
+                        }
+                        return [2 /*return*/];
                 }
             });
         });
@@ -123,10 +132,14 @@ var ProductosFirebaseDAO = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         size = 0;
+                        id = 0;
                         this.db.collection('productos').get().then(function (snap) {
-                            size = snap.size; // will return the collection size
+                            id = snap.length;
+                            console.log(id);
+                            id = snap.size;
+                            console.log(id);
                         });
-                        id = size++;
+                        console.log(id);
                         obj = {
                             id: id,
                             nombre: data.nombre,
@@ -137,11 +150,11 @@ var ProductosFirebaseDAO = /** @class */ (function () {
                             stock: data.stock,
                             timestamp: new Date()
                         };
-                        userDocument = this.db.doc();
-                        return [4 /*yield*/, userDocument.create(data)];
+                        userDocument = this.db.collection('productos').doc();
+                        return [4 /*yield*/, userDocument.create(obj)];
                     case 1:
                         _a.sent();
-                        return [2 /*return*/, id];
+                        return [2 /*return*/, obj];
                 }
             });
         });

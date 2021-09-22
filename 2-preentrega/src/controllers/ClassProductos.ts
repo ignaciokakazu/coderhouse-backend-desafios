@@ -66,8 +66,8 @@ class ClassProductos {
         //      //no está el id, ni el timestamp, porque depende del DAO
         // }
         
-        await productosAPI.insertProducto(obj);
-        res.json(obj);
+        const respuesta = await productosAPI.insertProducto(obj);
+        res.json(respuesta);
     }
 
     async deleteProducto(req:Request, res:Response) {

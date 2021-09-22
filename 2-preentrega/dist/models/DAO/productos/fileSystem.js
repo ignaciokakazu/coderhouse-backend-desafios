@@ -45,10 +45,10 @@ var path_1 = __importDefault(require("path"));
 var moment_1 = __importDefault(require("moment"));
 var ProductosFSDAO = /** @class */ (function () {
     function ProductosFSDAO() {
-        this.urls = {
-            carrito: "./carrito.txt",
-            productos: "./productos.txt",
-        };
+        // this.urls = {
+        //     carrito: "./carrito.txt",
+        //     productos: "./productos.txt",
+        // };
         var filePath = path_1.default.resolve(__dirname, './productos.txt');
         console.log(filePath);
         this.url = filePath;
@@ -140,7 +140,7 @@ var ProductosFSDAO = /** @class */ (function () {
                         productos = _a.sent();
                         productos.push(productoObj);
                         this.write(productos);
-                        return [2 /*return*/];
+                        return [2 /*return*/, productoObj];
                 }
             });
         });

@@ -64,20 +64,6 @@ var ProductosMongoDAO = /** @class */ (function () {
         mongoose_1.default.connect(this.srv);
         this.productos = mongoose_1.default.model('producto', productsSchema);
     }
-    //   async get(id?: string): Promise<ProductoInterface[]> {
-    //     let output: ProductoInterface[] = [];
-    //     try {
-    //       if (id) {
-    //         const document = await this.productos.findById(id);
-    //         if (document) output.push(document);
-    //       } else {
-    //         output = await this.productos.find();
-    //       }
-    //       return output;
-    //     } catch (err) {
-    //       return output;
-    //     }
-    //   }
     ProductosMongoDAO.prototype.getProductosAll = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
@@ -121,7 +107,7 @@ var ProductosMongoDAO = /** @class */ (function () {
                         return [4 /*yield*/, newProduct.save()];
                     case 2:
                         _a.sent();
-                        return [2 /*return*/, id];
+                        return [2 /*return*/, obj];
                 }
             });
         });

@@ -101,45 +101,15 @@ var ClassProductos = /** @class */ (function () {
     };
     ClassProductos.prototype.insertProducto = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
-            var obj;
+            var obj, respuesta;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         obj = req.body;
-                        // console.log(obj);
-                        // const strValidacion:string = this.validacion(obj);
-                        // if(strValidacion) {
-                        //     return res.json({error: strValidacion});
-                        // }
-                        // console.log(obj);
-                        // const prod = {
-                        //      nombre: req.body.nombre,
-                        //      descripcion: req.body.descripcion,
-                        //      codigo: req.body.codigo,
-                        //      foto: req.body.foto,
-                        //      precio: req.body.precio,
-                        //      stock: req.body.stock
-                        //      //no está el id, ni el timestamp, porque depende del DAO
-                        // }
                         return [4 /*yield*/, productos_1.productosAPI.insertProducto(obj)];
                     case 1:
-                        // console.log(obj);
-                        // const strValidacion:string = this.validacion(obj);
-                        // if(strValidacion) {
-                        //     return res.json({error: strValidacion});
-                        // }
-                        // console.log(obj);
-                        // const prod = {
-                        //      nombre: req.body.nombre,
-                        //      descripcion: req.body.descripcion,
-                        //      codigo: req.body.codigo,
-                        //      foto: req.body.foto,
-                        //      precio: req.body.precio,
-                        //      stock: req.body.stock
-                        //      //no está el id, ni el timestamp, porque depende del DAO
-                        // }
-                        _a.sent();
-                        res.json(obj);
+                        respuesta = _a.sent();
+                        res.json(respuesta);
                         return [2 /*return*/];
                 }
             });

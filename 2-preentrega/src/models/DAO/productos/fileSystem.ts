@@ -8,10 +8,10 @@ export class ProductosFSDAO {
     lista: any;
 
     constructor () {
-        this.urls = {
-            carrito: "./carrito.txt",
-            productos: "./productos.txt",
-        };
+        // this.urls = {
+        //     carrito: "./carrito.txt",
+        //     productos: "./productos.txt",
+        // };
         const filePath = path.resolve(__dirname, './productos.txt');
         console.log(filePath);
         this.url = filePath;
@@ -68,6 +68,8 @@ export class ProductosFSDAO {
         productos.push(productoObj);
 
         this.write(productos);
+
+        return productoObj;
     }
 
     async generarId() {

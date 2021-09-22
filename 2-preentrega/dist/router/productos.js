@@ -32,8 +32,6 @@ router.put('/actualizar/:id', ClassProductos_js_1.Productos.updateProducto);
 //     admin? next() : response.status(403).json({error: "Error de autenticación"})
 // }
 // router.use(middleAdmin) //lo de acá abajo es afectado por el middleWare
-// router.put('/actualizar/:id', Productos.updateProducto);
-// router.delete('/borrar/:id', Productos.deleteProducto);
 /*
 {
     "product": {"nombre": "nombre1",

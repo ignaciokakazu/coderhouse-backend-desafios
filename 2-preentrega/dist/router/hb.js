@@ -40,6 +40,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
+var ClassProductos_1 = require("../controllers/ClassProductos");
 var router = express_1.default.Router();
 router.get('/', function (req, res) {
     res.render('main');
@@ -51,13 +52,18 @@ router.get('/admin/error', function (req, res) {
     res.render('error');
 });
 router.get('/admin/index', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var prod, datos;
     return __generator(this, function (_a) {
-        //  const prod = await Productos.readProducto();
-        //  const datos = {
-        //      prod: prod //solo se puede mandar un objeto, no arrays
-        //  }
-        res.render('crud');
-        return [2 /*return*/];
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, ClassProductos_1.Productos.getProductosAll(req, res)];
+            case 1:
+                prod = _a.sent();
+                datos = {
+                    prod: prod //solo se puede mandar un objeto, no arrays
+                };
+                res.render('crud', datos);
+                return [2 /*return*/];
+        }
     });
 }); });
 exports.default = router;

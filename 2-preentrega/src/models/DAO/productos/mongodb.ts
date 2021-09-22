@@ -33,22 +33,6 @@ export class ProductosMongoDAO {//implements ProductBaseClass {
     this.productos = mongoose.model<ProductoInterface>('producto', productsSchema);
   }
 
-//   async get(id?: string): Promise<ProductoInterface[]> {
-//     let output: ProductoInterface[] = [];
-//     try {
-//       if (id) {
-//         const document = await this.productos.findById(id);
-//         if (document) output.push(document);
-//       } else {
-//         output = await this.productos.find();
-//       }
-
-//       return output;
-//     } catch (err) {
-//       return output;
-//     }
-//   }
-
   async getProductosAll() {
     return await this.productos.find();
   }
@@ -57,7 +41,7 @@ export class ProductosMongoDAO {//implements ProductBaseClass {
     return await this.productos.find({id:id});
   }
 
-  async insertProducto(data: NewProductoInterface): Promise<number> {
+  async insertProducto(data: NewProductoInterface) {
     const count = await this.productos.count();
     const id = count + 1;
     const obj = {
@@ -74,10 +58,10 @@ export class ProductosMongoDAO {//implements ProductBaseClass {
     const newProduct = new this.productos(obj);
     await newProduct.save();
 
-    return id;
+    return obj;
   }
 
-  async updateProducto(id: number, newProductData: NewProductoInterface): Promise<ProductoInterface> {
+  async updateProducto(id: number, newProductData: any) {
     //return this.productos.findByIdAndUpdate(id, newProductData);
     const filter = {id: id}
     return this.productos.findOneAndUpdate(filter, newProductData);
@@ -88,13 +72,4 @@ export class ProductosMongoDAO {//implements ProductBaseClass {
     await this.productos.deleteOne(filter);
   }
 
-//   async query(options: ProductQuery): Promise<ProductI[]> {
-//     let query: ProductQuery = {};
-
-//     if (options.nombre) query.nombre = options.nombre;
-
-//     if (options.precio) query.precio = options.precio;
-
-//     return this.productos.find(query);
-//   }
 }

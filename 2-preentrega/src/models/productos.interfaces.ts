@@ -8,7 +8,7 @@ export interface ProductoInterface {
     foto: string,
     precio: number,
     stock: number,
-    timestamp: string
+    timestamp: number
 }
 
 export interface NewProductoInterface {

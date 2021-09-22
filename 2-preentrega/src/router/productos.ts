@@ -40,12 +40,6 @@ router.put('/actualizar/:id', Productos.updateProducto);
 
 // router.use(middleAdmin) //lo de acá abajo es afectado por el middleWare
 
-
-
-// router.put('/actualizar/:id', Productos.updateProducto);
-
-// router.delete('/borrar/:id', Productos.deleteProducto);
-
 /*
 {
     "product": {"nombre": "nombre1",
