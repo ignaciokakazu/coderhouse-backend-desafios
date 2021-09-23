@@ -193,6 +193,10 @@ var classProductos = /** @class */ (function () {
                         if (!req.query.cant) {
                             cant = 10;
                         }
+                        else if (req.query.cant == 0) {
+                            res.json({ error: "No hay cantidad" });
+                            return [2 /*return*/];
+                        }
                         else {
                             cant = req.query.cant;
                         }
