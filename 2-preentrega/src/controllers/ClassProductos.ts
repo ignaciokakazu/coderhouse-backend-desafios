@@ -1,10 +1,8 @@
 import moment from 'moment';
-// import {db} from '../models/DAO/productos/fileSystem';
 import { Request, Response, NextFunction } from 'express';
 import {ProductoInterface,
         NewProductoInterface} from '../models/productos.interfaces';
-// import { nextTick } from 'process';
-import {productosAPI} from '../apis/productos';
+import {api} from '../apis/api';
 
 class ClassProductos {
     //private lista: ProductoInterface[];
@@ -25,7 +23,7 @@ class ClassProductos {
 
     async getProductosAll(req: Request, res: Response) {
         try {
-            const lista = await productosAPI.getProductosAll();
+            const lista = await api.getProductosAll();
             res.json(lista);
         } catch (error: any) {
             console.log(error.message);
@@ -35,7 +33,7 @@ class ClassProductos {
 
     async getProductosById(req: Request, res: Response) {
         try {
-            const lista:any = await productosAPI.getProductosById(Number(req.params.id));
+            const lista:any = await api.getProductosById(Number(req.params.id));
 
             if (lista.length) {
                 res.json(lista);
@@ -66,7 +64,7 @@ class ClassProductos {
         //      //no está el id, ni el timestamp, porque depende del DAO
         // }
         
-        const respuesta = await productosAPI.insertProducto(obj);
+        const respuesta = await api.insertProducto(obj);
         res.json(respuesta);
     }
 
@@ -79,7 +77,7 @@ class ClassProductos {
             id = Number(req.params.id);
         }
         
-        await productosAPI.deleteProducto(id);
+        await api.deleteProducto(id);
         res.json({id: id});
     }
 
@@ -89,7 +87,7 @@ class ClassProductos {
         
         const data:any = req.body;
         //acá tengo que validar, antes de mandar
-        await productosAPI.updateProducto(id, data);
+        await api.updateProducto(id, data);
         res.json({id: id});
     }
 

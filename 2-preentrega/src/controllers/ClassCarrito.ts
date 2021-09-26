@@ -1,139 +1,85 @@
-// import moment from 'moment';
+import moment from 'moment';
+import {Request, Response} from 'express';
+import {api} from '../apis/api';
 
-// class ClassCarrito {
-//     private lista: any;
+class ClassCarrito {
+    private lista: any;
     
-//     constructor() {
+    constructor() {
     
-//     }
+    }
 
-//     async getCarritoById(id:number) {
-//         try {
-//             this.lista = await db.read("carrito");
-//             const prod = this.lista.filter((product:any)=> product.id == id);
+    async getCarritoById(req:Request, res:Response) {//id:number) {
+        try {
+            const id: number= Number(req.params.id);
+            const carrito = await api.getCarritoById(id);
             
-//             if (!prod.length) {throw new Error('No existe el producto por ID')}
+            res.json(carrito);
             
-//             return prod;
+        } catch(error: any) {
+            res.json ({error: error.message})
+        }
+    }
+
+    async getCarritoAll(req:Request, res:Response) {
+        try {
+            const carritoAll = await api.getCarritoAll();
+            res.json(carritoAll);
+        } catch (error:any) {
+            res.json({error: error.message});
+        }
+    }
+
+    async deleteCarritoById(req:Request, res:Response){//id:number) {
+        try {
+            const id:number = Number(req.params.body);
+            const carrito = await api.deleteCarritoById(id);
             
-//         } catch(error: any) {
-//             return {error: error.message}
-//         }
-//     }
+            res.json({msg: `Eliminado ${id}`});
 
-//     async generarId(carrito:any) {
-//         /* si no fuera async, se empiezan a pisar los ids */
-//         const largo:number = carrito.length;
-//         let max:number = 0;
-//         for (let i=0;i<largo;i++) {
-//             if (parseInt(carrito[i].id) > max) {
-//                 max = parseInt(carrito[i].id);
-//             }
-//         }
-//         return max + 1;
-//     }
+        } catch (err:any) {
+            res.json({error: err.message});
+        }
+    }
 
-//     async getCarritoAll() {
-//         //si existe el file
-//         //try y catch
-//         //si existe el id
-//         try {
-//             this.carrito = await db.read("carrito");
-//             return this.carrito;
-//         } catch (error:any) {
-//             return {error: error.message};
-//         }
-//     }
+    async deleteCarritoAll(req:Request, res:Response) {
+        try {
+            await api.deleteCarritoAll();
+            res.json({msg: "Carrito eliminado"});
+        } catch(error:any) {
+            res.json({error: error.message});
+        }
+    }
 
-//     async deleteCarritoById(id:number) {
-//         try {
-//             this.carrito = await db.read("carrito");
-
-//             if (!this.carrito.length) {throw new Error('Carrito vacío. No se puede eliminar')}
+    async addCarritoById(req:Request, res:Response) {
+        try {
+            //Productos
+            const id:number = Number(req.params.body);
+            const lista = await api.getProductosById(id));
             
-//             const filtrada:any = this.carrito.filter((prod:any)=>prod.id != id);
+            if (!prod.length) { throw new Error('No hay productos disponibles. Comuniquese con el administrador')}
 
-//             if (filtrada.length == this.carrito.length) {throw new Error('No se encuentra el ID')}
+            //todo esto hay que adaptar para que funcione 
 
-//             this.carrito = filtrada;
-
-//             await db.write("carrito", this.carrito);
+            //Productos del carrito
+            const carrito = await api.getCarritoAll();
             
-//             return {msg: "Eliminado"};
-
-//         } catch (error:any) {
-//             return {error: error.message}
-//         }
-//     }
-
-//     // /* para después... */
-//     // async deleteCarritoByIdProducto(id_producto) {
-//     //     //si existe el file
-//     //     //try y catch
-//     //     //si existe el id
-        
-//     //     this.carrito = await db.read("carrito")
-        
-//     //     // si es vacío, throw new error
-        
-//     //     const filtrada = this.removeItemOnce(carrito, id_producto);
-//     //     this.carrito = filtrada;
-//     //     await db.write("carrito", this.carrito)
-//     //     return id_producto;
-//     // }
-
-//     // removeItemOnce(arr, value) {
-//     //     let bandera = false;
-//     //     let posicion = 0;
-
-//     //     while (bandera == false || posicion<arr.length){  
-//     //         if (arr[posicion].producto.id == value) {
-//     //             const arrayNuevo = arr.splice(0, posicion-1); //corto
-//     //             arrayNuevo.push(arr.splice(posicion,arr.length)); //pego
-//     //             bandera = true;
-//     //         }
-//     //         posicion ++;
-//     //     }
-//     //     return arrayNuevo;
-//     //   }
-
-//     async deleteCarritoAll() {
-//         try {
-//             this.carrito = [];
-//             db.write("carrito", this.carrito);
-//             return {msg: "Carrito eliminado"};
-//         } catch(error:any) {
-//             return {error: error.message}
-//         }
-//     }
-
-//     async addCarritoById(id:number) {
-//         try {
-//             //Productos
-//             this.lista = await db.read("productos");
-//             const prod = this.lista.filter((product:any) => product.id == id); 
-            
-//             if (!prod.length) { throw new Error('No hay productos disponibles. Comuniquese con el administrador')}
-
-//             //Productos del carrito
-//             this.carrito = await db.read("carrito") ;
-            
-//             const idCarrito:any = await this.generarId(this.carrito);
+            const idCarrito:any = await this.generarId(this.carrito);
                
-//             this.carrito.push({
-//                 id: idCarrito,
-//                 timestamp: moment().format('yy-MM-DD HH:mm:ss'),
-//                 producto: prod
-//             })
-//             console.log(this.carrito)
-//             await db.write("carrito", this.carrito)
-//                return this.carrito;  
+            this.carrito.push({
+                id: idCarrito,
+                timestamp: moment().format('yy-MM-DD HH:mm:ss'),
+                producto: prod
+            })
+            console.log(this.carrito)
+            await db.write("carrito", this.carrito)
+               return this.carrito;  
                
-//         } catch (error:any) {
-//             return {error: error.message}
-//         }
-//     }
+        } catch (error:any) {
+            return {error: error.message}
+        }
+    }
 
-// }
+}
 
-// export const Carrito = new ClassCarrito();
+export const Carrito = new ClassCarrito();

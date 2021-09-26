@@ -1,6 +1,6 @@
 import {Request, Response, NextFunction} from 'express';
 
-let admin = false;
+let admin:boolean = false;
 
 export const middleAdmin = (req: Request, res: Response, next: NextFunction) => {
     console.log("middleware admin")

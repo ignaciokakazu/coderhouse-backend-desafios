@@ -1,112 +1,142 @@
-// import fs from 'fs';
-// import path from 'path';
-// import moment from 'moment';
+import fs from 'fs';
+import path from 'path';
+import moment from 'moment';
+import { CarritoInterface, CarritoArray } from '../../carrito.interfaces';
 
-// export class CarritoFSDAO {
-//     url:string;
-//     urls: any; 
-//     lista: any;
+export class CarritoFSDAO {
+    url:string;
 
-//     constructor () {
-//         // this.urls = {
-//         //     carrito: "./carrito.txt",
-//         //     productos: "./productos.txt",
-//         // };
-//         const filePath = path.resolve(__dirname, './carrito.txt');
-//         console.log(filePath);
-//         this.url = filePath;
-//         //Acá hay que mockear los datos y crear el archivo
-//     }
+    constructor () {
+        const filePath = path.resolve(__dirname, './carrito.txt');
+        this.url = filePath;
+    }
 
-//     async getCarritoAll() {
-//         try {
-//             if (!fs.existsSync(this.url)) {throw new Error (`El archivo ${this.url} no existe. Comuniquese con el administrador`)} 
-//             const lista = await fs.promises.readFile(this.url, 'utf-8');
-//             let response: any;
-//             lista? response = JSON.parse(lista) : response = [];
-//             return response;
-
-//         } catch(error:any) {
-//             return {error: error.message};
-//         }
-//     }
-
-//     async getCarritoById(id:number) {
-//         try {
-//             const carritoAll = await this.getCarritoAll();
-//             const carritoById = carritoAll.filter((carrito:any) => carrito.id == carrito);
-//             return carritoById;            
-
-//         } catch(error:any) {
-//             return {error: error.message};
-//         }
-//     }
-
-//     async write(data:any) {
-//         try {
-//             await fs.promises.writeFile(this.url, JSON.stringify(data), 'utf-8')
-//         } catch(error:any) {
-//             return error.message;
-//         }
-//     }
-
-//     async insertCarrito(data:any){
-//         //lo pido sin ID. Lo averiguo acá. 
-//         const newId: number = await this.generarId();
-//         const productoObj = {
-//             id: newId,
-//             timestamp: moment().format('yy-MM-DD HH:mm:ss'),
-//             nombre:data.nombre,
-//             descripcion:data.descripcion,
-//             codigo:data.codigo,
-//             foto:data.foto,
-//             precio:data.precio,
-//             stock:data.stock
-//         }
+    async getCarritoAll(): Promise<CarritoArray> {
         
-//         const carrito:any = await this.getCarritoAll();
-//         carrito.push(productoObj);
+            if (!fs.existsSync(this.url)) {throw new Error (`El archivo ${this.url} no existe. Comuniquese con el administrador`)} 
+            const lista = await fs.promises.readFile(this.url, 'utf-8');
+            let response: any;
+            lista? response = JSON.parse(lista) : response = [];
+            return response;
 
-//         this.write(productos);
+        
+    }
 
-//         return productoObj;
-//     }
+    async getCarritoById(id:number|string): Promise<CarritoArray|Object> {
+        try {
+            let idNumber: number;
+            
+            if (typeof id === 'string') {
+                idNumber = parseInt(id);
+            }
 
-//     async generarId(carrito:any) {
-//         /* si no fuera async, se empiezan a pisar los ids */
-//         const largo:number = carrito.length;
-//         let max:number = 0;
-//         for (let i=0;i<largo;i++) {
-//             if (parseInt(carrito[i].id) > max) {
-//                 max = parseInt(carrito[i].id);
-//             }
-//         }
-//         return max + 1;
-//     }
+            const carritoAll:CarritoArray = await this.getCarritoAll();
+            const carritoById:CarritoArray = carritoAll.filter((carrito:any) => carrito.id == idNumber);
+            return carritoById;            
 
-//     async deleteProducto(id:number) {
-//         const productos:any = await this.getProductosAll();
-//         const productosTemp = productos.filter((prod:any)=> prod.id != id);
-//         this.write(productosTemp);
-//     }
+        } catch(error:any) {
+            return {error: error.message};
+        }
+    }
 
-//     async updateProducto(id:number, data:any) {
-//         const productos:any = await this.getProductosAll();
-//         const productosTemp = {
-//             id: id,
-//             nombre: data.nombre,
-//             descripcion: data.descripcion,
-//             codigo: data.codigo,
-//             foto: data.foto,
-//             precio: data.precio,
-//             stock: data.stock
-//         }
-//         const productosFilter = productos.filter((prod:any)=>prod.id == id);
-//         productosFilter.push(productosTemp);
-//         this.write(productosFilter);
-//     }
+    async write(data:CarritoInterface): any {
+        try {
+            await fs.promises.writeFile(this.url, JSON.stringify(data), 'utf-8')
+            return data;
+        } catch(err:any) {
+            return err.message;
+        }
+    }
 
-// }
+    async insertCarrito(data:any){
+        //lo pido sin ID. Lo averiguo acá. 
+        const carritoAll = await this.getCarritoAll();
+        const newId: number = await this.generarId(carritoAll);
+        const productoObj = {
+            id: newId,
+            timestamp: moment().format('yy-MM-DD HH:mm:ss'),
+            nombre:data.nombre,
+            descripcion:data.descripcion,
+            codigo:data.codigo,
+            foto:data.foto,
+            precio:data.precio,
+            stock:data.stock
+        }
+        
+        const carrito:any = await this.getCarritoAll();
+        carrito.push(productoObj);
+
+        await this.write(carrito);
+
+        return productoObj;
+    }
+
+    async generarId(carrito:any) {
+        /* si no fuera async, se empiezan a pisar los ids */
+        const largo:number = carrito.length;
+        let max:number = 0;
+        for (let i=0;i<largo;i++) {
+            if (parseInt(carrito[i].id) > max) {
+                max = parseInt(carrito[i].id);
+            }
+        }
+        return max + 1;
+    }
+
+    async deleteCarritoById(id:number) {
+        try {
+        const carrito:any = await this.getCarritoAll();
+        const carritoTemp = carrito.filter((carr:any)=> carr.id != id);
+        await this.write(carritoTemp);
+        return id
+        } catch (err:any) {
+            return {error: err.message};
+        }
+    }
+
+
+    async deleteCarritoAll() {
+        try {
+            const carrito:any = [];
+            await this.write(carrito);
+            return ({msg: "Carrito eliminado"});
+        } catch(err:any) {
+            return ({error: err.message})
+        }
+    }
+
+    async readProductos (){
+        const productos = await fs.promises.readFile('../productos/productos.txt');
+    }
+
+    async addCarritoById(id:number) {
+        try {
+            //Productos
+            const listaProductos:any = await this.readProductos();
+            const prod = listaProductos.filter((product:any) => product.id == id); 
+            
+            if (!prod.length) { throw new Error('No hay productos disponibles. Comuniquese con el administrador')}
+
+            //Productos del carrito
+            const carrito = await fs.promises.readFile(this.url);
+            
+            const idCarrito = await this.generarId(this.carrito);
+               
+            this.carrito.push({
+                id: idCarrito,
+                timestamp: moment().format('yy-MM-DD HH:mm:ss'),
+                producto: prod
+            })
+            console.log(this.carrito)
+            await db.write("carrito", this.carrito)
+               return this.carrito;  
+               
+        } catch (error) {
+            return {error: error.message}
+        }
+    }
+
+}
 
 
 

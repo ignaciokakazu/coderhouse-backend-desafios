@@ -1,9 +1,9 @@
-import {ProductosFSDAO} from './DAO/productos/fileSystem';
-import {ProductosSQLiteDAO} from './DAO/productos/sqlite';
-import { ProductosMemoryDAO } from './DAO/productos/memory';
-import { ProductosMYSQLDAO } from './DAO/productos/mySQL';
-import {ProductosMongoDAO} from './DAO/productos/mongodb';
-import {ProductosFirebaseDAO} from './DAO/productos/firebase';
+import {CarritoFSDAO} from './DAO/carrito/fileSystem';
+// import {ProductosSQLiteDAO} from './DAO/productos/sqlite';
+// import { ProductosMemoryDAO } from './DAO/productos/memory';
+// import { ProductosMYSQLDAO } from './DAO/productos/mySQL';
+// import {ProductosMongoDAO} from './DAO/productos/mongodb';
+// import {ProductosFirebaseDAO} from './DAO/productos/firebase';
 
 export enum TipoPersistencia {
     fileSystem = 'FS',
@@ -14,37 +14,39 @@ export enum TipoPersistencia {
     mongodbAtlas = 'MOA',
     firebase = 'FBA'
 }
-// el tipo de persistencia es elegido en apis/productos.ts
-export class ProductosFactoryDAO {
+
+// el tipo de persistencia es elegido en apis.ts
+
+export class CarritoFactoryDAO {
     static get(tipo: TipoPersistencia) {
         switch (tipo) {
             case TipoPersistencia.fileSystem:
                 console.log("Soy Factory y es el FS");
-                return new ProductosFSDAO();
+                return new CarritoFSDAO();
             
-            case TipoPersistencia.sqlite:
-                console.log("Soy el factory y es sqlite");
-                return new ProductosSQLiteDAO();
+        //     case TipoPersistencia.sqlite:
+        //         console.log("Soy el factory y es sqlite");
+        //         return new CarritoSQLiteDAO();
             
-            case TipoPersistencia.memory:
-                console.log("Soy el factory y es memory");
-                return new ProductosMemoryDAO();
+        //     case TipoPersistencia.memory:
+        //         console.log("Soy el factory y es memory");
+        //         return new CarritoMemoryDAO();
             
-            case TipoPersistencia.mysql:
-                console.log("Soy el factory y es mysql");
-                return new ProductosMYSQLDAO()
+        //     case TipoPersistencia.mysql:
+        //         console.log("Soy el factory y es mysql");
+        //         return new CarritoMYSQLDAO()
             
-            case TipoPersistencia.mongodbLocal:
-                    console.log("Soy el factory y es mongo local");
-                    return new ProductosMongoDAO(true);
+        //     case TipoPersistencia.mongodbLocal:
+        //             console.log("Soy el factory y es mongo local");
+        //             return new CarritoMongoDAO(true);
             
-            case TipoPersistencia.mongodbAtlas:
-                    console.log("Soy el factory y es mongo Atlas");
-                    return new ProductosMongoDAO(false);
+        //     case TipoPersistencia.mongodbAtlas:
+        //             console.log("Soy el factory y es mongo Atlas");
+        //             return new CarritoMongoDAO(false);
 
-            case TipoPersistencia.firebase:
-                    console.log("Soy el factory y es firebase");
-                    return new ProductosFirebaseDAO();
+        //     case TipoPersistencia.firebase:
+        //             console.log("Soy el factory y es firebase");
+        //             return new CarritoFirebaseDAO();
         }
     }
 }

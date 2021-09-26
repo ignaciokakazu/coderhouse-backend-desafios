@@ -1,6 +1,6 @@
 import * as admin from 'firebase-admin';
 import { NewProductoInterface } from '../../productos.interfaces';
-import * as serviceAccount from './firebase.json';
+import Config from '../../../config/config';
 
 export class ProductosFirebaseDAO {//implements ProductBaseClass {
   db: any;
@@ -8,16 +8,16 @@ export class ProductosFirebaseDAO {//implements ProductBaseClass {
   constructor() {
 
     const params = {
-        type: serviceAccount.type,
-        projectId: serviceAccount.project_id,
-        privateKeyId: serviceAccount.private_key_id,
-        privateKey: serviceAccount.private_key,
-        clientEmail: serviceAccount.client_email,
-        clientId: serviceAccount.client_id,
-        authUri: serviceAccount.auth_uri,
-        tokenUri: serviceAccount.token_uri,
-        authProviderX509CertUrl: serviceAccount.auth_provider_x509_cert_url,
-        clientC509CertUrl: serviceAccount.client_x509_cert_url
+        type: Config.FIREBASE_TYPE,
+        projectId: Config.FIREBASE_PROJECT_ID,
+        privateKeyId: Config.FIREBASE_PRIVATEKEY_ID,
+        privateKey: Config.FIREBASE_PRIVATE_KEY,
+        clientEmail: Config.FIREBASE_CLIENT_EMAIL,
+        clientId: Config.FIREBASE_CLIENT_ID,
+        authUri: Config.FIREBASE_AUTH_URI,
+        tokenUri: Config.FIREBASE_TOKEN_URI,
+        authProviderX509CertUrl: Config.FIREBASE_AUTH_PROVIDER_X509_CERT_URL,
+        clientC509CertUrl: Config.FIREBASE_CLIENT_X509_CERT_URL
       }
 
     admin.initializeApp({
