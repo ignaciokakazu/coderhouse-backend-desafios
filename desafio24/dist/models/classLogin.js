@@ -9,7 +9,7 @@ var classLogin = /** @class */ (function () {
         var user = req.query.user;
         if (user === 'admin') {
             console.log('hola');
-            res.cookie('user', user).send({ msg: 'ok' });
+            res.cookie('user', user, { expire: 60000 }).send({ msg: 'ok' });
         }
         else {
             res.json({ msg: "Usuario erróneo" });
