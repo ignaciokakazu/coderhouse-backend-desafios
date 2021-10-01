@@ -36,12 +36,13 @@ class classLogin {
         const cookies = req.cookies;
 
         console.log(cookies);
-        
+        const user = cookies.user;
+
         const keys = Object.keys(cookies);
       
         keys.forEach((aKey) => res.clearCookie(aKey));
       
-        res.send({ msg: 'ok' });
+        res.send({ msg: 'ok' , user: user});
     }
 }
 

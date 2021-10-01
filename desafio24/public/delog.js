@@ -6,6 +6,7 @@ async function delog() {
       .then(response=>response.json())
       .then((data)=>{
         if (data.msg === 'ok') {
+          alert('hasta luego ' + data.user);
           setTimeout(()=>{window.location.replace('http://localhost:8080')}, 2000);
           //redirect
         } else {

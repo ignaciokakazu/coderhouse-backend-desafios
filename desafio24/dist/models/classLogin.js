@@ -9,7 +9,7 @@ var classLogin = /** @class */ (function () {
         var user = req.query.user;
         if (user === 'admin') {
             console.log('hola');
-            res.cookie('user', user, { expire: 60000 }).send({ msg: 'ok' });
+            res.cookie('user', user, { expire: 5000 }).send({ msg: 'ok' });
         }
         else {
             res.json({ msg: "Usuario erróneo" });
@@ -28,9 +28,10 @@ var classLogin = /** @class */ (function () {
     classLogin.prototype.clear = function (req, res) {
         var cookies = req.cookies;
         console.log(cookies);
+        var user = cookies.user;
         var keys = Object.keys(cookies);
         keys.forEach(function (aKey) { return res.clearCookie(aKey); });
-        res.send({ msg: 'ok' });
+        res.send({ msg: 'ok', user: user });
     };
     return classLogin;
 }());
