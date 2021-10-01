@@ -1,0 +1,45 @@
+{
+  "name": "desafio23-tsc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/app.js",
+  "scripts": {
+    "start": "node '.\\dist\\app.js'",
+    "build": ".\\node_modules\\.bin\\tsc",
+    "dev": "nodemon dist/app.js",
+    "migrate:db": "npx knex migrate:latest",
+    "rollback:db": "npx knex migrate:rollback",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.2",
+    "@types/express": "^4.17.13",
+    "@types/express-handlebars": "^5.3.1",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^16.7.1",
+    "@types/normalizr": "^2.0.18",
+    "@types/socket.io": "^3.0.2",
+    "handlebars": "^4.5.0",
+    "nodemon": "^2.0.12",
+    "prettier": "^2.3.2",
+    "ts-node": "^10.2.1"
+  },
+  "dependencies": {
+    "@types/nodemon": "^1.19.1",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.3",
+    "faker": "^5.5.3",
+    "knex": "^0.95.10",
+    "moment": "^2.29.1",
+    "mongoose": "^6.0.5",
+    "mysql": "^2.18.1",
+    "normalizr": "^3.6.1",
+    "socket.io": "^4.2.0",
+    "socket.io-client": "^4.2.0",
+    "typescript": "^4.3.5"
+  }
+}
