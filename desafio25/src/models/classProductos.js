@@ -8,9 +8,11 @@ class classProductos {
 
     async getListaProductosHB() {
         try {
-            return await DBService.getAll();
+            const productos = await DBService.getAllHb();
+
+            return productos;
         } catch (err) {
-            return {error: err.message};
+            return {error: err.message, stack: err.stack};
         }
     }
 
@@ -78,28 +80,40 @@ class classProductos {
     }
 
     async testProducto(req, res) {
-        let cant;
-        if (!req.query.cant) {
-            cant = 10;
-        } else {
-            cant = req.query.cant;
+        try {
+            let cant;
+            if (!req.query.cant) {
+                cant = 10;
+            } else if (req.query.cant == 0) {
+                res.json({error: "No hay cantidad"});
+                return 
+            } else {
+                cant = req.query.cant;
+            }
+
+            const productosTest = [];
+            for (let i=0; i<cant;i++) {
+                const id = await DBService.getCount() + 1;
+                const prodTemp = {
+                    id: id,
+                    nombre: faker.commerce.productName(), 
+                    price: faker.commerce.price(), 
+                    thumbnail: faker.image.imageUrl(), 
+                    stock: faker.datatype.number(), 
+                    descripcion: faker.commerce.productDescription(), 
+                    timestamp: new Date(), 
+                    category_id: faker.datatype.number()
+                }; 
+
+                await DBService.insert(prodTemp);
+                productosTest.push(prodTemp);
+                console.log(prodTemp);
+            }
+
+            res.json(productosTest);
+        } catch(e) {
+            res.json({error:e.message});
         }
-
-        const id = await DBService.getCount() + 1;
-
-        const prodTemp = {
-            id: id,
-            nombre: faker.commerce.productName(), 
-            price: faker.commerce.price(), 
-            thumbnail: thumbnail, 
-            stock: faker.commerce.stock, 
-            descripcion: faker.commerce.productDescription(), 
-            timestamp: new Date(), 
-            category_id: category_id
-        }; 
-
-
-
     }
 
     async updateProducto(req, res) {

@@ -6,6 +6,11 @@ class DBProductos {
     return lista;
   }
 
+  async getAllHb() {
+    const lista = await productosMongo.find({}).lean();
+    return lista;
+  }
+
   async getProductById(id) {
     const lista = await productosMongo.find({id:id})
     return lista;
@@ -27,6 +32,7 @@ class DBProductos {
     await productosMongo.findOneAndUpdate({id: id}, producto);
     //await mySQLDB('productos').where({id: id}).update(producto);
   }
+
 }
 
 export const DBService = new DBProductos();

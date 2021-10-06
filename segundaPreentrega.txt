@@ -1,0 +1,31 @@
+Hacer 
+* Error Handler
+* Pasar Carrito a las persistencias
+* Agregar Intefaces (ver en el afterSegunda entrega)
+* Agregar Faker para 
+
+Métodos del DAO
+
+add
+
+read
+
+write
+
+update
+
+delete
+
+
+getProductosAll() -> TODOS
+
+getProductosById(id:number) ->
+
+insertProducto(data:any) -> va con ID y todo. En el MySQL no hace falta tener ID
+
+deleteProducto(id:number) -> delete
+
+updateProducto(id: number, producto) ->
+
+
+

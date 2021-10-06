@@ -22,3 +22,7 @@ mongodb
 1-preentrega-
 1preentregaPreliminar-tsc
 node.txt
+firebase.json
+config.ts
+dist
+build

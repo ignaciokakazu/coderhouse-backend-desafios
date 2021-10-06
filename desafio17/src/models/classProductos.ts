@@ -24,7 +24,7 @@ class classProductos {
         const id:number = Number(req.params.id);
         try {
             res.json(await DBService.getProductById(id));
-        } catch(err) {
+        } catch(err: any) {
             res.json({error: err.message});
         }
     }

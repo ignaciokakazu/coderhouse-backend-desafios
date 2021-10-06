@@ -13,7 +13,6 @@ router.delete('/productos/borrar/:id', Productos.deleteProducto);
 
 router.put('/productos/actualizar/:id', Productos.updateProducto);
 
-router.put('/productos/vista-test', Productos.testProducto);
-
+router.post('/productos/vista-test', Productos.testProducto);
 
 export default router
