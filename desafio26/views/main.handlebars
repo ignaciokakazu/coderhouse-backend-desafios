@@ -1,0 +1,152 @@
+    <div class="container">
+        <div class='row'>
+            <div class='col-4'>
+
+            </div>
+            <div class='col-4'>
+                <h3>Login</h3>
+                <div class='form-group'>
+                    <label>User</label>
+                    <input id='user' class='form-control'>
+                </div>
+                <div class='form-group'>
+                    <label>Password</label>
+                    <input id='password' type='password' class='form-control'>
+                    <button id='login'>Login</button>
+                </div>
+                    <h3>Registrarse</h3>
+                    <div class='form-group'>
+                        <label>User</label>
+                        <input id='userReg' class='form-control'>
+                    </div>
+                    <div class='form-group'>
+                        <label>Password</label>
+                        <input id='passwordReg' type='password' class='form-control'>
+                    </div>
+                    <div class='form-group'>
+                        <label>Email</label>
+                        <input id='email' class='form-control'>
+                    </div>
+                    <button id='register'>Registrarse</button>
+            </div>
+            <div class='col-4'>
+                
+            </div>
+            </div>
+        </div>
+        {{!-- <h3>Carga de productos</h3>
+        <form onsubmit="return addProduct(this)" method="post">
+            <div class="form-group">
+                <label>Title</label>
+                <input id="title" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Price</label>
+                <input id="price" class="form-control">
+            </div>
+            <div class="form-group mb-3">
+                <label>Thumbnail</label>
+                <input id="thumbnail" class="form-control">
+            </div>
+            <!--<input class="btn btn-success" type="submit" value="Guardar">
+            <a class="btn btn-success" href="/productos/vista">Vista</a>--->
+        </form>
+       
+        <div id="tablaProductos">
+                {{#if productos}}
+                <table class='table'>
+                    <tr>
+                        <thead>
+                            <th scope='col'>Producto</th>
+                            <th scrope='col'>Precio</th>
+                            <th scope='col'>Imagen</th>
+                        </thead>
+                    </tr>
+                        {{#each productos}}
+                        <tr>
+                        <td>{{nombre}}</td>
+                        <td>{{price}}</td>
+                        <td><img src='{{thumbnail}}' width="50px"></td>
+                        </tr>
+                        {{/each}}
+                </table>
+                {{else}}
+                <div class="card">
+                    <div class="card-text">
+                        <h2>No se encontraron productos</h2>
+                    </div>
+                </div>
+                {{/if}}
+            
+        </div> --}}
+
+        
+        <h3>Chat</h3>
+            <div class="chatContainer">
+
+                    <div id="chatDatos" class="chatDatos">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input class="form-control" type="text" id="email">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input class="form-control" type="text" id="name">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Apellido</label>
+                            <input class="form-control" type="text" id="surname">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Edad</label>
+                            <input class="form-control" type="number" id="age">
+                        </div>
+                        <div class="form-group">
+                            <label>Alias</label>
+                            <input class="form-control" type="text" id="alias">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Avatar</label>
+                            <input class="form-control" type="text" id="avatar">
+                        </div>
+                        <button class="btn btn-success" onclick="iniciar();">Iniciar</button>
+                    </div>
+                
+                
+            
+            
+        
+            <div class="chatPanel">
+                <div id="chat" class="chat"></div>
+            
+                <div class="chatButtons">
+                        <div class="form-group">
+                            <input class="form-control mb-3" type="text" id="newMessage" placeholder="Escriba su mensaje"> 
+                            <button id="enviar" class="btn btn-success" onclick="enviar();">Enviar</button>
+                            <button id="desconectar" class="btn btn-success" onclick="desconectar();">Desconectar</button>
+                        </div>
+                        
+                    </div>
+            </div>
+            
+        </div>       
+
+
+        <!---<script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>--->
+        
+<!---<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"
+    integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ=="
+    crossorigin="anonymous"
+></script>-->
+        
+        
+        <!--<script src="node_modules\socket.io-client\dist\socket.io.js"></script>-->
+        <!---<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>--->
+            <script src="/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
+    </div>
