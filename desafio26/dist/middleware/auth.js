@@ -42,7 +42,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.isLoggedIn = void 0;
 var passport_1 = __importDefault(require("passport"));
 var passport_local_1 = __importDefault(require("passport-local"));
-var user_1 = require("../models/user");
+var mongodb_1 = require("../services/mongodb");
+var joi_1 = __importDefault(require("joi"));
 var LocalStrategy = passport_local_1.default.Strategy;
 var strategyOptions = {
     usernameField: 'username',
@@ -53,11 +54,11 @@ var loginFunc = function (req, username, password, done) { return __awaiter(void
     var user;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, user_1.UserModel.findOne({ username: username })];
+            case 0: return [4 /*yield*/, mongodb_1.UserModel.findOne({ username: username })];
             case 1:
                 user = _a.sent();
                 if (!user) {
-                    return [2 /*return*/, done(null, false, { message: 'User does not exist' })];
+                    return [2 /*return*/, done(null, false, { message: 'User does not exist' })]; //done implica que termina. el false del segundo parámetro es fundamental
                 }
                 if (!user.isValidPassword(password)) {
                     return [2 /*return*/, done(null, false, { message: 'Password is not valid.' })];
@@ -67,49 +68,68 @@ var loginFunc = function (req, username, password, done) { return __awaiter(void
         }
     });
 }); };
+//validación de usuario con JOI
+var validarUsuario = function (objeto) {
+    var JoiSchema = joi_1.default.object({
+        username: joi_1.default.string()
+            .min(6)
+            .max(30)
+            .required(),
+        email: joi_1.default.string()
+            //.email() saqué esto porque entre mongoose y joi tenia problemas
+            .required(),
+        password: joi_1.default.string()
+            .min(8)
+            .max(30)
+            .required(),
+    }).options({ abortEarly: false });
+    return JoiSchema.validate(objeto);
+};
 var signUpFunc = function (req, username, password, done) { return __awaiter(void 0, void 0, void 0, function () {
-    var _a, username_1, password_1, email, query, user, userData, newUser, error_1;
+    var _a, username_1, password_1, email, validacion, userData, newUser, error_1;
     return __generator(this, function (_b) {
         switch (_b.label) {
             case 0:
-                _b.trys.push([0, 5, , 6]);
-                _a = req.body, username_1 = _a.username, password_1 = _a.password, email = _a.email;
+                console.log('entrando en middleware signup');
+                _b.label = 1;
+            case 1:
+                _b.trys.push([1, 3, , 4]);
                 console.log(req.body);
-                if (!username_1 || !password_1 || !email) {
-                    console.log('Invalid body fields');
+                _a = req.body, username_1 = _a.username, password_1 = _a.password, email = _a.email;
+                validacion = validarUsuario(req.body);
+                if (!validacion.error) {
+                    console.log(username_1, password_1, email);
+                }
+                else {
+                    console.log(username_1, password_1, email);
+                    console.log('error de joi');
                     return [2 /*return*/, done(null, false)];
                 }
-                query = {
-                    $or: [{ username: username_1 }, { email: email }],
-                };
-                console.log(query);
-                return [4 /*yield*/, user_1.UserModel.findOne(query)];
-            case 1:
-                user = _b.sent();
-                if (!user) return [3 /*break*/, 2];
-                console.log('User already exists');
-                console.log(user);
-                return [2 /*return*/, done(null, false, 'User already exists')];
-            case 2:
                 userData = {
                     username: username_1,
-                    password: password_1,
-                    email: email
+                    email: email,
+                    password: password_1
                 };
-                newUser = new user_1.UserModel(userData);
+                newUser = new mongodb_1.UserModel(userData);
                 return [4 /*yield*/, newUser.save()];
-            case 3:
+            case 2:
                 _b.sent();
                 return [2 /*return*/, done(null, newUser)];
-            case 4: return [3 /*break*/, 6];
-            case 5:
+            case 3:
                 error_1 = _b.sent();
                 done(error_1);
-                return [3 /*break*/, 6];
-            case 6: return [2 /*return*/];
+                return [3 /*break*/, 4];
+            case 4: return [2 /*return*/];
         }
     });
 }); };
+var isLoggedIn = function (req, res, done) {
+    if (!req.user) {
+        return res.status(401).json({ msg: 'Unathorized' });
+    }
+    done();
+};
+exports.isLoggedIn = isLoggedIn;
 passport_1.default.use('login', new LocalStrategy(strategyOptions, loginFunc));
 passport_1.default.use('signup', new LocalStrategy(strategyOptions, signUpFunc));
 passport_1.default.serializeUser(function (user, done) {
@@ -117,14 +137,8 @@ passport_1.default.serializeUser(function (user, done) {
     done(null, user._id);
 });
 passport_1.default.deserializeUser(function (userId, done) {
-    user_1.UserModel.findById(userId, function (err, user) {
+    mongodb_1.UserModel.findById(userId, function (err, user) {
         done(err, user);
     });
 });
-var isLoggedIn = function (req, res, done) {
-    if (!req.user)
-        return res.status(401).json({ msg: 'Unathorized' });
-    done();
-};
-exports.isLoggedIn = isLoggedIn;
 exports.default = passport_1.default;

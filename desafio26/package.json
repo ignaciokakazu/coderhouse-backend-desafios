@@ -38,6 +38,7 @@
     "express-handlebars": "^5.3.3",
     "express-session": "^1.17.2",
     "faker": "^5.5.3",
+    "joi": "^17.4.2",
     "knex": "^0.95.10",
     "moment": "^2.29.1",
     "mongoose": "^6.0.5",

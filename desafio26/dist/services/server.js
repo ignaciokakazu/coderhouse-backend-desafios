@@ -22,34 +22,47 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var config_1 = __importDefault(require("../config/config"));
 var express_1 = __importDefault(require("express"));
 var path_1 = __importDefault(require("path"));
 var index_1 = __importDefault(require("../routes/index"));
 var express_handlebars_1 = __importDefault(require("express-handlebars"));
 var http = __importStar(require("http"));
-var cookie_parser_1 = __importDefault(require("cookie-parser"));
+//import cookieParser from 'cookie-parser';
 var express_session_1 = __importDefault(require("express-session"));
-var connect_mongo_1 = __importDefault(require("connect-mongo"));
-var advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
+//import MongoStore from 'connect-mongo';
+var auth_1 = __importDefault(require("../middleware/auth"));
+//import { nextTick } from 'process';
+// const advancedOptions:Object = { useNewUrlParser: true, useUnifiedTopology: true };
 var app = express_1.default();
-//cookies
-app.use(cookie_parser_1.default());
-var StoreOptions = {
-    store: connect_mongo_1.default.create({
-        mongoUrl: config_1.default.MONGO_ATLAS_URL,
-        mongoOptions: advancedOptions,
-    }),
-    secret: 'miFirma',
-    resave: false,
-    saveUninitialized: false,
-    // cookie: {
-    //     maxAge: 500 //10000
-    // },
-};
-app.use(cookie_parser_1.default());
-app.use(express_session_1.default(StoreOptions));
+/*Desde acá, passport */
 app.use(express_1.default.json());
+//cookies
+// app.use(cookieParser());
+// const StoreOptions = {
+//   store: MongoStore.create({
+//     mongoUrl: config.MONGO_ATLAS_URL,
+//     mongoOptions: advancedOptions,
+//   }),
+//   secret: 'miFirma',
+//   resave: false,
+//   saveUninitialized: false,
+//   // cookie: {
+//   //     maxAge: 500 //10000
+//   // },
+// };
+// app.use(cookieParser());
+// app.use(session(StoreOptions));
+app.use(express_session_1.default({
+    secret: 'miFirma',
+    resave: true,
+    saveUninitialized: false
+}));
+app.use(auth_1.default.initialize());
+app.use(auth_1.default.session());
+app.use(function (req, res, next) {
+    //esto sirve para el logueo correcto
+    next();
+});
 app.use(express_1.default.urlencoded({ extended: true }));
 //ruta del public
 var publicPath = path_1.default.resolve(__dirname, "../../public");

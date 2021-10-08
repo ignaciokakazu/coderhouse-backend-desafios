@@ -39,11 +39,71 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.productosMongo = exports.mensajesMongo = void 0;
+exports.productosMongo = exports.mensajesMongo = exports.UserModel = void 0;
 var config_1 = __importDefault(require("../config/config"));
 var mongoose_1 = __importDefault(require("mongoose"));
+var bcrypt_1 = __importDefault(require("bcrypt"));
+var usersCollection = 'users';
+var Schema = mongoose_1.default.Schema;
+var UserSchema = new Schema({
+    username: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+        index: true
+    },
+    password: {
+        type: String,
+        required: true
+    }
+});
+/*pre es una especie de  middleware de mongoose
+  Se ejecuta antes del evento 'save'
+  en este caso, hashea el password
+*/
+UserSchema.pre('save', function (next) {
+    return __awaiter(this, void 0, void 0, function () {
+        var user, hash;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    user = this;
+                    return [4 /*yield*/, bcrypt_1.default.hash(user.password, 10)];
+                case 1:
+                    hash = _a.sent();
+                    this.password = hash;
+                    next();
+                    return [2 /*return*/];
+            }
+        });
+    });
+});
+/*isValidPassword es un método para evitar hacer la query a la BD
+  bcrypt encripta y desencripta, y compara contra la BD
+*/
+UserSchema.methods.isValidPassword = function (password) {
+    return __awaiter(this, void 0, void 0, function () {
+        var user, compare;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    user = this;
+                    return [4 /*yield*/, bcrypt_1.default.compare(password, user.password)];
+                case 1:
+                    compare = _a.sent();
+                    return [2 /*return*/, compare];
+            }
+        });
+    });
+};
+exports.UserModel = mongoose_1.default.model('user', UserSchema);
 var mensajesCollection = 'mensajes';
-var mensajesSchema = new mongoose_1.default.Schema({
+var mensajesSchema = new Schema({
     // author: [authorSchema],
     author: { name: { type: String, required: true },
         surname: { type: String, required: true },
@@ -57,7 +117,7 @@ var mensajesSchema = new mongoose_1.default.Schema({
 });
 exports.mensajesMongo = new mongoose_1.default.model(mensajesCollection, mensajesSchema);
 var productosCollection = 'productos';
-var productosSchema = new mongoose_1.default.Schema({
+var productosSchema = new Schema({
     id: { type: Number, required: true, unique: true },
     // _id: {type:String, required:true, unique:true},
     nombre: { type: String, required: true },

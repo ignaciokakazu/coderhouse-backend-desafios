@@ -3,10 +3,12 @@ const socket = io.connect('http://localhost:8080')//, {forceNew: true});
 
 async function login() {
   const user = document.getElementById('user').value
-  
+  const password = document.getElementById('password').value
+
   let url = new URL('http://localhost:8080/login/set')
     url.search = new URLSearchParams({
-        user: user
+        username: user,
+        password: password
   })
 
 fetch(url)
@@ -40,7 +42,7 @@ async function signup() {
   fetch('http://localhost:8080/signup', {
     method: 'POST',
     body: JSON.stringify({
-      user: user,
+      username: user,
       password: password,
       email: email
     }),
@@ -54,7 +56,7 @@ async function signup() {
       alert('Usuario creado')
       //redirect
     } else {
-      alert(data.error);
+      alert(JSON.stringify(data.error));
     }
   })
 }

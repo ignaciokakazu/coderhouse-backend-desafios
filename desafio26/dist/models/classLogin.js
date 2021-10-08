@@ -25,20 +25,19 @@ var classLogin = /** @class */ (function () {
         });
     };
     ;
-    classLogin.prototype.set = function (req, res) {
-        console.log('setea');
-        var user = req.query.user;
-        console.log(user);
-        if (user === 'admin') {
-            console.log('hola');
-            req.session.user = user;
-            console.log(req.session.user);
-            res.send({ msg: 'ok' });
-        }
-        else {
-            res.send({ msg: "Usuario erróneo" });
-        }
-    };
+    // set(req, res) {
+    //     console.log('setea')
+    //     const user = req.body.user;
+    //     console.log(user);
+    //     if (user === 'admin') {
+    //         console.log('hola')
+    //         req.session.user = user;
+    //         console.log(req.session.user);
+    //         res.send({msg: 'ok'});
+    //     } else {
+    //         res.send({msg: "Usuario erróneo"});
+    //     }
+    // }
     classLogin.prototype.get = function (req, res) {
         console.log('controla');
         //const user = req.query.user;
