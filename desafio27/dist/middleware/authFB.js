@@ -52,8 +52,8 @@ var strategyOptions = {
 var loginFunc = function (accessToken, refreshToken, profile, done) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         console.log('SALIO TODO BIEN');
-        console.log(accessToken);
-        console.log(refreshToken);
+        // console.log(accessToken);
+        // console.log(refreshToken);
         console.log(profile);
         return [2 /*return*/, done(null, profile)];
     });

@@ -39,11 +39,33 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.productosMongo = exports.mensajesMongo = void 0;
+exports.productosMongo = exports.mensajesMongo = exports.UserModel = void 0;
 var config_1 = __importDefault(require("../config/config"));
 var mongoose_1 = __importDefault(require("mongoose"));
 // const usersCollection = 'users';
 var Schema = mongoose_1.default.Schema;
+var UserSchema = new Schema({
+    id: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    name: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    picture: {
+        type: String,
+        required: true,
+        unique: true
+    }
+});
 // const UserSchema = new Schema({
 //     username: {
 //         type: String,
@@ -80,6 +102,7 @@ var Schema = mongoose_1.default.Schema;
 //   return compare
 // };
 // export const UserModel = mongoose.model('user', UserSchema);
+exports.UserModel = mongoose_1.default.model('user', UserSchema);
 var mensajesCollection = 'mensajes';
 var mensajesSchema = new Schema({
     // author: [authorSchema],

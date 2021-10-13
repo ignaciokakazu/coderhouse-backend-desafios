@@ -2,6 +2,7 @@ import express from 'express';
 import passport from '../middleware/authFB';
 import {isLoggedIn} from '../middleware/authFB';
 import LoginRouter from './login';
+import { UserModel } from '../services/mongodb';
 
 const router = express.Router();
 
@@ -22,10 +23,10 @@ router.get('/facebook/fail', (req, res)=> {
 })
 
 //endpoint de success
-router.get('/facebook/success', (req, res)=> {
+router.get('/facebook/success', async (req, res)=> {
     let foto = "";
     let email = "";
-    console.log('successssssssssssssssssss');
+    
     if (req.isAuthenticated()) {
         const userData = req.user;
         
@@ -37,11 +38,16 @@ router.get('/facebook/success', (req, res)=> {
             email = userData.emails[0].value;
         }
 
-        res.render('authFB', {
-            nombre: userData.displayName,
-            foto: foto,
+        const data = {
+            id: userData.id,
+            name: userData.displayName,
+            picture: foto,
             email: email
-        });
+        }
+
+        await UserModel.create(data);
+
+        res.render('authFB', data);
 
     } else {
         res.redirect('http://localhost:8080');
@@ -50,9 +56,11 @@ router.get('/facebook/success', (req, res)=> {
 
 //endpoint de logout
 router.get('/facebook/logout', (req,res)=> {
+    req.session = null;
     req.logout();
-    res.redirect('login')
+    res.redirect('http://localhost:8080/')
 })
+
 
 export default router;
 

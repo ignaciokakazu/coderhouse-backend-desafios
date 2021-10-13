@@ -6,6 +6,28 @@ import bcrypt from 'bcrypt';
 
 const Schema = mongoose.Schema;
 
+const UserSchema = new Schema ({
+  id: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  email: {
+    type:String,
+    required: true,
+    unique: true
+  },
+  name: {
+    type:String,
+    required:true,
+    unique:true
+  },
+  picture: {
+    type: String,
+    required:true,
+    unique: true
+  }
+})
 // const UserSchema = new Schema({
 //     username: {
 //         type: String,
@@ -48,7 +70,7 @@ const Schema = mongoose.Schema;
 
 // export const UserModel = mongoose.model('user', UserSchema);
 
-
+export const UserModel = mongoose.model('user', UserSchema);
 
 const mensajesCollection = 'mensajes';
 

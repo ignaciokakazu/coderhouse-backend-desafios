@@ -21,8 +21,8 @@ const loginFunc = async (
   done
 ) => {
   console.log('SALIO TODO BIEN');
-  console.log(accessToken);
-  console.log(refreshToken);
+  // console.log(accessToken);
+  // console.log(refreshToken);
   console.log(profile);
   return done(null, profile);
 };

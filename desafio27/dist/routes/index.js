@@ -8,13 +8,13 @@ var routesProductos_1 = __importDefault(require("./routesProductos"));
 var routes_hb_1 = __importDefault(require("./routes-hb"));
 var error_1 = require("../middleware/error");
 // import routesLogin from './login';
-var signup_1 = __importDefault(require("./signup"));
+// import routesSignup from './signup';
 var authFB_1 = __importDefault(require("./authFB"));
 var mainRouter = express_1.default.Router();
 mainRouter.use(error_1.errorHandler);
 mainRouter.use('/auth', authFB_1.default);
 // mainRouter.use('/login', routesLogin)
 mainRouter.use('/api', routesProductos_1.default);
-mainRouter.use('/signup', signup_1.default);
+// mainRouter.use('/signup', routesSignup)
 mainRouter.use('/', routes_hb_1.default);
 exports.default = mainRouter;
