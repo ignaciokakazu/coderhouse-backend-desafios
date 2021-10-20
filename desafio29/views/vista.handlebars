@@ -1,0 +1,27 @@
+<h3>Vista de productos</h3>
+
+    {{#if productos}}
+    <table class='table'>
+        <tr>
+            <thead>
+                <th scope='col'>Producto</th>
+                <th scrope='col'>Precio</th>
+                <th scope='col'>Imagen</th>
+            </thead>
+        </tr>
+            {{#each productos}}
+            <tr>
+            <td>{{nombre}}</td>
+            <td>{{price}}</td>
+            <td><img src='{{thumbnail}}' width="50px"></td>
+            </tr>
+            {{/each}}
+    </table>
+    {{else}}
+    <div class="card">
+        <div class="card-text">
+            <h2>No se encontraron productos</h2>
+        </div>
+    </div>
+    {{/if}}
+
