@@ -3,6 +3,7 @@ import {calculo} from '../utils/procesoFork';
 import {fork} from 'child_process';
 import path from 'path';
 import os from 'os';
+import {PORT} from '../config/config';
 
 const router = express.Router();
 /* DESAFIO 28 */
@@ -17,7 +18,8 @@ router.get('/', (req, res)=> {
         platform: process.platform,
         path: process.cwd(),
         memoryUsage: process.memoryUsage(),
-        numCPUs: os.cpus().length
+        numCPUs: os.cpus().length,
+        port: PORT
     })
 })
 

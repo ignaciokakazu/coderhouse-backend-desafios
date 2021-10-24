@@ -23,7 +23,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
+var path_1 = __importDefault(require("path"));
 var index_1 = __importDefault(require("../routes/index"));
+var express_handlebars_1 = __importDefault(require("express-handlebars"));
 var http = __importStar(require("http"));
 //import cookieParser from 'cookie-parser';
 var express_session_1 = __importDefault(require("express-session"));
@@ -63,19 +65,16 @@ app.use(function (req, res, next) {
 });
 app.use(express_1.default.urlencoded({ extended: true }));
 //ruta del public
-// const publicPath = path.resolve(__dirname, "../../public")
-// // app.use(express.static(publicPath))
-// //configuración handlebars
-// app.set('view engine', 'handlebars');
-// const layoutDirPath = path.resolve(__dirname, '../../views/layouts');
-// const defaultLayerPth = path.resolve(__dirname, '../../views/layouts/index.handlebars');
-// app.engine(
-//   'handlebars',
-//   handlebars({
-//     layoutsDir: layoutDirPath,
-//     defaultLayout: defaultLayerPth,
-//   })
-// );
+var publicPath = path_1.default.resolve(__dirname, "../../public");
+app.use(express_1.default.static(publicPath));
+//configuración handlebars
+app.set('view engine', 'handlebars');
+var layoutDirPath = path_1.default.resolve(__dirname, '../../views/layouts');
+var defaultLayerPth = path_1.default.resolve(__dirname, '../../views/layouts/index.handlebars');
+app.engine('handlebars', express_handlebars_1.default({
+    layoutsDir: layoutDirPath,
+    defaultLayout: defaultLayerPth,
+}));
 app.use('/', index_1.default);
 var myServer = new http.Server(app);
 myServer.on('error', function (err) {

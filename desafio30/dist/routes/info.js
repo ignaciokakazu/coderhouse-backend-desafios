@@ -7,6 +7,7 @@ var express_1 = __importDefault(require("express"));
 var child_process_1 = require("child_process");
 var path_1 = __importDefault(require("path"));
 var os_1 = __importDefault(require("os"));
+var config_1 = require("../config/config");
 var router = express_1.default.Router();
 /* DESAFIO 28 */
 router.get('/', function (req, res) {
@@ -18,7 +19,8 @@ router.get('/', function (req, res) {
         platform: process.platform,
         path: process.cwd(),
         memoryUsage: process.memoryUsage(),
-        numCPUs: os_1.default.cpus().length
+        numCPUs: os_1.default.cpus().length,
+        port: config_1.PORT
     });
 });
 //no olvidar esta parte
