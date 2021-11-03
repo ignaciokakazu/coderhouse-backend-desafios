@@ -17,3 +17,71 @@
 [2021-10-25T21:46:24.104] [INFO] default - 13808
 [2021-10-25T21:46:24.109] [INFO] default - Server Up port 8080
 [2021-10-25T21:46:28.270] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T21:57:43.581] [INFO] default - 15320
+[2021-11-02T21:57:43.578] [INFO] default - 9360
+[2021-11-02T21:57:43.592] [INFO] default - Server Up port 8082
+[2021-11-02T21:57:43.593] [INFO] default - Server Up port 8081
+[2021-11-02T22:02:08.731] [INFO] default - 5512
+[2021-11-02T22:02:08.739] [INFO] default - 8632
+[2021-11-02T22:02:08.741] [INFO] default - Server Up port 8081
+[2021-11-02T22:02:08.750] [INFO] default - Server Up port 8082
+[2021-11-02T22:06:06.550] [INFO] default - 11412
+[2021-11-02T22:06:06.553] [INFO] default - 13464
+[2021-11-02T22:06:06.558] [INFO] default - Server Up port 8081
+[2021-11-02T22:06:06.560] [INFO] default - Server Up port 8082
+[2021-11-02T22:06:52.678] [INFO] default - 12468
+[2021-11-02T22:06:52.683] [INFO] default - Server Up port 8081
+[2021-11-02T22:06:52.685] [INFO] default - 1740
+[2021-11-02T22:06:52.690] [INFO] default - Server Up port 8082
+[2021-11-02T22:07:05.934] [INFO] default - 2208
+[2021-11-02T22:07:05.939] [INFO] default - Server Up port 8082
+[2021-11-02T22:07:05.948] [INFO] default - 14160
+[2021-11-02T22:07:05.954] [INFO] default - Server Up port 8081
+[2021-11-02T22:07:54.062] [INFO] default - 5772
+[2021-11-02T22:07:54.068] [INFO] default - Server Up port 8082
+[2021-11-02T22:07:54.195] [INFO] default - 11760
+[2021-11-02T22:07:54.200] [INFO] default - Server Up port 8081
+[2021-11-02T22:09:16.155] [INFO] default - 14552
+[2021-11-02T22:09:16.160] [INFO] default - Server Up port 8081
+[2021-11-02T22:09:16.199] [INFO] default - 8612
+[2021-11-02T22:09:16.209] [INFO] default - Server Up port 8082
+[2021-11-02T22:12:10.803] [INFO] default - 13100
+[2021-11-02T22:12:10.808] [INFO] default - Server Up port 8082
+[2021-11-02T22:12:10.808] [INFO] default - 12724
+[2021-11-02T22:12:10.814] [INFO] default - Server Up port 8081
+[2021-11-02T22:12:20.734] [INFO] default - 2392
+[2021-11-02T22:12:20.739] [INFO] default - Server Up port 8082
+[2021-11-02T22:12:20.789] [INFO] default - 10880
+[2021-11-02T22:12:20.793] [INFO] default - Server Up port 8081
+[2021-11-02T22:12:51.257] [INFO] default - 14836
+[2021-11-02T22:12:51.265] [INFO] default - Server Up port 8081
+[2021-11-02T22:12:51.351] [INFO] default - 12364
+[2021-11-02T22:12:51.359] [INFO] default - Server Up port 8082
+[2021-11-02T22:13:20.072] [INFO] default - 2140
+[2021-11-02T22:13:20.080] [INFO] default - Server Up port 8082
+[2021-11-02T22:13:20.106] [INFO] default - 7980
+[2021-11-02T22:13:20.110] [INFO] default - Server Up port 8081
+[2021-11-02T22:15:19.814] [INFO] default - 14776
+[2021-11-02T22:15:19.819] [INFO] default - Server Up port 8082
+[2021-11-02T22:15:19.827] [INFO] default - 3724
+[2021-11-02T22:15:19.833] [INFO] default - Server Up port 8081
+[2021-11-02T22:15:48.673] [INFO] default - 12572
+[2021-11-02T22:15:48.676] [INFO] default - 13680
+[2021-11-02T22:15:48.680] [INFO] default - Server Up port 8082
+[2021-11-02T22:15:48.681] [INFO] default - Server Up port 8081
+[2021-11-02T22:16:19.167] [INFO] default - 14764
+[2021-11-02T22:16:19.173] [INFO] default - Server Up port 8082
+[2021-11-02T22:16:19.170] [INFO] default - 4980
+[2021-11-02T22:16:19.177] [INFO] default - Server Up port 8081
+[2021-11-02T22:17:00.796] [INFO] default - 4804
+[2021-11-02T22:17:00.804] [INFO] default - Server Up port 8081
+[2021-11-02T22:17:00.822] [INFO] default - 12152
+[2021-11-02T22:17:00.827] [INFO] default - Server Up port 8082
+[2021-11-02T22:18:11.135] [INFO] default - 10664
+[2021-11-02T22:18:11.140] [INFO] default - Server Up port 8081
+[2021-11-02T22:18:11.153] [INFO] default - 4308
+[2021-11-02T22:18:11.158] [INFO] default - Server Up port 8082
+[2021-11-02T22:18:33.993] [INFO] default - 12392
+[2021-11-02T22:18:33.999] [INFO] default - Server Up port 8081
+[2021-11-02T22:18:34.032] [INFO] default - 14172
+[2021-11-02T22:18:34.036] [INFO] default - Server Up port 8082
