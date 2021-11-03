@@ -1,10 +1,10 @@
 
-const cantidad = process.argv.slice(2);
-console.log(cantidad);
-const calculo = () => {
+// const cantidad = process.argv.slice(2);
+// console.log(cantidad);
+export const calculo = (cantidad) => {
     
     const numeros = [];
-    console.log(cantidad[0]);
+    // console.log(cantidad[0]);
 
     for (let i=0;i<cantidad;i++) {
         const randomInt = getRandomInt();

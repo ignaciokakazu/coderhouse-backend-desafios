@@ -1,9 +1,10 @@
 "use strict";
-var cantidad = process.argv.slice(2);
-console.log(cantidad);
-var calculo = function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.calculo = void 0;
+// const cantidad = process.argv.slice(2);
+// console.log(cantidad);
+var calculo = function (cantidad) {
     var numeros = [];
-    console.log(cantidad[0]);
     var _loop_1 = function (i) {
         var randomInt = getRandomInt();
         var obj = numeros.find(function (objeto) { return objeto.nro === randomInt; });
@@ -20,11 +21,13 @@ var calculo = function () {
             });
         }
     };
+    // console.log(cantidad[0]);
     for (var i = 0; i < cantidad; i++) {
         _loop_1(i);
     }
     return numeros;
 };
+exports.calculo = calculo;
 function getRandomInt(min, max) {
     if (min === void 0) { min = 1; }
     if (max === void 0) { max = 1000; }
@@ -33,7 +36,7 @@ function getRandomInt(min, max) {
 process.on('message', function (msg) {
     if (msg == 'start') {
         console.log('Arranca Start');
-        var resultado = calculo();
+        var resultado = exports.calculo();
         if (process && process.send) {
             process.send(resultado);
         }

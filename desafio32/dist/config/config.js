@@ -16,7 +16,7 @@ var facebookSecret = argv._[1] ? argv._[0].replace('FACEBOOK_APP_SECRET=', '') :
 exports.PORT = argv.puerto || 8080;
 exports.default = {
     MONGO_ATLAS_URL: process.env.MONGO_ATLAS_SRV || 'mongoSRV',
-    PORT: exports.PORT || 8080,
+    PORT: exports.PORT,
     FACEBOOK_APP_ID: process.env.FACEBOOK_APP_ID || facebookId,
     FACEBOOK_APP_SECRET: process.env.FACEBOOK_APP_SECRET || facebookSecret,
 };

@@ -1,6 +1,8 @@
 import express from 'express';
+// import {calculo} from '../utils/procesoFork';
+// import {fork} from 'child_process';
 import {calculo} from '../utils/procesoFork';
-import {fork} from 'child_process';
+
 import path from 'path';
 import os from 'os';
 import {PORT} from '../config/config';
@@ -28,13 +30,17 @@ const scriptPath = path.resolve(__dirname, '../utils/procesoFork.js');
 
 router.get('/random', (req, res)=> {
     const cantidad = req.query.cantidad || 1000000;
+    console.log('random, cantidad : ' + cantidad);
+    const resultado = calculo(cantidad);
+    res.json(resultado);
 
     //acá ejecuta en fork
-    const procesoFork = fork(scriptPath, [cantidad]);
-    procesoFork.send('start');
-    procesoFork.on('message', (resultado)=> {
-        res.json(resultado);
-    })
+    // const procesoFork = fork(scriptPath, [cantidad]);
+    // procesoFork.send('start');
+    // procesoFork.on('message', (resultado)=> {
+    //     res.json(resultado);
+    // })
+
 });
 
 router.get('/muerte', (req, res)=> {
