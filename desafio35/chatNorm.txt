@@ -1,0 +1,81 @@
+{
+	"entities": {
+		"author": {
+			"ignaciokakazu@gmail.com": {
+				"name": "Ignacio",
+				"surname": "Kakazu",
+				"email": "ignaciokakazu@gmail.com",
+				"age": 21,
+				"alias": "1234",
+				"avatar": "aaaa"
+			}
+		},
+		"message": {
+			"61884b65713b5642fa98a3e1": {
+				"_id": "61884b65713b5642fa98a3e1",
+				"author": "ignaciokakazu@gmail.com",
+				"message": "Bienvenido/a Ignacio Kakazu",
+				"timestamp": "Sun Nov 07 2021 18:55:49 GMT-0300 (hora estándar de Argentina)"
+			},
+			"61884b6b713b5642fa98a3e4": {
+				"_id": "61884b6b713b5642fa98a3e4",
+				"author": "ignaciokakazu@gmail.com",
+				"message": "hola",
+				"timestamp": "Sun Nov 07 2021 18:55:55 GMT-0300 (hora estándar de Argentina)"
+			},
+			"61885dd9ab47d7eee9bcb18c": {
+				"_id": "61885dd9ab47d7eee9bcb18c",
+				"author": "ignaciokakazu@gmail.com",
+				"message": "Bienvenido/a Ignacio Kakazu",
+				"timestamp": "Sun Nov 07 2021 20:14:33 GMT-0300 (hora estándar de Argentina)"
+			},
+			"61885ddfab47d7eee9bcb18f": {
+				"_id": "61885ddfab47d7eee9bcb18f",
+				"author": "ignaciokakazu@gmail.com",
+				"message": "administrador",
+				"timestamp": "Sun Nov 07 2021 20:14:39 GMT-0300 (hora estándar de Argentina)"
+			},
+			"61885e584acddf86e1d294a0": {
+				"_id": "61885e584acddf86e1d294a0",
+				"author": "ignaciokakazu@gmail.com",
+				"message": "Bienvenido/a Ignacio Kakazu",
+				"timestamp": "Sun Nov 07 2021 20:16:40 GMT-0300 (hora estándar de Argentina)"
+			},
+			"61885e5d4acddf86e1d294a3": {
+				"_id": "61885e5d4acddf86e1d294a3",
+				"author": "ignaciokakazu@gmail.com",
+				"message": "administrador",
+				"timestamp": "Sun Nov 07 2021 20:16:45 GMT-0300 (hora estándar de Argentina)"
+			},
+			"61885f01cbe43a995a8c0673": {
+				"_id": "61885f01cbe43a995a8c0673",
+				"author": "ignaciokakazu@gmail.com",
+				"message": "Bienvenido/a Ignacio Kakazu",
+				"timestamp": "Sun Nov 07 2021 20:19:29 GMT-0300 (hora estándar de Argentina)"
+			},
+			"61885f06cbe43a995a8c0676": {
+				"_id": "61885f06cbe43a995a8c0676",
+				"author": "ignaciokakazu@gmail.com",
+				"message": "administrador",
+				"timestamp": "Sun Nov 07 2021 20:19:34 GMT-0300 (hora estándar de Argentina)"
+			},
+			"618861037f6769de04967ab2": {
+				"_id": "618861037f6769de04967ab2",
+				"author": "ignaciokakazu@gmail.com",
+				"message": "Bienvenido/a Ignacio Kakazu",
+				"timestamp": "Sun Nov 07 2021 20:28:03 GMT-0300 (hora estándar de Argentina)"
+			}
+		}
+	},
+	"result": [
+		"61884b65713b5642fa98a3e1",
+		"61884b6b713b5642fa98a3e4",
+		"61885dd9ab47d7eee9bcb18c",
+		"61885ddfab47d7eee9bcb18f",
+		"61885e584acddf86e1d294a0",
+		"61885e5d4acddf86e1d294a3",
+		"61885f01cbe43a995a8c0673",
+		"61885f06cbe43a995a8c0676",
+		"618861037f6769de04967ab2"
+	]
+}

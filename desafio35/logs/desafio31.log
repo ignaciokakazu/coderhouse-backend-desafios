@@ -1,0 +1,788 @@
+[2021-10-25T21:29:39.660] [INFO] default - 9264
+[2021-10-25T21:29:44.930] [ERROR] default - Unexpected end of JSON input
+[2021-10-25T21:31:46.486] [INFO] default - 2852
+[2021-10-25T21:31:50.831] [ERROR] default - Unexpected end of JSON input
+[2021-10-25T21:36:13.526] [INFO] default - 8312
+[2021-10-25T21:36:13.532] [INFO] default - Server Up port 8080
+[2021-10-25T21:36:22.602] [ERROR] default - Unexpected end of JSON input
+[2021-10-25T21:38:24.593] [INFO] default - 2772
+[2021-10-25T21:38:24.599] [INFO] default - Server Up port 8080
+[2021-10-25T21:38:29.074] [ERROR] default - Unexpected end of JSON input
+[2021-10-25T21:41:31.757] [INFO] default - 532
+[2021-10-25T21:41:31.763] [INFO] default - Server Up port 8080
+[2021-10-25T21:41:35.776] [ERROR] default - Unexpected end of JSON input
+[2021-10-25T21:45:06.498] [INFO] default - 14440
+[2021-10-25T21:45:06.505] [INFO] default - Server Up port 8080
+[2021-10-25T21:45:10.591] [ERROR] default - Unexpected end of JSON input
+[2021-10-25T21:46:24.104] [INFO] default - 13808
+[2021-10-25T21:46:24.109] [INFO] default - Server Up port 8080
+[2021-10-25T21:46:28.270] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T21:57:43.581] [INFO] default - 15320
+[2021-11-02T21:57:43.578] [INFO] default - 9360
+[2021-11-02T21:57:43.592] [INFO] default - Server Up port 8082
+[2021-11-02T21:57:43.593] [INFO] default - Server Up port 8081
+[2021-11-02T22:02:08.731] [INFO] default - 5512
+[2021-11-02T22:02:08.739] [INFO] default - 8632
+[2021-11-02T22:02:08.741] [INFO] default - Server Up port 8081
+[2021-11-02T22:02:08.750] [INFO] default - Server Up port 8082
+[2021-11-02T22:06:06.550] [INFO] default - 11412
+[2021-11-02T22:06:06.553] [INFO] default - 13464
+[2021-11-02T22:06:06.558] [INFO] default - Server Up port 8081
+[2021-11-02T22:06:06.560] [INFO] default - Server Up port 8082
+[2021-11-02T22:06:52.678] [INFO] default - 12468
+[2021-11-02T22:06:52.683] [INFO] default - Server Up port 8081
+[2021-11-02T22:06:52.685] [INFO] default - 1740
+[2021-11-02T22:06:52.690] [INFO] default - Server Up port 8082
+[2021-11-02T22:07:05.934] [INFO] default - 2208
+[2021-11-02T22:07:05.939] [INFO] default - Server Up port 8082
+[2021-11-02T22:07:05.948] [INFO] default - 14160
+[2021-11-02T22:07:05.954] [INFO] default - Server Up port 8081
+[2021-11-02T22:07:54.062] [INFO] default - 5772
+[2021-11-02T22:07:54.068] [INFO] default - Server Up port 8082
+[2021-11-02T22:07:54.195] [INFO] default - 11760
+[2021-11-02T22:07:54.200] [INFO] default - Server Up port 8081
+[2021-11-02T22:09:16.155] [INFO] default - 14552
+[2021-11-02T22:09:16.160] [INFO] default - Server Up port 8081
+[2021-11-02T22:09:16.199] [INFO] default - 8612
+[2021-11-02T22:09:16.209] [INFO] default - Server Up port 8082
+[2021-11-02T22:12:10.803] [INFO] default - 13100
+[2021-11-02T22:12:10.808] [INFO] default - Server Up port 8082
+[2021-11-02T22:12:10.808] [INFO] default - 12724
+[2021-11-02T22:12:10.814] [INFO] default - Server Up port 8081
+[2021-11-02T22:12:20.734] [INFO] default - 2392
+[2021-11-02T22:12:20.739] [INFO] default - Server Up port 8082
+[2021-11-02T22:12:20.789] [INFO] default - 10880
+[2021-11-02T22:12:20.793] [INFO] default - Server Up port 8081
+[2021-11-02T22:12:51.257] [INFO] default - 14836
+[2021-11-02T22:12:51.265] [INFO] default - Server Up port 8081
+[2021-11-02T22:12:51.351] [INFO] default - 12364
+[2021-11-02T22:12:51.359] [INFO] default - Server Up port 8082
+[2021-11-02T22:13:20.072] [INFO] default - 2140
+[2021-11-02T22:13:20.080] [INFO] default - Server Up port 8082
+[2021-11-02T22:13:20.106] [INFO] default - 7980
+[2021-11-02T22:13:20.110] [INFO] default - Server Up port 8081
+[2021-11-02T22:15:19.814] [INFO] default - 14776
+[2021-11-02T22:15:19.819] [INFO] default - Server Up port 8082
+[2021-11-02T22:15:19.827] [INFO] default - 3724
+[2021-11-02T22:15:19.833] [INFO] default - Server Up port 8081
+[2021-11-02T22:15:48.673] [INFO] default - 12572
+[2021-11-02T22:15:48.676] [INFO] default - 13680
+[2021-11-02T22:15:48.680] [INFO] default - Server Up port 8082
+[2021-11-02T22:15:48.681] [INFO] default - Server Up port 8081
+[2021-11-02T22:16:19.167] [INFO] default - 14764
+[2021-11-02T22:16:19.173] [INFO] default - Server Up port 8082
+[2021-11-02T22:16:19.170] [INFO] default - 4980
+[2021-11-02T22:16:19.177] [INFO] default - Server Up port 8081
+[2021-11-02T22:17:00.796] [INFO] default - 4804
+[2021-11-02T22:17:00.804] [INFO] default - Server Up port 8081
+[2021-11-02T22:17:00.822] [INFO] default - 12152
+[2021-11-02T22:17:00.827] [INFO] default - Server Up port 8082
+[2021-11-02T22:18:11.135] [INFO] default - 10664
+[2021-11-02T22:18:11.140] [INFO] default - Server Up port 8081
+[2021-11-02T22:18:11.153] [INFO] default - 4308
+[2021-11-02T22:18:11.158] [INFO] default - Server Up port 8082
+[2021-11-02T22:18:33.993] [INFO] default - 12392
+[2021-11-02T22:18:33.999] [INFO] default - Server Up port 8081
+[2021-11-02T22:18:34.032] [INFO] default - 14172
+[2021-11-02T22:18:34.036] [INFO] default - Server Up port 8082
+[2021-11-02T22:28:09.554] [INFO] default - 10632
+[2021-11-02T22:28:09.560] [INFO] default - Server Up port 8082
+[2021-11-02T22:28:09.558] [INFO] default - 7452
+[2021-11-02T22:28:09.563] [INFO] default - Server Up port 8081
+[2021-11-02T22:28:24.852] [INFO] default - 8884
+[2021-11-02T22:28:24.859] [INFO] default - Server Up port 8082
+[2021-11-02T22:28:24.873] [INFO] default - 7412
+[2021-11-02T22:28:24.884] [INFO] default - Server Up port 8081
+[2021-11-02T22:28:42.803] [INFO] default - 7236
+[2021-11-02T22:28:42.812] [INFO] default - Server Up port 8082
+[2021-11-02T22:28:42.816] [INFO] default - 13588
+[2021-11-02T22:28:42.823] [INFO] default - Server Up port 8081
+[2021-11-02T22:28:53.357] [INFO] default - 4840
+[2021-11-02T22:28:53.363] [INFO] default - Server Up port 8081
+[2021-11-02T22:28:53.371] [INFO] default - 7836
+[2021-11-02T22:28:53.376] [INFO] default - Server Up port 8082
+[2021-11-02T22:37:10.692] [INFO] default - 7140
+[2021-11-02T22:37:10.701] [INFO] default - Server Up port 8082
+[2021-11-02T22:37:10.744] [INFO] default - 2748
+[2021-11-02T22:37:10.749] [INFO] default - Server Up port 8081
+[2021-11-02T22:37:19.505] [INFO] default - 6064
+[2021-11-02T22:37:19.510] [INFO] default - Server Up port 8081
+[2021-11-02T22:37:19.511] [INFO] default - 3940
+[2021-11-02T22:37:19.516] [INFO] default - Server Up port 8082
+[2021-11-02T22:37:23.810] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:37:24.201] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:37:56.518] [INFO] default - 14280
+[2021-11-02T22:37:56.523] [INFO] default - Server Up port 8082
+[2021-11-02T22:37:56.537] [INFO] default - 12336
+[2021-11-02T22:37:56.541] [INFO] default - Server Up port 8081
+[2021-11-02T22:38:00.746] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:38:00.799] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:38:26.113] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-02T22:38:26.119] [INFO] default - PID MASTER => 13756
+[2021-11-02T22:38:26.241] [INFO] default - Server Up port 8080 - PID WORKER 13756
+[2021-11-02T22:38:30.442] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:38:34.608] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:38:34.645] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:38:34.685] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:38:34.885] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:39:48.445] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-02T22:39:48.447] [INFO] default - PID MASTER => 15256
+[2021-11-02T22:39:48.543] [INFO] default - Server Up port 8080 - PID WORKER 15256
+[2021-11-02T22:39:52.643] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:39:56.469] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:39:56.571] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:39:56.762] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:39:57.163] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:41:18.693] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-02T22:41:18.696] [INFO] default - PID MASTER => 13752
+[2021-11-02T22:41:18.734] [INFO] default - Server Up port 8082 - PID WORKER 13752
+[2021-11-02T22:41:18.788] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-02T22:41:18.799] [INFO] default - PID MASTER => 4812
+[2021-11-02T22:41:18.957] [INFO] default - Server Up port 8081 - PID WORKER 4812
+[2021-11-02T22:41:23.047] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:41:23.269] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:41:32.090] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:41:32.476] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:41:32.473] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:41:32.511] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:41:32.780] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:41:32.781] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:41:33.074] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:41:33.368] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:42:10.461] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-02T22:42:10.465] [INFO] default - PID MASTER => 8616
+[2021-11-02T22:42:10.501] [INFO] default - Server Up port 8082 - PID WORKER 8616
+[2021-11-02T22:42:10.459] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-02T22:42:10.462] [INFO] default - PID MASTER => 5084
+[2021-11-02T22:42:10.529] [INFO] default - Server Up port 8081 - PID WORKER 5084
+[2021-11-02T22:42:14.623] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:42:15.513] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:42:26.082] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:42:26.160] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:42:26.241] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:42:26.316] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:42:26.456] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:42:26.498] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:42:26.684] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:42:26.721] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:42:29.160] [INFO] default - Worker 4380 died at Tue Nov 02 2021 22:42:29 GMT-0300 (hora estándar de Argentina)
+[2021-11-02T22:42:29.170] [INFO] default - Worker 13256 died at Tue Nov 02 2021 22:42:29 GMT-0300 (hora estándar de Argentina)
+[2021-11-02T22:42:29.189] [INFO] default - Worker 15004 died at Tue Nov 02 2021 22:42:29 GMT-0300 (hora estándar de Argentina)
+[2021-11-02T22:42:37.348] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-02T22:42:37.350] [INFO] default - PID MASTER => 2288
+[2021-11-02T22:42:37.392] [INFO] default - Server Up port 8082 - PID WORKER 2288
+[2021-11-02T22:42:37.341] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-02T22:42:37.343] [INFO] default - PID MASTER => 3340
+[2021-11-02T22:42:37.389] [INFO] default - Server Up port 8081 - PID WORKER 3340
+[2021-11-02T22:42:41.581] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:42:41.706] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:42:51.704] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:42:51.887] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:42:51.903] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:42:52.043] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:42:52.088] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:42:52.260] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:42:52.604] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:42:52.788] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:43:05.107] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-02T22:43:05.110] [INFO] default - PID MASTER => 4380
+[2021-11-02T22:43:05.159] [INFO] default - Server Up port 8082 - PID WORKER 4380
+[2021-11-02T22:43:05.198] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-02T22:43:05.204] [INFO] default - PID MASTER => 15004
+[2021-11-02T22:43:05.271] [INFO] default - Server Up port 8081 - PID WORKER 15004
+[2021-11-02T22:43:06.984] [INFO] default - Worker 7056 died at Tue Nov 02 2021 22:43:06 GMT-0300 (hora estándar de Argentina)
+[2021-11-02T22:43:07.039] [INFO] default - Worker 9560 died at Tue Nov 02 2021 22:43:07 GMT-0300 (hora estándar de Argentina)
+[2021-11-02T22:43:07.192] [INFO] default - Worker 6880 died at Tue Nov 02 2021 22:43:07 GMT-0300 (hora estándar de Argentina)
+[2021-11-02T22:43:07.200] [INFO] default - Worker 7952 died at Tue Nov 02 2021 22:43:07 GMT-0300 (hora estándar de Argentina)
+[2021-11-02T22:43:07.305] [INFO] default - Worker 9212 died at Tue Nov 02 2021 22:43:07 GMT-0300 (hora estándar de Argentina)
+[2021-11-02T22:43:07.315] [INFO] default - Worker 356 died at Tue Nov 02 2021 22:43:07 GMT-0300 (hora estándar de Argentina)
+[2021-11-02T22:43:15.955] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-02T22:43:15.958] [INFO] default - PID MASTER => 5340
+[2021-11-02T22:43:16.006] [INFO] default - Server Up port 8082 - PID WORKER 5340
+[2021-11-02T22:43:16.038] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-02T22:43:16.042] [INFO] default - PID MASTER => 2224
+[2021-11-02T22:43:16.176] [INFO] default - Server Up port 8081 - PID WORKER 2224
+[2021-11-02T22:43:20.300] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:43:20.518] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:43:30.719] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:43:30.885] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:43:30.936] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:43:31.051] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:43:31.091] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:43:31.123] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:43:31.267] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:43:32.292] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:57:07.483] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-02T22:57:07.487] [INFO] default - PID MASTER => 10672
+[2021-11-02T22:57:07.560] [INFO] default - Server Up port 8081 - PID WORKER 10672
+[2021-11-02T22:57:11.781] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:57:15.857] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:57:15.886] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:57:16.001] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T22:57:16.061] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:00:49.935] [INFO] default - Worker 8292 died at Tue Nov 02 2021 23:00:49 GMT-0300 (hora estándar de Argentina)
+[2021-11-02T23:00:50.017] [INFO] default - Worker 8876 died at Tue Nov 02 2021 23:00:50 GMT-0300 (hora estándar de Argentina)
+[2021-11-02T23:01:51.092] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-02T23:01:51.094] [INFO] default - PID MASTER => 4128
+[2021-11-02T23:01:51.167] [INFO] default - Server Up port 8081 - PID WORKER 4128
+[2021-11-02T23:01:55.678] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:03:25.247] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-02T23:03:25.250] [INFO] default - PID MASTER => 9016
+[2021-11-02T23:03:25.319] [INFO] default - Server Up port 8081 - PID WORKER 9016
+[2021-11-02T23:03:29.477] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:03:33.301] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:03:33.347] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:03:33.372] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:03:34.822] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:05:18.763] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-02T23:05:18.766] [INFO] default - PID MASTER => 3648
+[2021-11-02T23:05:18.840] [INFO] default - Server Up port 8081 - PID WORKER 3648
+[2021-11-02T23:05:23.037] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:05:26.797] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:05:26.816] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:05:26.846] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:05:26.999] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:06:16.079] [INFO] default - Worker 12432 died at Tue Nov 02 2021 23:06:16 GMT-0300 (hora estándar de Argentina)
+[2021-11-02T23:06:16.093] [INFO] default - Worker 12564 died at Tue Nov 02 2021 23:06:16 GMT-0300 (hora estándar de Argentina)
+[2021-11-02T23:06:16.144] [INFO] default - Worker 13188 died at Tue Nov 02 2021 23:06:16 GMT-0300 (hora estándar de Argentina)
+[2021-11-02T23:07:12.790] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-02T23:07:12.793] [INFO] default - PID MASTER => 8904
+[2021-11-02T23:07:12.863] [INFO] default - Server Up port 8081 - PID WORKER 8904
+[2021-11-02T23:07:17.697] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:07:20.950] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:07:21.103] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:07:21.101] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:07:21.120] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:07:45.368] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-02T23:07:45.371] [INFO] default - PID MASTER => 6956
+[2021-11-02T23:07:45.443] [INFO] default - Server Up port 8082 - PID WORKER 6956
+[2021-11-02T23:07:49.438] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:07:53.268] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:07:53.293] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:07:53.316] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:07:53.337] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:08:55.279] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-02T23:08:55.282] [INFO] default - PID MASTER => 796
+[2021-11-02T23:08:55.357] [INFO] default - Server Up port 8082 - PID WORKER 796
+[2021-11-02T23:08:59.409] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:09:03.196] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:09:03.221] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:09:03.267] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:09:06.807] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:09:46.222] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-02T23:09:46.225] [INFO] default - PID MASTER => 13172
+[2021-11-02T23:09:46.313] [INFO] default - Server Up port 8081 - PID WORKER 13172
+[2021-11-02T23:09:50.352] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:09:55.128] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:09:55.150] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:09:55.146] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:09:55.179] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:30:42.117] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-02T23:30:42.123] [INFO] default - PID MASTER => 17428
+[2021-11-02T23:30:42.196] [INFO] default - Server Up port 8081 - PID WORKER 17428
+[2021-11-02T23:30:46.399] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:30:50.196] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:30:50.260] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:30:50.866] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:30:53.925] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:32:53.343] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-02T23:32:53.346] [INFO] default - PID MASTER => 10072
+[2021-11-02T23:32:53.417] [INFO] default - Server Up port 8081 - PID WORKER 10072
+[2021-11-02T23:32:57.537] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:33:01.199] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:33:01.365] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:33:01.407] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:33:01.648] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:35:07.771] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-02T23:35:07.774] [INFO] default - PID MASTER => 18472
+[2021-11-02T23:35:07.848] [INFO] default - Server Up port 8081 - PID WORKER 18472
+[2021-11-02T23:35:11.848] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:35:15.782] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:35:15.792] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:35:15.813] [ERROR] default - Unexpected end of JSON input
+[2021-11-02T23:35:16.613] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T00:46:48.854] [INFO] default - Worker 12712 died at Wed Nov 03 2021 00:46:48 GMT-0300 (hora estándar de Argentina)
+[2021-11-03T00:46:48.910] [INFO] default - Worker 18460 died at Wed Nov 03 2021 00:46:48 GMT-0300 (hora estándar de Argentina)
+[2021-11-03T00:46:48.937] [INFO] default - Worker 18260 died at Wed Nov 03 2021 00:46:48 GMT-0300 (hora estándar de Argentina)
+[2021-11-03T00:46:48.960] [INFO] default - Worker 20188 died at Wed Nov 03 2021 00:46:48 GMT-0300 (hora estándar de Argentina)
+[2021-11-03T11:10:55.794] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-03T11:10:55.798] [INFO] default - PID MASTER => 17856
+[2021-11-03T11:10:55.909] [INFO] default - Server Up port 8081 - PID WORKER 17856
+[2021-11-03T11:11:00.919] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T11:11:03.918] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T11:11:04.094] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T11:11:04.273] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T11:11:04.479] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T11:14:44.642] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-03T11:14:44.645] [INFO] default - PID MASTER => 14076
+[2021-11-03T11:14:44.744] [INFO] default - Server Up port 8082 - PID WORKER 14076
+[2021-11-03T11:14:48.743] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T11:14:52.713] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T11:14:52.871] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T11:14:52.903] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T11:14:52.911] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T11:19:36.900] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-03T11:19:36.903] [INFO] default - PID MASTER => 8624
+[2021-11-03T11:19:36.941] [INFO] default - Server Up port undefined - PID WORKER 8624
+[2021-11-03T11:19:41.041] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T11:19:41.846] [INFO] default - Server Up port undefined - PID WORKER 13280
+[2021-11-03T11:19:41.948] [INFO] default - Server Up port undefined - PID WORKER 20108
+[2021-11-03T11:19:42.028] [INFO] default - Server Up port undefined - PID WORKER 10700
+[2021-11-03T11:19:42.030] [INFO] default - Server Up port undefined - PID WORKER 3480
+[2021-11-03T11:24:20.453] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-03T11:24:20.456] [INFO] default - PID MASTER => 6672
+[2021-11-03T11:24:20.533] [INFO] default - Server Up port undefined - PID WORKER 6672
+[2021-11-03T11:24:25.358] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T11:24:26.568] [INFO] default - Server Up port undefined - PID WORKER 18044
+[2021-11-03T11:24:26.609] [INFO] default - Server Up port undefined - PID WORKER 17100
+[2021-11-03T11:24:26.700] [INFO] default - Server Up port undefined - PID WORKER 10136
+[2021-11-03T11:24:26.740] [INFO] default - Server Up port undefined - PID WORKER 8888
+[2021-11-03T11:24:30.989] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T11:24:30.983] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T11:24:31.004] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T11:24:31.383] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T11:40:44.087] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-03T11:40:44.091] [INFO] default - PID MASTER => 14532
+[2021-11-03T11:40:44.129] [INFO] default - Server Up port undefined - PID WORKER 14532
+[2021-11-03T11:40:48.783] [INFO] default - Server Up port undefined - PID WORKER 10072
+[2021-11-03T11:40:48.879] [INFO] default - Server Up port undefined - PID WORKER 19400
+[2021-11-03T11:40:48.879] [INFO] default - Server Up port undefined - PID WORKER 8724
+[2021-11-03T11:40:48.893] [INFO] default - Server Up port undefined - PID WORKER 19084
+[2021-11-03T11:40:52.966] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T11:40:52.985] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T11:40:53.005] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T11:40:57.741] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T11:40:57.990] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T11:42:57.499] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-03T11:42:57.502] [INFO] default - PID MASTER => 18744
+[2021-11-03T11:42:57.541] [INFO] default - Server Up port 8080 - PID WORKER 18744
+[2021-11-03T11:43:02.028] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T11:43:06.067] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T11:43:06.219] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T11:43:06.268] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T11:43:06.412] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T12:11:53.610] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-03T12:11:53.619] [INFO] default - PID MASTER => 5336
+[2021-11-03T12:11:53.662] [INFO] default - Server Up port 8080 - PID WORKER 5336
+[2021-11-03T12:11:57.731] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T12:12:02.327] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T12:12:02.341] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T12:12:02.358] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T12:12:02.372] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T12:34:10.395] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-03T12:34:10.400] [INFO] default - PID MASTER => 18884
+[2021-11-03T12:34:10.450] [INFO] default - Server Up port 8080 - PID WORKER 18884
+[2021-11-03T12:34:14.656] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T12:34:18.400] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T12:34:18.458] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T12:34:18.638] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T12:34:24.562] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T12:41:22.540] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-03T12:41:22.543] [INFO] default - PID MASTER => 9152
+[2021-11-03T12:41:22.583] [INFO] default - Server Up port 8080 - PID WORKER 9152
+[2021-11-03T12:41:26.563] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T12:41:31.621] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T12:41:31.694] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T12:41:31.719] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T12:41:31.720] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T12:58:32.752] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-03T12:58:32.814] [INFO] default - PID MASTER => 14268
+[2021-11-03T12:58:32.980] [INFO] default - Server Up port 8080 - PID WORKER 14268
+[2021-11-03T12:58:39.176] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T12:58:41.598] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T12:58:41.792] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T12:58:45.418] [ERROR] default - Unexpected end of JSON input
+[2021-11-03T12:58:45.676] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:21:12.722] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T15:21:12.725] [INFO] default - PID MASTER => 6528
+[2021-11-07T15:21:12.818] [INFO] default - Server Up port 8080 - PID WORKER 6528
+[2021-11-07T15:21:19.297] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:21:21.978] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:21:22.395] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:21:22.472] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:21:22.511] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:24:01.526] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T15:24:01.528] [INFO] default - PID MASTER => 11632
+[2021-11-07T15:24:01.603] [INFO] default - Server Up port 8080 - PID WORKER 11632
+[2021-11-07T15:24:05.502] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:24:10.305] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:24:10.328] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:24:10.333] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:24:10.508] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:27:30.926] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T15:27:30.930] [INFO] default - PID MASTER => 8276
+[2021-11-07T15:27:31.009] [INFO] default - Server Up port 8080 - PID WORKER 8276
+[2021-11-07T15:27:34.901] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:27:40.647] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:27:40.706] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:27:40.894] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:27:41.079] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:29:12.902] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T15:29:12.905] [INFO] default - PID MASTER => 10892
+[2021-11-07T15:29:12.993] [INFO] default - Server Up port 8080 - PID WORKER 10892
+[2021-11-07T15:29:16.961] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:29:21.739] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:29:21.748] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:29:22.799] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:29:24.086] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:32:24.223] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T15:32:24.226] [INFO] default - PID MASTER => 2132
+[2021-11-07T15:32:24.304] [INFO] default - Server Up port 8080 - PID WORKER 2132
+[2021-11-07T15:32:28.591] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:32:33.609] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:32:33.610] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:32:33.765] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:32:33.853] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:35:37.185] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T15:35:37.189] [INFO] default - PID MASTER => 1228
+[2021-11-07T15:35:37.301] [INFO] default - Server Up port 8080 - PID WORKER 1228
+[2021-11-07T15:35:42.148] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:35:46.608] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:35:46.618] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:35:46.768] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:35:52.057] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:37:16.145] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T15:37:16.147] [INFO] default - PID MASTER => 5592
+[2021-11-07T15:37:16.241] [INFO] default - Server Up port 8080 - PID WORKER 5592
+[2021-11-07T15:37:19.972] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:37:24.767] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:37:24.831] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:37:25.098] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T15:37:25.114] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T17:58:49.232] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T17:58:49.237] [INFO] default - PID MASTER => 10792
+[2021-11-07T17:58:49.338] [INFO] default - Server Up port 8080 - PID WORKER 10792
+[2021-11-07T17:58:53.241] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T17:58:57.633] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T17:58:57.634] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T17:58:57.668] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T17:58:57.869] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T17:59:44.994] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T17:59:44.998] [INFO] default - PID MASTER => 8940
+[2021-11-07T17:59:45.092] [INFO] default - Server Up port 8080 - PID WORKER 8940
+[2021-11-07T17:59:48.879] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T17:59:53.689] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T17:59:53.695] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T17:59:53.696] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T17:59:53.876] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:00:44.845] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T18:00:44.850] [INFO] default - PID MASTER => 5796
+[2021-11-07T18:00:44.941] [INFO] default - Server Up port 8080 - PID WORKER 5796
+[2021-11-07T18:00:53.261] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:00:53.275] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:00:53.306] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:00:53.856] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:00:53.881] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:01:53.091] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T18:01:53.094] [INFO] default - PID MASTER => 4632
+[2021-11-07T18:01:53.194] [INFO] default - Server Up port 8080 - PID WORKER 4632
+[2021-11-07T18:01:57.064] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:02:01.497] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:02:01.538] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:02:01.621] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:02:01.672] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:03:21.658] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T18:03:21.661] [INFO] default - PID MASTER => 1252
+[2021-11-07T18:03:22.043] [INFO] default - Server Up port 8080 - PID WORKER 1252
+[2021-11-07T18:03:25.876] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:03:31.580] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:03:31.636] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:03:31.636] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:03:31.696] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:04:04.007] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T18:04:04.010] [INFO] default - PID MASTER => 9224
+[2021-11-07T18:04:04.101] [INFO] default - Server Up port 8080 - PID WORKER 9224
+[2021-11-07T18:04:07.789] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:04:12.812] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:04:12.815] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:04:12.844] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:04:13.007] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:05:31.940] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T18:05:31.944] [INFO] default - PID MASTER => 12156
+[2021-11-07T18:05:32.032] [INFO] default - Server Up port 8080 - PID WORKER 12156
+[2021-11-07T18:05:36.207] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:05:40.363] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:05:40.446] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:05:40.498] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:05:40.612] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:07:42.482] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T18:07:42.485] [INFO] default - PID MASTER => 4380
+[2021-11-07T18:07:42.574] [INFO] default - Server Up port 8080 - PID WORKER 4380
+[2021-11-07T18:07:46.453] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:07:51.189] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:07:51.243] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:07:51.285] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:07:51.467] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:18:52.466] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T18:18:52.470] [INFO] default - PID MASTER => 9512
+[2021-11-07T18:18:52.561] [INFO] default - Server Up port 8080 - PID WORKER 9512
+[2021-11-07T18:18:56.835] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:19:00.432] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:19:00.446] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:19:00.466] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:19:00.533] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:21:35.904] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T18:21:35.908] [INFO] default - PID MASTER => 11728
+[2021-11-07T18:21:35.998] [INFO] default - Server Up port 8080 - PID WORKER 11728
+[2021-11-07T18:21:40.695] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:21:44.378] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:21:44.472] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:21:44.469] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:21:44.595] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:43:03.254] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T18:43:03.258] [INFO] default - PID MASTER => 6568
+[2021-11-07T18:43:03.353] [INFO] default - Server Up port 8080 - PID WORKER 6568
+[2021-11-07T18:43:07.113] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:43:12.104] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:43:12.120] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:43:12.182] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:43:12.216] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:53:10.399] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T18:53:10.402] [INFO] default - PID MASTER => 10388
+[2021-11-07T18:53:10.495] [INFO] default - Server Up port 8080 - PID WORKER 10388
+[2021-11-07T18:53:14.470] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:53:19.659] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:53:19.736] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:53:19.928] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:53:20.611] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:55:12.419] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T18:55:12.423] [INFO] default - PID MASTER => 2412
+[2021-11-07T18:55:12.513] [INFO] default - Server Up port 8080 - PID WORKER 2412
+[2021-11-07T18:55:16.328] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:55:21.125] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:55:21.126] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:55:21.324] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:55:21.856] [ERROR] default - Unexpected end of JSON input
+[2021-11-07T18:55:50.059] [INFO] default - {
+  entities: {
+    author: { 'ignaciokakazu@gmail.com': [Object] },
+    message: { '61884b65713b5642fa98a3e1': [Object] }
+  },
+  result: [ new ObjectId("61884b65713b5642fa98a3e1") ]
+}
+[2021-11-07T18:55:55.094] [INFO] default - setMessage
+[2021-11-07T18:55:55.094] [ERROR] default - {
+  author: {
+    name: 'Ignacio',
+    surname: 'Kakazu',
+    email: 'ignaciokakazu@gmail.com',
+    age: '21',
+    alias: '22',
+    avatar: '38'
+  },
+  message: 'hola',
+  timestamp: 2021-11-07T21:55:55.093Z
+}
+[2021-11-07T18:58:47.251] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T18:58:47.254] [INFO] default - PID MASTER => 416
+[2021-11-07T18:58:47.341] [INFO] default - Server Up port 8080 - PID WORKER 416
+[2021-11-07T18:58:51.069] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T18:58:56.156] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T18:58:56.208] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T18:58:56.235] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T18:58:56.253] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T19:17:46.496] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T19:17:46.500] [INFO] default - PID MASTER => 11636
+[2021-11-07T19:17:46.578] [INFO] default - Server Up port 8080 - PID WORKER 11636
+[2021-11-07T19:17:50.678] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T19:17:55.326] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T19:17:55.613] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T19:17:55.733] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T19:17:55.990] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T19:19:23.406] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T19:19:23.410] [INFO] default - PID MASTER => 9956
+[2021-11-07T19:19:23.501] [INFO] default - Server Up port 8080 - PID WORKER 9956
+[2021-11-07T19:19:27.256] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T19:19:32.448] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T19:19:32.514] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T19:19:32.663] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T19:19:32.672] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T19:22:00.471] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T19:22:00.475] [INFO] default - PID MASTER => 10768
+[2021-11-07T19:22:00.570] [INFO] default - Server Up port 8080 - PID WORKER 10768
+[2021-11-07T19:22:05.148] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T19:22:09.109] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T19:22:09.265] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T19:22:09.282] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T19:22:09.284] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T19:25:57.070] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T19:25:57.074] [INFO] default - PID MASTER => 12100
+[2021-11-07T19:25:57.162] [INFO] default - Server Up port 8080 - PID WORKER 12100
+[2021-11-07T19:26:00.989] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T19:26:06.380] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T19:26:06.393] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T19:26:06.618] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T19:26:06.804] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T20:13:48.914] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T20:13:48.920] [INFO] default - PID MASTER => 656
+[2021-11-07T20:13:49.112] [INFO] default - Server Up port 8080 - PID WORKER 656
+[2021-11-07T20:13:53.108] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T20:13:59.351] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T20:13:59.712] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T20:14:00.025] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T20:14:00.272] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T20:14:33.851] [INFO] default - {
+  entities: {
+    author: { 'ignaciokakazu@gmail.com': [Object] },
+    message: {
+      '61884b65713b5642fa98a3e1': [Object],
+      '61884b6b713b5642fa98a3e4': [Object],
+      '61885dd9ab47d7eee9bcb18c': [Object]
+    }
+  },
+  result: [
+    new ObjectId("61884b65713b5642fa98a3e1"),
+    new ObjectId("61884b6b713b5642fa98a3e4"),
+    new ObjectId("61885dd9ab47d7eee9bcb18c")
+  ]
+}
+[2021-11-07T20:14:39.745] [INFO] default - setMessage
+[2021-11-07T20:14:39.747] [ERROR] default - {
+  author: {
+    name: 'Ignacio',
+    surname: 'Kakazu',
+    email: 'ignaciokakazu@gmail.com',
+    age: '21',
+    alias: '1234',
+    avatar: 'aaaa'
+  },
+  message: 'administrador',
+  timestamp: 2021-11-07T23:14:39.745Z
+}
+[2021-11-07T20:15:43.241] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T20:15:43.249] [INFO] default - PID MASTER => 2132
+[2021-11-07T20:15:43.368] [INFO] default - Server Up port 8080 - PID WORKER 2132
+[2021-11-07T20:15:47.176] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T20:15:51.141] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T20:15:51.210] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T20:15:51.248] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T20:15:51.503] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T20:16:41.163] [INFO] default - {
+  entities: {
+    author: { 'ignaciokakazu@gmail.com': [Object] },
+    message: {
+      '61884b65713b5642fa98a3e1': [Object],
+      '61884b6b713b5642fa98a3e4': [Object],
+      '61885dd9ab47d7eee9bcb18c': [Object],
+      '61885ddfab47d7eee9bcb18f': [Object],
+      '61885e584acddf86e1d294a0': [Object]
+    }
+  },
+  result: [
+    new ObjectId("61884b65713b5642fa98a3e1"),
+    new ObjectId("61884b6b713b5642fa98a3e4"),
+    new ObjectId("61885dd9ab47d7eee9bcb18c"),
+    new ObjectId("61885ddfab47d7eee9bcb18f"),
+    new ObjectId("61885e584acddf86e1d294a0")
+  ]
+}
+[2021-11-07T20:16:45.911] [INFO] default - setMessage
+[2021-11-07T20:16:45.912] [ERROR] default - {
+  author: {
+    name: 'Ignacio',
+    surname: 'Kakazu',
+    email: 'ignaciokakazu@gmail.com',
+    age: '21',
+    alias: 'aaa',
+    avatar: '1234'
+  },
+  message: 'administrador',
+  timestamp: 2021-11-07T23:16:45.911Z
+}
+[2021-11-07T20:19:03.436] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T20:19:03.441] [INFO] default - PID MASTER => 9772
+[2021-11-07T20:19:03.563] [INFO] default - Server Up port 8080 - PID WORKER 9772
+[2021-11-07T20:19:07.549] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T20:19:14.152] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T20:19:14.175] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T20:19:14.242] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T20:19:14.356] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T20:19:30.299] [INFO] default - {
+  entities: {
+    author: { 'ignaciokakazu@gmail.com': [Object] },
+    message: {
+      '61884b65713b5642fa98a3e1': [Object],
+      '61884b6b713b5642fa98a3e4': [Object],
+      '61885dd9ab47d7eee9bcb18c': [Object],
+      '61885ddfab47d7eee9bcb18f': [Object],
+      '61885e584acddf86e1d294a0': [Object],
+      '61885e5d4acddf86e1d294a3': [Object],
+      '61885f01cbe43a995a8c0673': [Object]
+    }
+  },
+  result: [
+    new ObjectId("61884b65713b5642fa98a3e1"),
+    new ObjectId("61884b6b713b5642fa98a3e4"),
+    new ObjectId("61885dd9ab47d7eee9bcb18c"),
+    new ObjectId("61885ddfab47d7eee9bcb18f"),
+    new ObjectId("61885e584acddf86e1d294a0"),
+    new ObjectId("61885e5d4acddf86e1d294a3"),
+    new ObjectId("61885f01cbe43a995a8c0673")
+  ]
+}
+[2021-11-07T20:19:34.898] [INFO] default - setMessage
+[2021-11-07T20:19:34.899] [ERROR] default - {
+  author: {
+    name: 'Ignacio',
+    surname: 'Kakazu',
+    email: 'ignaciokakazu@gmail.com',
+    age: '21',
+    alias: 'AliasI',
+    avatar: 'aaaa'
+  },
+  message: 'administrador',
+  timestamp: 2021-11-07T23:19:34.898Z
+}
+[2021-11-07T20:25:21.682] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T20:25:21.686] [INFO] default - PID MASTER => 748
+[2021-11-07T20:25:21.814] [INFO] default - Server Up port 8080 - PID WORKER 748
+[2021-11-07T20:25:25.632] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T20:25:28.189] [INFO] default - Worker 944 died at Sun Nov 07 2021 20:25:28 GMT-0300 (hora estándar de Argentina)
+[2021-11-07T20:27:46.464] [INFO] default - NÚMERO DE CPUS => 4
+[2021-11-07T20:27:46.468] [INFO] default - PID MASTER => 9928
+[2021-11-07T20:27:46.584] [INFO] default - Server Up port 8080 - PID WORKER 9928
+[2021-11-07T20:27:50.671] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T20:27:56.997] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T20:27:57.140] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T20:27:57.283] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T20:27:57.357] [ERROR] default - Unexpected token a in JSON at position 4
+[2021-11-07T20:28:03.535] [INFO] default - {
+  entities: {
+    author: { 'ignaciokakazu@gmail.com': [Object] },
+    message: {
+      '61884b65713b5642fa98a3e1': [Object],
+      '61884b6b713b5642fa98a3e4': [Object],
+      '61885dd9ab47d7eee9bcb18c': [Object],
+      '61885ddfab47d7eee9bcb18f': [Object],
+      '61885e584acddf86e1d294a0': [Object],
+      '61885e5d4acddf86e1d294a3': [Object],
+      '61885f01cbe43a995a8c0673': [Object],
+      '61885f06cbe43a995a8c0676': [Object],
+      '618861037f6769de04967ab2': [Object]
+    }
+  },
+  result: [
+    new ObjectId("61884b65713b5642fa98a3e1"),
+    new ObjectId("61884b6b713b5642fa98a3e4"),
+    new ObjectId("61885dd9ab47d7eee9bcb18c"),
+    new ObjectId("61885ddfab47d7eee9bcb18f"),
+    new ObjectId("61885e584acddf86e1d294a0"),
+    new ObjectId("61885e5d4acddf86e1d294a3"),
+    new ObjectId("61885f01cbe43a995a8c0673"),
+    new ObjectId("61885f06cbe43a995a8c0676"),
+    new ObjectId("618861037f6769de04967ab2")
+  ]
+}
+[2021-11-07T20:28:11.012] [INFO] default - setMessage
+[2021-11-07T20:28:11.013] [ERROR] default - {
+  author: {
+    name: 'Ignacio',
+    surname: 'Kakazu',
+    email: 'ignaciokakazu@gmail.com',
+    age: '21',
+    alias: '1234',
+    avatar: 'aaaa'
+  },
+  message: 'administrador',
+  timestamp: 2021-11-07T23:28:11.012Z
+}
