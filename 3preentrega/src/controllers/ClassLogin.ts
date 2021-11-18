@@ -44,9 +44,13 @@ class ClassLogin {
         const flagPassword: boolean = password === passwordConfirmation? true : false;
         
         if (!flagPassword) {throw new Error("Error en confirmación de password")}
+        console.log("file" + req.body.file)
         
         //acá tiene que usar joi
+        if (!req.body.name) {throw new Error("Error. Falta name")};
 
+        if (!req.body.tel) {throw new Error("Error. Falta tel")};
+        
         const userArr = await apiLogin.getByEmail(req.body.email);
                 
         if (userArr) {throw new Error("Error. Usuario existente")};
@@ -94,34 +98,14 @@ class ClassLogin {
             res.json({msg:'no', success:false});
         }
     
-        // bcrypt.compare(password, userMongo.password, function(err, isMatch) {
-        //     if (err) {
-        //       peligroLogger.error('Error. Vuelva a intentarlo más tarde')
-        //       throw new Error('Error. Vuelva a intentarlo más tarde')
-              
-              
-        //     } else if (!isMatch) {
-        //       peligroLogger.warn("Error en usuario y/o contraseña");
-        //       infoLogger.info("Error en usuario y/o contraseña");
-        //       res.json({msg: 'Error en usuario y/o contraseña', success:false})
-        //     } else {
-              
-        //       res.json({msg: 'ok', success:true});
-        //       //graba el ingreso
-        //       //devuelve la redirección
-        //     }
-        //   })
-
-        // } catch (e:any) {
-        //     peligroLogger.log(e.message);
-        //     res.json({msg: e.message, success:false});
-        // }
     }
 
     async getIdByEmail(email: string): Promise<string> {
         const userMongo:UserI = await apiLogin.getByEmail(email);
         return userMongo._id
     }
+
+
 }
 
     // async fbAuth() {

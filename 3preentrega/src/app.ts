@@ -2,7 +2,8 @@ import myServer from './services/server';
 import config from './config/config';
 import {infoLogger, peligroLogger} from './services/logger';
 import {apiLogin} from './apis/login';
-const port = config.PORT;
+
+const port = process.env.PORT || config.PORT;
 
 
 // apiLogin.get('ignaciokakazu1@gmail.com')

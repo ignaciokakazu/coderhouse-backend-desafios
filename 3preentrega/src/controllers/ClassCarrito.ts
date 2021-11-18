@@ -2,8 +2,13 @@ import moment from 'moment';
 import {Request, Response} from 'express';
 import {api} from '../apis/api';
 import {CarritoArray, CarritoInterface, NewCarritoInterface} from '../models/carrito.interfaces';
+import {UserI} from '../models/login.interfaces';
 import {infoLogger, peligroLogger} from '../services/logger';
-import { info } from 'console';
+import {Login} from './ClassLogin';
+import { apiLogin } from '../apis/login';
+import {SmsService} from '../services/twilio';
+import EmailService from '../services/email';
+
 
 class ClassCarrito {
     private sqlite:any;
@@ -15,7 +20,7 @@ class ClassCarrito {
 
     async getCarritoById(req:Request, res:Response) {//id:number) {
         try {
-            const id: number= Number(req.params.id);
+            const id: string= req.params.id;
             const carrito = await api.getCarritoById(id);
             
             res.json(carrito);
@@ -52,67 +57,53 @@ class ClassCarrito {
         }
     }
 
-    async setCarritoNuevo(req:Request, res:Response, id: string) {
-        infoLogger.info(`seteo carrito nuevo para ${req.body.email}`)
-        console.log(req.user);
-        console.log(req.body.user);
-        infoLogger.info(req.user);
-        infoLogger.log(req.body);
+    async setCarritoNuevo(id: string): Promise<string>{
 
-        const obj: NewCarritoInterface = {
-            timestamp: moment().format('YYYY mm DDDD'),
-            user: id,
-            producto: [],
-        }
-        const idCarrito:string = await api.setCarritoNuevo(obj);
+        return await api.setCarritoNuevo(id);
         
-        return idCarrito
+        
     }
 
     async setCarrito(req:Request, res:Response) {
-        // try {
-        //     if (!req.body.id) {
-        //         const obj: CarritoInterface = {
-        //                 timestamp: moment().format('YYYY mm dd'),
-        //                 user: req.body.user,
-        //                 producto: [{
-        //                     id: req.body.producto.id,
-        //                     nombre: req.body.producto.nombre,
-        //                     descripcion: req.body.producto.descripcion,
-        //                     codigo: req.body.producto.codigo,
-        //                     foto: req.body.producto.foto,
-        //                     precio: req.body.producto.precio,
-        //                     cantidad: req.body.producto.cantidad,
-        //                     timestamp: moment().format('YYYY mm dd')
-        //                 }]
-        //             }
+        try {
+        /* Corroborar que haya stock */
 
-        //             const id = await api.setCarritoNuevo(obj);
-        //             res.json({msg:`abrí el carrito ${id}`})
-        //         } else {
-        //             //recibe un solo producto, así que hace un push al carrito viejo
+        const carrito: CarritoInterface = await api.setCarrito(req.body);
 
-        //             // const obj: CarritoInterface = {
-        //             //     _id: req.body.id,
-        //             //     timestamp: new Date(),
-        //             //     user: req.body.user,
-        //             //     producto: [{
-        //             //         id: req.body.producto.id,
-        //             //         nombre: req.body.producto.nombre,
-        //             //         descripcion: req.body.producto.descripcion,
-        //             //         codigo: req.body.producto.codigo,
-        //             //         foto: req.body.producto.foto,
-        //             //         precio: req.body.producto.precio,
-        //             //         cantidad: req.body.producto.cantidad,
-        //             //         timestramp: new Date()
-        //             //     }]
-        //             }
+        res.json(carrito);
 
-        // } catch(e:any) {
-        //     res.json(e.message)
-        // }
-
+ 
+    } catch (e:any) {
+        res.json({msg:e.message})
     }
+    }
+
+    async checkout(req:Request, res:Response) {
+        /*
+            {recibe del body el carrito}
+            cierra el carrito. Cambia de abierto a false
+        */
+       try {
+        let carrito:CarritoInterface = await api.getCarritoById(req.body._id)
+        const userId:string = carrito.user;
+        const user: UserI[] = await apiLogin.get(userId);
+        
+        carrito.abierto = false;
+        await api.checkout(carrito)
+        //enviar mail a admin
+        const mail = new EmailService()
+        console.log('enviado')
+        await mail.sendEmail(user[0].email, `Nuevo pedido de ${user[0].name}`, `${carrito}`)
+        await SmsService.sendMessage(`Nuevo pedido de ${user[0].name}`)
+            res.json({msg: 'cerrado', carrito: carrito})
+        } catch(e:any) {
+            res.json({msg: e.message})
+        }
+        //enviar sms a admin
+
+        //enviar sms a user
+    }
+
 
     async addCarritoById(req:Request, res:Response) {
         try {
@@ -121,24 +112,6 @@ class ClassCarrito {
             const lista = await api.getProductosById(id);
             
             console.log(lista);
-
-            //if (!prod.length) { throw new Error('No hay productos disponibles. Comuniquese con el administrador')}
-
-            //todo esto hay que adaptar para que funcione 
-
-            //Productos del carrito
-            // const carrito = await api.getCarritoAll();
-            
-            // const idCarrito:any = await this.generarId(this.carrito);
-               
-            // this.carrito.push({
-            //     id: idCarrito,
-            //     timestamp: moment().format('yy-MM-DD HH:mm:ss'),
-            //     producto: prod
-            // })
-            // console.log(this.carrito)
-            // await db.write("carrito", this.carrito)
-            //    return this.carrito;  
                
         } catch (error:any) {
             return {error: error.message}

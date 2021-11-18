@@ -64,6 +64,7 @@ export class LoginAtlasDAO  {
         return user? user[0] : null;       
     }
 
+    
     async get(id?: string): Promise<UserI[]> {
         let output: UserI[] = [];
         try {

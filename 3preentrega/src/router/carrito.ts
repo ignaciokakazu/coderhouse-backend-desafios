@@ -4,16 +4,28 @@ import {Carrito} from '../controllers/ClassCarrito';
 const router = express.Router();
 
 router.get('/listar', Carrito.getCarritoAll);
-// async (req: Request,res: Response)=> {
-//     res.json(await Carrito.getCarritoAll())
-// })
 
 router.get('/listar/:id', Carrito.getCarritoById);
-// async (req: Request,res: Response)=> {
-//     res.json(await Carrito.getCarritoById(Number(req.params.id)))
-// })
 
-router.post('/agregar/:id_producto', Carrito.addCarritoById)
+/* Ejemplo de objeto del Response {
+"_id": "61924f8b74ebb19a086840d0", 
+"producto": {
+    "_id": "614a81044110e52a0702bf81", 
+    "nombre": "OsobucoModif",
+    "descripcion": "Descripcion osobuco",
+    "codigo": "Oso",
+    "foto": "foto",
+    "precio": 50,
+    "stock": 10,
+    "timestamp": "Tue Sep 21 2021 22:04:04 GMT-0300 (hora estándar de Argentina)"
+}
+*/
+
+router.post('/agregar', Carrito.setCarrito); //acá recibe _id del usuario y ProductoInterface
+
+router.post('/checkout', Carrito.checkout);
+
+// router.post('/agregar/:id_producto', Carrito.addCarritoById)
 // async (req: Request,res:Response)=> {
 //     res.json(await Carrito.addCarritoById(Number(req.params.id_producto)))
 // })

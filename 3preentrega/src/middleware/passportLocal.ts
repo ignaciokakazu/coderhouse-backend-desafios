@@ -132,7 +132,7 @@ export const isLoggedIn = (req: Request, res: Response, done: NextFunction) => {
 };
 
 export const isAdmin = (req: Request, res: Response, done: NextFunction) => {
-  if (!req.user) return res.status(401).json({ msg: 'Unathorized' });
+  if (!req.user) return res.redirect('/admin')//res.status(401).json({ msg: 'Unathorized' });
 
   done();
 };

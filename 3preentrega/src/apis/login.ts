@@ -37,7 +37,6 @@ class ApiLogin {
     async userExists(email:string): Promise<boolean> {
         return await this.user.userExists(email);
     }
-
     
     async validatePassword(email:string, password:string) : Promise<boolean> {
         console.log('validate password, linea 38 api/login ' + email + " " + password)

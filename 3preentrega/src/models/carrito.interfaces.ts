@@ -5,7 +5,7 @@ export interface CarritoInterface {
     timestamp: string,
     user: string,
     producto: [{
-        id: number,
+        _id: string,
         nombre: string,
         descripcion: string,
         codigo: string,
@@ -13,11 +13,13 @@ export interface CarritoInterface {
         precio: number,
         cantidad: number,
         timestamp: string
-    }]
+    }],
+    abierto:boolean
 }
 
 export interface NewCarritoInterface {
     timestamp: string,
     user: string,
-    producto: []
+    producto: CarritoInterface[],
+    abierto:boolean
 }

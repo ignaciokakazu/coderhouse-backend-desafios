@@ -2,12 +2,15 @@ import mongoose from 'mongoose';
 import {CarritoInterface, NewCarritoInterface} from '../../carrito.interfaces';
 import Config from '../../../config/config';
 import Moment from 'moment';
+import { ProductoInterface } from '../../productos.interfaces';
+import {peligroLogger} from '../../../services/logger';
 
 const carritoSchema = new mongoose.Schema<CarritoInterface>({
+  //en el SCHEMA no va el _id... sino no podría hacer save del NewCarritoInterface
     timestamp: String,
     user: String,
     producto: [{
-        id: String,
+        _id: String,
         nombre: String,
         descripcion: String,
         codigo: String,
@@ -15,7 +18,8 @@ const carritoSchema = new mongoose.Schema<CarritoInterface>({
         precio: Number,
         cantidad: Number,
         timestramp: String
-    }]
+    }],
+    abierto:Boolean
 });
 
 
@@ -37,77 +41,114 @@ export class CarritoMongoDAO {//implements ProductBaseClass {
     return await this.carrito.find();
   }
 
-  async getCarritoById(id:number) {
-    return await this.carrito.find({id:id});
+  async getCarritoById(id:string) {
+    return await this.carrito.findById(id).exec();
   }
 
-  async setCarrito(data: NewCarritoInterface): Promise<string>{
-    const newProduct = new this.carrito(data);
-    let id:string = "";
-    await newProduct.save(function(err,data){
-        if (err) {
-            console.log('no se pudo grabar')
-            throw new Error('no se pudo grabar')
-        } 
-        console.log(data.id)
-        id = data.id;
-    });
+  async setCarrito(data:any){
+    const id:string = data._id
+    const carrito = await this.carrito.findOne({_id: id}).exec();
+    console.log(id)
+    console.log(data.producto._id)
+    if (!carrito) {
+      return 'no se encuentra el carrito'
+    }
 
-    return id;
+        if (!carrito.producto.length) {
+        
+        carrito.producto.push({
+            _id: data.producto._id,
+            nombre: data.producto.nombre,
+            descripcion: data.producto.descripcion,
+            codigo: data.producto.codigo,
+            foto: data.producto.foto,
+            precio: data.producto.precio,
+            cantidad: 1,
+            timestamp: Moment().format('YYYY-MM-DD-HH-mm-ss-A'),
+        })
+        
+        await this.carrito.findByIdAndUpdate(id, carrito)
+
+        return carrito
+
+    } else {
+
+      const productoArray:any = carrito.producto.filter((element:any)=> element._id == data.producto._id)
+      const cantidad: number = parseInt(productoArray[0].cantidad) + 1;
+      console.log(productoArray);
+      const carritoSinProducto = carrito.producto.filter((element:any)=> element._id != data.producto._id)
+
+      console.log(carritoSinProducto)
+      carritoSinProducto.push({
+            _id: data.producto._id,
+            nombre: data.producto.nombre,
+            descripcion: data.producto.descripcion,
+            codigo: data.producto.codigo,
+            foto: data.producto.foto,
+            precio: data.producto.precio,
+            cantidad: cantidad,
+            timestamp: Moment().format('YYYY-MM-DD-HH-mm-ss-A')
+        })
+      
+      const carritoNuevo = {
+        _id: carrito._id,
+        user: carrito.user,
+        timestamp: carrito.timestamp,
+        producto: carritoSinProducto,
+        abierto: true
+      }
+        await this.carrito.findByIdAndUpdate(id, carritoNuevo)
+        
+        return carritoNuevo
+    }
   }
 
-  async setCarritoNuevo(data: NewCarritoInterface): Promise<string>{
-    const newProduct = new this.carrito(data);
-    let id:string="";
-    await newProduct.save(function(err,data){
-        if (err) {
-            console.log('no se pudo grabar')
-            throw new Error('no se pudo grabar')
-        } 
-        console.log(data.id)
-        id = data.id;
-    });
+    async checkout(carrito: CarritoInterface) {
+      //cambia abierto a false
+      try {
+      const filter = {id: carrito._id};
+      const update = {abierto:false};
+      
+      let doc = await this.carrito.findOneAndUpdate(filter, update, {
+        returnOriginal: false
+      });
 
-    return id;
-  }
+        return doc
 
-//   async addCarritoPrueba() {//(data: NewProductoInterface) {
-//     console.log('desde mongodb carrito')
-//     const obj = {
-//         id: "1", 
-//         timestamp: Moment().format(),
-//         user: 'user',
-//         producto: {
-//             id: 1,
-//             nombre: 'producto1',
-//             descripcion: 'descripcion2',
-//             codigo: 'codigo1',
-//             foto: 'foto',
-//             precio: 12,
-//             cantidad: 1,
-//             timestamp: new Date()
-//         }
-//     }
-//     console.log(obj);
-//     const newProduct = new this.carrito(obj);
-//     await newProduct.save();
+      } catch(e:any) {
+        return e.message;
+      }
+    }
 
-//     return obj;
-//   }
+    async setCarritoNuevo(id:string): Promise<string>{
+      const data: NewCarritoInterface = {
+        timestamp: Moment().format('YYYY-MM-DD-HH-mm-ss-A'),
+        user: id,
+        producto: [],
+        abierto:true
+    }
+    try {
+      const newProduct = new this.carrito(data);
+      
+      await newProduct.save(function(err,data){
+          if (err) {
+              console.log('no se pudo grabar')
+              throw new Error('no se pudo grabar')
+          } 
+          
+          console.log(data._id.toString());
+          
+      });
 
-  async deleteCarritoById(id:number) {
+      return newProduct._id
+
+    } catch (e:any) {
+      return e.message
+    }
+    }
+
+  async deleteCarritoById(id:string) {
       await this.carrito.deleteOne({id:id});
   }
-
-//   async updateProducto(id: number, newProductData: any) {
-//     //return this.productos.findByIdAndUpdate(id, newProductData);
-//     const filter = {id: id}
-//     return this.productos.findOneAndUpdate(filter, newProductData);
-//   }
-
-//   async deleteProducto(id: number) {
-//       const filter = {id:id}
-//     await this.productos.deleteOne(filter);
-//   }
 
 }

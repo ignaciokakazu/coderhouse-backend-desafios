@@ -10,7 +10,7 @@ const register = () => {
     const email = document.getElementById("email").value;
     const name = document.getElementById("name").value;
     const direction = document.getElementById("direction").value;
-    const avatar = document.getElementById("avatar").value;
+    const avatar = document.getElementById("avatar").files[0].name;
     const tel = document.getElementById("tel").value;
     const age = document.getElementById("age").value;
     const country = document.getElementById("country").value;

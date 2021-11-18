@@ -5,7 +5,7 @@ import {TipoPersistencia} from '../models/productos.factory';
 import {CarritoFactoryDAO} from '../models/carrito.factory';
 import {ProductoInterface} from '../models/productos.interfaces';
 
-import {NewCarritoInterface} from '../models/carrito.interfaces';
+import {NewCarritoInterface, CarritoInterface} from '../models/carrito.interfaces';
 /**
  * Con esta variable elegimos el tipo de persistencia
  */
@@ -50,7 +50,7 @@ class capaAPI { //incluye productos y carrito
        return this.carrito.getCarritoAll();
    }
    
-   async getCarritoById(id:number) {
+   async getCarritoById(id:string) {
     return this.carrito.getCarritoById(id);
    }
 
@@ -58,16 +58,22 @@ class capaAPI { //incluye productos y carrito
      return this.carrito.addCarritoPrueba();
    }
 
-  //  async setCarrito(data) {
-  //    return this.carrito.setCarrito(data);
-  //  }
 
-   async setCarritoNuevo(data:NewCarritoInterface) {
-    return this.carrito.setCarritoNuevo(data);
+   async setCarritoNuevo(id:string) {
+    return this.carrito.setCarritoNuevo(id);
+  }
+
+  async setCarrito(data:CarritoInterface) { 
+    //en realidad acá le debería pasar el producto. En el DAO debería hacer la lógica de Mongo, para que sea útil para otras BD
+    return this.carrito.setCarrito(data);
   }
 
    async deleteCarritoById(id:number) {
     return this.carrito.deleteCarritoById(id);
+   }
+
+   async checkout(data:CarritoInterface) {
+     return this.carrito.checkout(data);
    }
 
 }
