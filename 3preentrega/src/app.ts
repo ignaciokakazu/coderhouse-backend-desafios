@@ -16,7 +16,7 @@ console.log(modo);
 // myServer.listen(PORT, ()=> console.log(`server up ${PORT}`));
 if (modo === 'FORK') {
 
-    myServer.listen(PORT, () => infoLogger.info(`Server Up port ${PORT}`));
+    myServer.listen(PORT, () => infoLogger.info(`Server Up port modo fork ${PORT}`));
 
     infoLogger.info(process.pid);
     process.on('exit', (code)=> {
@@ -25,7 +25,7 @@ if (modo === 'FORK') {
 
 } else {
 
-    if (cluster.isMaster) {
+    if (cluster.isMaster && cluster.isPrimary) {
         const numCPU = os.cpus().length
         infoLogger.info(`NÚMERO DE CPUS => ${numCPU}`);
         infoLogger.info(`PID MASTER => ${process.pid}`);
@@ -40,6 +40,6 @@ if (modo === 'FORK') {
         })
     }
 
-        myServer.listen(PORT, () => infoLogger.info(`Server Up port ${PORT} - PID WORKER ${process.pid}`));
+        myServer.listen(PORT, () => infoLogger.info(`Server Up port modo cluster ${PORT} - PID WORKER ${process.pid}`));
     
 }
