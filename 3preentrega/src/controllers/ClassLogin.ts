@@ -50,7 +50,7 @@ class ClassLogin {
         if (!req.body.name) {throw new Error("Error. Falta name")};
 
         if (!req.body.tel) {throw new Error("Error. Falta tel")};
-        
+
         const userArr = await apiLogin.getByEmail(req.body.email);
                 
         if (userArr) {throw new Error("Error. Usuario existente")};
@@ -107,14 +107,5 @@ class ClassLogin {
 
 
 }
-
-    // async fbAuth() {
-
-    // }
-
-    // async fbLogout() {
-
-    // }
-
-
+/* */
 export const Login = new ClassLogin()

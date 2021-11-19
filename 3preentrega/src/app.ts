@@ -1,17 +1,45 @@
 import myServer from './services/server';
 import config from './config/config';
 import {infoLogger, peligroLogger} from './services/logger';
-import {apiLogin} from './apis/login';
+import os from 'os';
+import cluster from 'cluster';
+import minimist from 'minimist';
 
-const port = process.env.PORT || config.PORT;
+const PORT = process.env.PORT || config.PORT;
 
+/* FORK O CLUSTER */
+const argv = minimist(process.argv.slice(2));
+const modo = argv.server;
+// export const PORT = argv.puerto || 8080;
+console.log(modo);
 
-// apiLogin.get('ignaciokakazu1@gmail.com')
-//     .then((result) => {console.log(result)})
+// myServer.listen(PORT, ()=> console.log(`server up ${PORT}`));
+if (modo === 'FORK') {
 
-// apiLogin.getByEmail('ignaciokakazu1@gmail.com')
-//     .then((result) => {console.log(result)})
+    myServer.listen(PORT, () => infoLogger.info(`Server Up port ${PORT}`));
 
-myServer.listen(port, ()=> { infoLogger.info(`SERVER UP ${port}`)});   
-myServer.on('error', (err:any)=> { peligroLogger.warn(`Error en server ${err.message}`)})
+    infoLogger.info(process.pid);
+    process.on('exit', (code)=> {
+        infoLogger.info(`Código de salida: ${code}`);
+    })
 
+} else {
+
+    if (cluster.isMaster) {
+        const numCPU = os.cpus().length
+        infoLogger.info(`NÚMERO DE CPUS => ${numCPU}`);
+        infoLogger.info(`PID MASTER => ${process.pid}`);
+
+        for (let i=0;i<numCPU;i++) {
+            cluster.fork();
+        }
+
+        cluster.on('exit', (worker)=> {
+            infoLogger.info(`Worker ${worker.process.pid} died at ${new Date()}`);
+            cluster.fork();
+        })
+    }
+
+        myServer.listen(PORT, () => infoLogger.info(`Server Up port ${PORT} - PID WORKER ${process.pid}`));
+    
+}

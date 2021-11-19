@@ -1102,3 +1102,18 @@
 [2021-11-18T02:15:39.094] [INFO] info - User log ignaciokakazu1@gmail.com
 [2021-11-18T02:15:52.507] [INFO] info - req.user=> undefined
 [2021-11-18T02:17:43.985] [INFO] info - req.user=> undefined
+[2021-11-18T21:47:25.299] [INFO] info - NÚMERO DE CPUS => 4
+[2021-11-18T21:47:25.302] [INFO] info - PID MASTER => 3604
+[2021-11-18T21:47:25.469] [INFO] info - Server Up port 8080 - PID WORKER 3604
+[2021-11-18T21:47:30.468] [INFO] info - Worker 7472 died at Thu Nov 18 2021 21:47:30 GMT-0300 (hora estándar de Argentina)
+[2021-11-18T21:47:30.491] [INFO] info - Worker 12272 died at Thu Nov 18 2021 21:47:30 GMT-0300 (hora estándar de Argentina)
+[2021-11-18T21:47:30.522] [INFO] info - Worker 4688 died at Thu Nov 18 2021 21:47:30 GMT-0300 (hora estándar de Argentina)
+[2021-11-18T21:47:30.868] [INFO] info - Worker 13276 died at Thu Nov 18 2021 21:47:30 GMT-0300 (hora estándar de Argentina)
+[2021-11-18T21:47:35.079] [INFO] info - Worker 1624 died at Thu Nov 18 2021 21:47:35 GMT-0300 (hora estándar de Argentina)
+[2021-11-18T21:47:35.282] [INFO] info - Worker 1936 died at Thu Nov 18 2021 21:47:35 GMT-0300 (hora estándar de Argentina)
+[2021-11-18T21:47:35.327] [INFO] info - Worker 11260 died at Thu Nov 18 2021 21:47:35 GMT-0300 (hora estándar de Argentina)
+[2021-11-18T21:47:35.585] [INFO] info - Worker 12844 died at Thu Nov 18 2021 21:47:35 GMT-0300 (hora estándar de Argentina)
+[2021-11-18T21:47:39.831] [INFO] info - Worker 8276 died at Thu Nov 18 2021 21:47:39 GMT-0300 (hora estándar de Argentina)
+[2021-11-18T21:47:39.985] [INFO] info - Worker 11012 died at Thu Nov 18 2021 21:47:39 GMT-0300 (hora estándar de Argentina)
+[2021-11-18T21:47:40.167] [INFO] info - Worker 11620 died at Thu Nov 18 2021 21:47:40 GMT-0300 (hora estándar de Argentina)
+[2021-11-18T21:47:40.213] [INFO] info - Worker 12828 died at Thu Nov 18 2021 21:47:40 GMT-0300 (hora estándar de Argentina)

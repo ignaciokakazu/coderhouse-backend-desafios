@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "transpile": "babel src --out-dir dist",
-    "start": "tsc && node ./dist/app.js",
+    "start": "tsc && node ./dist/app.js --server=CLUSTER",
     "dev": "tsc && nodemon",
     "transcuto": "npm run transpile && npm run start"
   },
@@ -26,6 +26,7 @@
     "joy": "^0.1.1",
     "knex": "^0.95.11",
     "log4js": "^6.3.0",
+    "minimist": "^1.2.5",
     "moment": "^2.29.1",
     "mongoose": "^6.0.7",
     "multer": "^1.4.3",
@@ -52,6 +53,7 @@
     "@types/joi": "^17.2.3",
     "@types/knex": "^0.16.1",
     "@types/log4js": "^2.3.5",
+    "@types/minimist": "^1.2.2",
     "@types/moment": "^2.13.0",
     "@types/mongoose": "^5.11.97",
     "@types/multer": "^1.4.7",
