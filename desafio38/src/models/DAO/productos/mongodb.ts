@@ -10,7 +10,7 @@ import {MongoAtlas, MongoLocal} from '../../../services/mongoDb'
 export const productsSchema = new mongoose.Schema<ProductoInterface>({
 //   nombre: String,
 //   precio: Number,
-  _id: String,
+// _id: String,
   nombre: String,
   descripcion: String,
   codigo: String,

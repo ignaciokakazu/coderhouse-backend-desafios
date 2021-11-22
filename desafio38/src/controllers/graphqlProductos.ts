@@ -4,6 +4,7 @@ import { Schema, model } from 'mongoose';
 import { composeWithMongoose } from 'graphql-compose-mongoose';
 import {productsSchema} from '../models/DAO/productos/mongodb';
 
+
 const connection = MongoAtlas.getConnection();
 const productosModel = connection.model<ProductoInterface>('producto', productsSchema);
 const productosTC = composeWithMongoose(productosModel)
@@ -30,3 +31,30 @@ export const ProductsMutation = {
 };
 
 
+/* EJEMPLO QUERY, MUTATION 
+
+{
+  	productsOne {
+  	  nombre
+  	  descripcion
+  	  timestamp
+  	} 
+}
+  
+  mutation {
+    productsCreateOne(record: {
+      nombre: "productoCreadoConGraphQl",
+      descripcion: "descripdescripcionGraphQl",
+      codigo: "GQL",
+      foto: "holaholhoa",
+      precio: 500,
+      stock: 120,
+      timestamp: "algun dia"    
+    }) {
+      record {
+        nombre
+      }
+    }
+  }
+
+  */
