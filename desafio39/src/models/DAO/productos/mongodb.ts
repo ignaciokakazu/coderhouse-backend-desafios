@@ -33,23 +33,7 @@ export class ProductosMongoDAO {//implements ProductBaseClass {
     }
 
     this.productos = this.connection.model<ProductoInterface>('producto', productsSchema);
-    // if (local) {
-    //   this.srv = `mongodb://localhost:27017/${Config.MONGO_LOCAL_DBNAME}`;
-    // } else {
-    //   this.srv = `mongodb+srv://${Config.MONGO_ATLAS_USER}:${Config.MONGO_ATLAS_PASSWORD}@${Config.MONGO_ATLAS_CLUSTER}/${Config.MONGO_ATLAS_DBNAME}?retryWrites=true&w=majority`;
-    // mongoose.connect(this.srv);
-    // this.carrito = mongoose.model<CarritoInterface>('carrito', carritoSchema);
-    // }
   }
-
-  // constructor(local: boolean = false) {
-  //   if (local)
-  //     this.srv = `mongodb://localhost:27017/${Config.MONGO_LOCAL_DBNAME}`;
-  //   else
-  //     this.srv = `mongodb+srv://${Config.MONGO_ATLAS_USER}:${Config.MONGO_ATLAS_PASSWORD}@${Config.MONGO_ATLAS_CLUSTER}/${Config.MONGO_ATLAS_DBNAME}?retryWrites=true&w=majority`;
-  //   mongoose.connect(this.srv);
-  //   this.productos = mongoose.model<ProductoInterface>('producto', productsSchema);
-  // }
 
   async getProductosAll() {
     return await this.productos.find();

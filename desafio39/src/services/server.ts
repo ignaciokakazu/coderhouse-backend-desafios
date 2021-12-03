@@ -13,7 +13,7 @@ import cookieParser from 'cookie-parser'
 import { graphqlHTTP } from 'express-graphql';
 import { graphQLMainSchema } from './graphql';
 
-const app = express();
+export const app = express();
 
 /* Graph QL */
 

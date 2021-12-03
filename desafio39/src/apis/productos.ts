@@ -17,27 +17,27 @@ class prodAPI {
     this.productos = ProductosFactoryDAO.get(tipo);
   }
 
-  async getProductosAll(){//id: string | undefined = undefined){//: Promise<ProductI[]> {
+  async getProductosAll() {//id: string | undefined = undefined){//: Promise<ProductI[]> {
     //if (id) return this.productos.getProductosById(id);
 
     return this.productos.getProductosAll();
   }
 
-  async getProductosById(id:number) {
-      return this.productos.getProductosById(id);
+  async getProductosById(id: number) {
+    return this.productos.getProductosById(id);
   }
 
-  async insertProducto(data:any) {
-      return this.productos.insertProducto(data);
+  async insertProducto(data: any) {
+    return this.productos.insertProducto(data);
   }
 
-  async deleteProducto(data:any) {
+  async deleteProducto(data: any) {
     return this.productos.deleteProducto(data);
-   }
+  }
 
-   async updateProducto(id:number, data:any) {
+  async updateProducto(id: number, data: any) {
     return this.productos.updateProducto(id, data);
-   }
+  }
 }
 
 export const productosAPI = new prodAPI();

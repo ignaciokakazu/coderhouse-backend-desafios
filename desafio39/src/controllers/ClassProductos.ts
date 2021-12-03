@@ -24,7 +24,7 @@ class ClassProductos {
     async getProductosAll(req: Request, res: Response) {
         try {
             const lista = await api.getProductosAll();
-            res.json(lista);
+            res.status(200).json(lista);
         } catch (error: any) {
             console.log(error.message);
             res.json({error: error.message});
@@ -36,9 +36,9 @@ class ClassProductos {
             const lista:any = await api.getProductosById(Number(req.params.id));
 
             if (lista.length) {
-                res.json(lista);
+                res.status(200).json(lista);
             } else {
-                res.json({error: "No se encuentra el producto"})
+                res.status(200).json({error: "No se encuentra el producto"})
             }
         } catch (error: any) {
             res.json({error: error.message});
@@ -50,7 +50,7 @@ class ClassProductos {
         const obj: any = req.body;
         
         const respuesta = await api.insertProducto(obj);
-        res.json(respuesta);
+        res.status(200).json(respuesta);
     }
 
     async deleteProducto(req:Request, res:Response) {
@@ -63,7 +63,7 @@ class ClassProductos {
         }
         
         await api.deleteProducto(id);
-        res.json({id: id});
+        res.status(200).json({id: id});
     }
 
     async updateProducto(req:Request, res: Response) {
@@ -73,7 +73,7 @@ class ClassProductos {
         const data:any = req.body;
         //acá tengo que validar, antes de mandar
         await api.updateProducto(id, data);
-        res.json({id: id});
+        res.status(200).json({id: id});
     }
 
     // async addProducto(req: Request, res: Response) {

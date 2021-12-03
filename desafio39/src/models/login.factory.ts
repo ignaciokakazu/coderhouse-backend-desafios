@@ -13,6 +13,9 @@ export class LoginFactory {
                 
                 return new LoginAtlasDAO();
             
+            default: 
+                return new LoginAtlasDAO();
+                
             /*case TipoLogin.facebook:
                 console.log("Factory de Facebook");
                 //return new ProductosSQLiteDAO();

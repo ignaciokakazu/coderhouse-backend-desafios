@@ -45,6 +45,10 @@ export class ProductosFactoryDAO {
             case TipoPersistencia.firebase:
                     console.log("Soy el factory y es firebase");
                     return new ProductosFirebaseDAO();
+            
+            default:
+                    console.log("Soy el factory y es mongo Atlas");
+                    return new ProductosMongoDAO(false);
         }
     }
 }

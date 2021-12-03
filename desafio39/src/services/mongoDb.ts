@@ -12,16 +12,18 @@ mongoose.Promise = global.Promise;
 
 
 class MongoDB {
-    private connection: Connection;
+    private connection?: Connection;
     private srv: string;
 
     constructor(local?: boolean) {
         this.srv = local? config.MONGO_LOCAL_DBNAME : config.MONGO_ATLAS_SRV;
-        mongoose.connect(this.srv);
-        this.connection =  mongoose.connection;
     }
 
     getConnection() {
+        if (!this.connection){ 
+            mongoose.connect(this.srv);
+            this.connection =  mongoose.connection;
+        } 
         return this.connection;
     }
 

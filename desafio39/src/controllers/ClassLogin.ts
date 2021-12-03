@@ -73,7 +73,7 @@ class ClassLogin {
         });
 
             infoLogger.info(`Usuario ${req.body.email} dado de alta ${new Date()}`);
-            res.json({msg: `Usuario ${req.body.email} dado de alta ${new Date()}`, success:true})
+            res.status(200).json({msg: `Usuario ${req.body.email} dado de alta ${new Date()}`, success:true})
         
         } catch(e:any) {
             infoLogger.info(`${e.message}`);
@@ -92,7 +92,7 @@ class ClassLogin {
         const validate = await apiLogin.validatePassword(email, password);
         console.log(validate);
         if (validate) {
-            res.redirect('/carrito');
+            res.status(200).redirect('/carrito');
             // res.json({msg: 'ok', success:true});
         } else {
             res.json({msg:'no', success:false});

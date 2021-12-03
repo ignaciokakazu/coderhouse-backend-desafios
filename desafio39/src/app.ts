@@ -9,11 +9,13 @@ const PORT = process.env.PORT || config.PORT;
 
 /* FORK O CLUSTER */
 const argv = minimist(process.argv.slice(2));
-const modo = argv.server;
-// export const PORT = argv.puerto || 8080;
-console.log(modo);
+const modo = argv.server || 'FORK';
+export const persistencia = argv.persistencia || "MOA";
 
-// myServer.listen(PORT, ()=> console.log(`server up ${PORT}`));
+/* POR MOTIVOS DE TESTING CON SUPERTEST, SAQUÉ EL LISTEN DE ACÁ 
+
+ https://zellwk.com/blog/endpoint-testing/ */
+
 if (modo === 'FORK') {
 
     myServer.listen(PORT, () => infoLogger.info(`Server Up port modo fork ${PORT}`));

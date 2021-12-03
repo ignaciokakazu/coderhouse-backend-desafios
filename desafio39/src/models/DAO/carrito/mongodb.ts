@@ -4,7 +4,7 @@ import Config from '../../../config/config';
 import Moment from 'moment';
 import { ProductoInterface } from '../../productos.interfaces';
 import {peligroLogger} from '../../../services/logger';
-import { MongoAtlas, MongoLocal } from '../../../services/mongoDb';
+import { MongoAtlas } from '../../../services/mongoDb';
 
 const carritoSchema = new mongoose.Schema<CarritoInterface>({
   //en el SCHEMA no va el _id... sino no podría hacer save del NewCarritoInterface
@@ -32,7 +32,7 @@ export class CarritoMongoDAO {//implements ProductBaseClass {
   constructor(local: boolean = false) {
     if (local) {
       // this.carrito = MongoLocal,getConnection();
-      this.connection = MongoLocal.getConnection();
+      this.connection = MongoAtlas.getConnection();
     } else {
       this.connection = MongoAtlas.getConnection();
     }

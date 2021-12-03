@@ -5,15 +5,17 @@
   "main": "dist/app.js",
   "scripts": {
     "transpile": "babel src --out-dir dist",
-    "start": "tsc && node ./dist/app.js --server=CLUSTER",
+    "start": "tsc && node ./dist/app.js --persistencia=MOA --server=FORK",
     "dev": "tsc && nodemon",
     "transcuto": "npm run transpile && npm run start",
-    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.ts' --recursive './src/**/*.test.ts'"
+    "test:mocha": "TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.ts' --recursive './src/**/*.test.ts'",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "audit": "0.0.6",
     "axios": "^0.24.0",
     "bcrypt": "^5.0.1",
     "chai": "^4.3.4",
@@ -58,6 +60,7 @@
     "@types/express": "^4.17.13",
     "@types/express-handlebars": "^5.3.1",
     "@types/express-session": "^1.17.4",
+    "@types/jest": "^27.0.3",
     "@types/joi": "^17.2.3",
     "@types/knex": "^0.16.1",
     "@types/log4js": "^2.3.5",
@@ -71,8 +74,15 @@
     "@types/passport": "^1.0.7",
     "@types/passport-local": "^1.0.34",
     "@types/supertest": "^2.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint": "^8.3.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3",
     "express-graphql": "^0.12.0",
+    "jest": "^27.3.1",
     "nodemon": "^2.0.12",
+    "ts-jest": "^27.0.7",
     "ts-node": "^10.4.0"
   }
 }

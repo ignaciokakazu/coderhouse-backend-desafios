@@ -43,6 +43,10 @@ export class CarritoFactoryDAO {
             case TipoPersistencia.mongodbAtlas:
                     console.log("Soy el factory y es mongo Atlas");
                     return new CarritoMongoDAO(false);
+            
+            default:
+                    console.log("Soy el factory y es mongo Atlas");
+                    return new CarritoMongoDAO(false);
 
         //     case TipoPersistencia.firebase:
         //             console.log("Soy el factory y es firebase");
