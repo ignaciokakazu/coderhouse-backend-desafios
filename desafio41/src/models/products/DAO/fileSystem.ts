@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import moment from 'moment';
+import ProductosDTO from '../productos.dto';
 
 export class ProductosFSDAO {
     url:string;
@@ -18,43 +19,35 @@ export class ProductosFSDAO {
         //Acá hay que mockear los datos y crear el archivo
     }
 
-    async getProductosAll() {
-        try {
-            if (!fs.existsSync(this.url)) {throw new Error (`El archivo ${this.url} no existe. Comuniquese con el administrador`)} 
+    async getProductosAll(): Promise<ProductosDTO>{
+        
+            //if (!fs.existsSync(this.url)) {throw new Error (`El archivo ${this.url} no existe. Comuniquese con el administrador`)} 
             const lista = await fs.promises.readFile(this.url, 'utf-8');
             let response: any;
             lista? response = JSON.parse(lista) : response = [];
             return response;
-
-        } catch(error:any) {
-            return {error: error.message};
-        }
+        
     }
 
-    async getProductosById(id:number) {
-        try {
-            const productosAll = await this.getProductosAll();
-            const productoById = productosAll.filter((prod:any) => prod.id == id);
-            return productoById;            
+    async getProductosById(id:number): Promise<ProductosDTO> {
+        const lista = await fs.promises.readFile(this.url, 'utf-8');
+        let response: any;
+        lista? response = JSON.parse(lista) : response = [];
+        
+        const productoById = response.filter((prod:any) => prod.id == id);
+        return new ProductosDTO(productoById);            
 
-        } catch(error:any) {
-            return {error: error.message};
-        }
     }
 
     async write(data:any) {
-        try {
-            await fs.promises.writeFile(this.url, JSON.stringify(data), 'utf-8')
-        } catch(error:any) {
-            return error.message;
-        }
+        await fs.promises.writeFile(this.url, JSON.stringify(data), 'utf-8')
     }
 
-    async insertProducto(data:any){
+    async insertProducto(data:any): Promise<ProductosDTO>{
         //lo pido sin ID. Lo averiguo acá. 
         const newId: number = await this.generarId();
         const productoObj = {
-            id: newId,
+            _id: newId.toString(),
             timestamp: moment().format('yy-MM-DD HH:mm:ss'),
             nombre:data.nombre,
             descripcion:data.descripcion,
@@ -69,7 +62,7 @@ export class ProductosFSDAO {
 
         this.write(productos);
 
-        return productoObj;
+        return new ProductosDTO(productoObj);
     }
 
     async generarId() {
@@ -90,10 +83,10 @@ export class ProductosFSDAO {
         this.write(productosTemp);
     }
 
-    async updateProducto(id:number, data:any) {
+    async updateProducto(id:number, data:any){
         const productos:any = await this.getProductosAll();
         const productosTemp = {
-            id: id,
+            _id: id,
             nombre: data.nombre,
             descripcion: data.descripcion,
             codigo: data.codigo,

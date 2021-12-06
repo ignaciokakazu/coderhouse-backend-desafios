@@ -9628,3 +9628,7 @@
 [2021-11-28T21:43:17.487] [INFO] info - req.user=> undefined
 [2021-11-28T22:54:44.435] [INFO] info - req.user=> undefined
 [2021-11-28T22:54:47.103] [INFO] info - req.user=> undefined
+[2021-12-05T19:10:38.931] [INFO] info - 8392
+[2021-12-05T19:10:38.934] [INFO] info - Server Up port modo fork 8080
+[2021-12-05T19:10:42.084] [INFO] info - req.user=> undefined
+[2021-12-05T19:10:43.384] [INFO] info - req.user=> undefined

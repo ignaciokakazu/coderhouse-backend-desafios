@@ -1,8 +1,8 @@
 import moment from 'moment';
 import { Request, Response, NextFunction } from 'express';
 import {ProductoInterface,
-        NewProductoInterface} from '../models/productos.interfaces';
-import {api} from '../apis/api';
+        NewProductoInterface} from './productos.interfaces';
+import {api} from '../../apis/api';
 
 class ClassProductos {
     //private lista: ProductoInterface[];

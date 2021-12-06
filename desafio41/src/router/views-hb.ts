@@ -1,5 +1,5 @@
 import express from 'express';
-import {Productos} from '../controllers/ClassProductos';
+import {Productos} from '../models/products/ClassProductos';
 import { isLoggedIn, pruebaFuncionamiento } from '../middleware/passportLocal';
 import {Carrito} from '../controllers/ClassCarrito';
 import {Request, Response, NextFunction} from 'express';

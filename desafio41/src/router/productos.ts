@@ -1,7 +1,8 @@
 import express from 'express';
 import {Request, Response, NextFunction} from 'express';
 import { Login } from '../controllers/ClassLogin';
-import {Productos} from '../controllers/ClassProductos';
+import {Productos} from '../models/products/ClassProductos';
+import asyncHandler from 'express-async-handler';
 //import {middleAdm} from './middleware.js';
 
 const router = express.Router();

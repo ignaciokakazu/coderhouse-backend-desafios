@@ -1,9 +1,9 @@
 // import { NewProductoInterface, ProductoInterface } from '../models/interfaces';
 // import { ProductQuery } from '../models/interfaces';
-import { ProductosFactoryDAO } from '../models/productos.factory';
-import { TipoPersistencia } from '../models/productos.factory';
+import { ProductosFactoryDAO } from '../models/products/productos.factory';
+import { TipoPersistencia } from '../models/products/productos.factory';
 import { CarritoFactoryDAO } from '../models/carrito.factory';
-import { ProductoInterface } from '../models/productos.interfaces';
+import { ProductoInterface } from '../models/products/productos.interfaces';
 import { persistencia } from '../app';
 
 import { NewCarritoInterface, CarritoInterface } from '../models/carrito.interfaces';

@@ -2,7 +2,7 @@ import mongoose, { Connection } from 'mongoose';
 import {CarritoInterface, NewCarritoInterface} from '../../carrito.interfaces';
 import Config from '../../../config/config';
 import Moment from 'moment';
-import { ProductoInterface } from '../../productos.interfaces';
+import { ProductoInterface } from '../../products/productos.interfaces';
 import {peligroLogger} from '../../../services/logger';
 import { MongoAtlas } from '../../../services/mongoDb';
 

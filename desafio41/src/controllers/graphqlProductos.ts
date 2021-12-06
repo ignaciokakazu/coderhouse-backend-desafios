@@ -1,8 +1,8 @@
-import {ProductoInterface, NewProductoInterface} from '../models/productos.interfaces';
+import {ProductoInterface, NewProductoInterface} from '../models/products/productos.interfaces';
 import {MongoAtlas} from '../services/mongoDb';
 import { Schema, model } from 'mongoose';
 import { composeWithMongoose } from 'graphql-compose-mongoose';
-import {productsSchema} from '../models/DAO/productos/mongodb';
+import {productsSchema} from '../models/products/DAO/mongodb';
 
 
 const connection = MongoAtlas.getConnection();

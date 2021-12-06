@@ -1,7 +1,7 @@
 // import { NewProductoInterface, ProductoInterface } from '../models/interfaces';
 // import { ProductQuery } from '../models/interfaces';
-import { ProductosFactoryDAO } from '../models/productos.factory';
-import { TipoPersistencia } from '../models/productos.factory';
+import { ProductosFactoryDAO } from '../models/products/productos.factory';
+import { TipoPersistencia } from '../models/products/productos.factory';
 
 
 /**
