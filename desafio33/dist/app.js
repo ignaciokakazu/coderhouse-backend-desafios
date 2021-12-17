@@ -15,7 +15,7 @@ var io = new socket_io_1.Server(server_1.default);
 socket_1.socketProducts(io);
 /* FORK O CLUSTER */
 var argv = minimist_1.default(process.argv.slice(2));
-var modo = argv._[2] ? argv._[2].replace('SERVER=', '') : "CLUSTER";
+var modo = argv.server;
 // export const PORT = argv.puerto || 8080;
 console.log(modo);
 // myServer.listen(PORT, ()=> console.log(`server up ${PORT}`));

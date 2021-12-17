@@ -1,108 +1,149 @@
 "use strict";
-// import moment from 'moment';
-// class ClassCarrito {
-//     private lista: any;
-//     constructor() {
-//     }
-//     async getCarritoById(id:number) {
-//         try {
-//             this.lista = await db.read("carrito");
-//             const prod = this.lista.filter((product:any)=> product.id == id);
-//             if (!prod.length) {throw new Error('No existe el producto por ID')}
-//             return prod;
-//         } catch(error: any) {
-//             return {error: error.message}
-//         }
-//     }
-//     async generarId(carrito:any) {
-//         /* si no fuera async, se empiezan a pisar los ids */
-//         const largo:number = carrito.length;
-//         let max:number = 0;
-//         for (let i=0;i<largo;i++) {
-//             if (parseInt(carrito[i].id) > max) {
-//                 max = parseInt(carrito[i].id);
-//             }
-//         }
-//         return max + 1;
-//     }
-//     async getCarritoAll() {
-//         //si existe el file
-//         //try y catch
-//         //si existe el id
-//         try {
-//             this.carrito = await db.read("carrito");
-//             return this.carrito;
-//         } catch (error:any) {
-//             return {error: error.message};
-//         }
-//     }
-//     async deleteCarritoById(id:number) {
-//         try {
-//             this.carrito = await db.read("carrito");
-//             if (!this.carrito.length) {throw new Error('Carrito vacío. No se puede eliminar')}
-//             const filtrada:any = this.carrito.filter((prod:any)=>prod.id != id);
-//             if (filtrada.length == this.carrito.length) {throw new Error('No se encuentra el ID')}
-//             this.carrito = filtrada;
-//             await db.write("carrito", this.carrito);
-//             return {msg: "Eliminado"};
-//         } catch (error:any) {
-//             return {error: error.message}
-//         }
-//     }
-//     // /* para después... */
-//     // async deleteCarritoByIdProducto(id_producto) {
-//     //     //si existe el file
-//     //     //try y catch
-//     //     //si existe el id
-//     //     this.carrito = await db.read("carrito")
-//     //     // si es vacío, throw new error
-//     //     const filtrada = this.removeItemOnce(carrito, id_producto);
-//     //     this.carrito = filtrada;
-//     //     await db.write("carrito", this.carrito)
-//     //     return id_producto;
-//     // }
-//     // removeItemOnce(arr, value) {
-//     //     let bandera = false;
-//     //     let posicion = 0;
-//     //     while (bandera == false || posicion<arr.length){  
-//     //         if (arr[posicion].producto.id == value) {
-//     //             const arrayNuevo = arr.splice(0, posicion-1); //corto
-//     //             arrayNuevo.push(arr.splice(posicion,arr.length)); //pego
-//     //             bandera = true;
-//     //         }
-//     //         posicion ++;
-//     //     }
-//     //     return arrayNuevo;
-//     //   }
-//     async deleteCarritoAll() {
-//         try {
-//             this.carrito = [];
-//             db.write("carrito", this.carrito);
-//             return {msg: "Carrito eliminado"};
-//         } catch(error:any) {
-//             return {error: error.message}
-//         }
-//     }
-//     async addCarritoById(id:number) {
-//         try {
-//             //Productos
-//             this.lista = await db.read("productos");
-//             const prod = this.lista.filter((product:any) => product.id == id); 
-//             if (!prod.length) { throw new Error('No hay productos disponibles. Comuniquese con el administrador')}
-//             //Productos del carrito
-//             this.carrito = await db.read("carrito") ;
-//             const idCarrito:any = await this.generarId(this.carrito);
-//             this.carrito.push({
-//                 id: idCarrito,
-//                 timestamp: moment().format('yy-MM-DD HH:mm:ss'),
-//                 producto: prod
-//             })
-//             console.log(this.carrito)
-//             await db.write("carrito", this.carrito)
-//                return this.carrito;  
-//         } catch (error:any) {
-//             return {error: error.message}
-//         }
-//     }
-// }
-// export const Carrito = new ClassCarrito();
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Carrito = void 0;
+const moment_1 = __importDefault(require("moment"));
+const api_1 = require("../apis/api");
+const logger_1 = require("../services/logger");
+class ClassCarrito {
+    constructor() {
+    }
+    getCarritoById(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const id = Number(req.params.id);
+                const carrito = yield api_1.api.getCarritoById(id);
+                res.json(carrito);
+            }
+            catch (error) {
+                logger_1.peligroLogger.warn(error.message);
+                res.json({ error: error.message });
+            }
+        });
+    }
+    getCarritoAll(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const carritoAll = yield api_1.api.getCarritoAll();
+                res.json(carritoAll);
+            }
+            catch (error) {
+                res.json({ error: error.message });
+            }
+        });
+    }
+    addCarritoPrueba(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const cart = yield api_1.api.addCarritoPrueba();
+            console.log('soy el carrito prueba');
+            res.json(cart);
+        });
+    }
+    deleteCarritoById(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                yield api_1.api.deleteCarritoById(req.body.id);
+                res.json({ msg: `Eliminado ${req.body.id}` });
+            }
+            catch (err) {
+                res.json({ error: err.message });
+            }
+        });
+    }
+    setCarritoNuevo(req, res, id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            logger_1.infoLogger.info(`seteo carrito nuevo para ${req.body.email}`);
+            console.log(req.user);
+            console.log(req.body.user);
+            logger_1.infoLogger.info(req.user);
+            logger_1.infoLogger.log(req.body);
+            const obj = {
+                timestamp: (0, moment_1.default)().format('YYYY mm DDDD'),
+                user: id,
+                producto: [],
+            };
+            const idCarrito = yield api_1.api.setCarritoNuevo(obj);
+            return idCarrito;
+        });
+    }
+    setCarrito(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            // try {
+            //     if (!req.body.id) {
+            //         const obj: CarritoInterface = {
+            //                 timestamp: moment().format('YYYY mm dd'),
+            //                 user: req.body.user,
+            //                 producto: [{
+            //                     id: req.body.producto.id,
+            //                     nombre: req.body.producto.nombre,
+            //                     descripcion: req.body.producto.descripcion,
+            //                     codigo: req.body.producto.codigo,
+            //                     foto: req.body.producto.foto,
+            //                     precio: req.body.producto.precio,
+            //                     cantidad: req.body.producto.cantidad,
+            //                     timestamp: moment().format('YYYY mm dd')
+            //                 }]
+            //             }
+            //             const id = await api.setCarritoNuevo(obj);
+            //             res.json({msg:`abrí el carrito ${id}`})
+            //         } else {
+            //             //recibe un solo producto, así que hace un push al carrito viejo
+            //             // const obj: CarritoInterface = {
+            //             //     _id: req.body.id,
+            //             //     timestamp: new Date(),
+            //             //     user: req.body.user,
+            //             //     producto: [{
+            //             //         id: req.body.producto.id,
+            //             //         nombre: req.body.producto.nombre,
+            //             //         descripcion: req.body.producto.descripcion,
+            //             //         codigo: req.body.producto.codigo,
+            //             //         foto: req.body.producto.foto,
+            //             //         precio: req.body.producto.precio,
+            //             //         cantidad: req.body.producto.cantidad,
+            //             //         timestramp: new Date()
+            //             //     }]
+            //             }
+            // } catch(e:any) {
+            //     res.json(e.message)
+            // }
+        });
+    }
+    addCarritoById(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                //Productos
+                const id = Number(req.params.body);
+                const lista = yield api_1.api.getProductosById(id);
+                console.log(lista);
+                //if (!prod.length) { throw new Error('No hay productos disponibles. Comuniquese con el administrador')}
+                //todo esto hay que adaptar para que funcione 
+                //Productos del carrito
+                // const carrito = await api.getCarritoAll();
+                // const idCarrito:any = await this.generarId(this.carrito);
+                // this.carrito.push({
+                //     id: idCarrito,
+                //     timestamp: moment().format('yy-MM-DD HH:mm:ss'),
+                //     producto: prod
+                // })
+                // console.log(this.carrito)
+                // await db.write("carrito", this.carrito)
+                //    return this.carrito;  
+            }
+            catch (error) {
+                return { error: error.message };
+            }
+        });
+    }
+}
+exports.Carrito = new ClassCarrito();

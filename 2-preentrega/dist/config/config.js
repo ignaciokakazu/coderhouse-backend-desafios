@@ -1,16 +1,48 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var dotenv_1 = __importDefault(require("dotenv"));
-dotenv_1.default.config();
-var venv = {
+const dotenv = __importStar(require("dotenv"));
+dotenv.config();
+const config = {
     PORT: process.env.PORT || 8080,
-    MONGO_ATLAS_USER: process.env.MONGO_ATLAS_USER || 'user1234',
-    MONGO_ATLAS_PASSWORD: process.env.MONGO_ATLAS_PASSWORD || 'RjPDXWOh3m4xsGad',
-    MONGO_ATLAS_CLUSTER: process.env.MONGO_ATLAS_CLUSTER || 'cluster0.tc0bp.mongodb.net',
-    MONGO_ATLAS_DBNAME: process.env.MONGO_ATLAS_DBNAME || 'ecommerce',
-    MONGO_LOCAL_DBNAME: process.env.MONGO_LOCAL_DBNAME || 'ecommerce',
+    SESSION_SECRET: process.env.SESSION_SECRET || '',
+    SESSION_COOKIE_TIMEOUT_MIN: process.env.SESSION_COOKIE_TIMEOUT_MIN || '',
+    //MONGO_ATLAS
+    MONGO_ATLAS_USER: process.env.MONGO_ATLAS_USER || '',
+    MONGO_ATLAS_PASSWORD: process.env.MONGO_ATLAS_PASSWORD || '',
+    MONGO_ATLAS_CLUSTER: process.env.MONGO_ATLAS_CLUSTER || '',
+    MONGO_ATLAS_DBNAME: process.env.MONGO_ATLAS_DBNAME || '',
+    MONGO_ATLAS_SRV: process.env.MONGO_ATLAS_SRV || '',
+    //MONGO_LOCAL
+    MONGO_LOCAL_DBNAME: process.env.MONGO_LOCAL_DBNAME || '',
+    //FIREBASE
+    FIREBASE_TYPE: process.env.FIREBASE_TYPE || '',
+    FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID || '',
+    FIREBASE_PRIVATEKEY_ID: process.env.FIREBASE_PRIVATEKEY_ID || '',
+    FIREBASE_PRIVATE_KEY: process.env.FIREBASE_PRIVATE_KEY || '',
+    FIREBASE_CLIENT_EMAIL: process.env.FIREBASE_CLIENT_EMAIL || '',
+    FIREBASE_CLIENT_ID: process.env.FIREBASE_CLIENT_ID || '',
+    FIREBASE_AUTH_URI: process.env.FIREBASE_AUTH_URI || '',
+    FIREBASE_TOKEN_URI: process.env.FIREBASE_TOKEN_URI || '',
+    FIREBASE_AUTH_PROVIDER_X509_CERT_URL: process.env.FIREBASE_AUTH_PROVIDER_X509_CERT_URL || '',
+    FIREBASE_CLIENT_X509_CERT_URL: process.env.FIREBASE_CLIENT_X509_CERT_URL || ''
 };
-exports.default = venv;
+exports.default = config;

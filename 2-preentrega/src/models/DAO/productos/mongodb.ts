@@ -7,10 +7,10 @@ import {
 } from '../../productos.interfaces';
 import Config from '../../../config/config';
 
-const productsSchema = new mongoose.Schema<ProductoInterface>({
+export const productsSchema = new mongoose.Schema<ProductoInterface>({
 //   nombre: String,
 //   precio: Number,
-  id: Number,
+  _id: String,
   nombre: String,
   descripcion: String,
   codigo: String,

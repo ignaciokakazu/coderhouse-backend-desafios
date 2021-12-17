@@ -48,21 +48,6 @@ class ClassProductos {
     async insertProducto(req: Request, res: Response) {
         //agregar try-catch;
         const obj: any = req.body;
-        // console.log(obj);
-        // const strValidacion:string = this.validacion(obj);
-        // if(strValidacion) {
-        //     return res.json({error: strValidacion});
-        // }
-        // console.log(obj);
-        // const prod = {
-        //      nombre: req.body.nombre,
-        //      descripcion: req.body.descripcion,
-        //      codigo: req.body.codigo,
-        //      foto: req.body.foto,
-        //      precio: req.body.precio,
-        //      stock: req.body.stock
-        //      //no está el id, ni el timestamp, porque depende del DAO
-        // }
         
         const respuesta = await api.insertProducto(obj);
         res.json(respuesta);

@@ -20,7 +20,7 @@
       script: 'dist/app.js',
       watch: true,
       autorestart: true, //por si se cae, reinicia
-      instances: 4,
+      // instances: 4,
       args: '--puerto=8082', //esto funciona en combinación con argv y config.PORT. VER nginx.config
     },
     {

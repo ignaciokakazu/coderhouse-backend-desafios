@@ -4,7 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
-var child_process_1 = require("child_process");
+// import {calculo} from '../utils/procesoFork';
+// import {fork} from 'child_process';
+var procesoFork_1 = require("../utils/procesoFork");
 var path_1 = __importDefault(require("path"));
 var os_1 = __importDefault(require("os"));
 var config_1 = require("../config/config");
@@ -27,12 +29,15 @@ router.get('/', function (req, res) {
 var scriptPath = path_1.default.resolve(__dirname, '../utils/procesoFork.js');
 router.get('/random', function (req, res) {
     var cantidad = req.query.cantidad || 1000000;
+    console.log('random, cantidad : ' + cantidad);
+    var resultado = procesoFork_1.calculo(cantidad);
+    res.json(resultado);
     //acá ejecuta en fork
-    var procesoFork = child_process_1.fork(scriptPath, [cantidad]);
-    procesoFork.send('start');
-    procesoFork.on('message', function (resultado) {
-        res.json(resultado);
-    });
+    // const procesoFork = fork(scriptPath, [cantidad]);
+    // procesoFork.send('start');
+    // procesoFork.on('message', (resultado)=> {
+    //     res.json(resultado);
+    // })
 });
 router.get('/muerte', function (req, res) {
     res.json({ msg: 'ok' });

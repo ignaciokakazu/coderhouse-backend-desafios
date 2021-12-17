@@ -8,7 +8,7 @@ import { TipoPersistencia } from '../models/productos.factory';
  * Con esta variable elegimos el tipo de persistencia
  */
 // const tipo = TipoPersistencia.sqlite;
-const tipo = TipoPersistencia.firebase;
+const tipo = TipoPersistencia.mongodbAtlas;
 
 class prodAPI {
   private productos;

@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProductosFactoryDAO = exports.TipoPersistencia = void 0;
-var fileSystem_1 = require("./DAO/productos/fileSystem");
-var sqlite_1 = require("./DAO/productos/sqlite");
-var memory_1 = require("./DAO/productos/memory");
-var mySQL_1 = require("./DAO/productos/mySQL");
-var mongodb_1 = require("./DAO/productos/mongodb");
-var firebase_1 = require("./DAO/productos/firebase");
+exports.CarritoFactoryDAO = exports.TipoPersistencia = void 0;
+// import {CarritoFSDAO} from './DAO/carrito/fileSystem';
+// import {ProductosSQLiteDAO} from './DAO/productos/sqlite';
+// import { ProductosMemoryDAO } from './DAO/productos/memory';
+// import { ProductosMYSQLDAO } from './DAO/productos/mySQL';
+const mongodb_1 = require("./DAO/carrito/mongodb");
+// import {ProductosFirebaseDAO} from './DAO/productos/firebase';
 var TipoPersistencia;
 (function (TipoPersistencia) {
     TipoPersistencia["fileSystem"] = "FS";
@@ -17,35 +17,32 @@ var TipoPersistencia;
     TipoPersistencia["mongodbAtlas"] = "MOA";
     TipoPersistencia["firebase"] = "FBA";
 })(TipoPersistencia = exports.TipoPersistencia || (exports.TipoPersistencia = {}));
-// el tipo de persistencia es elegido en apis/productos.ts
-var ProductosFactoryDAO = /** @class */ (function () {
-    function ProductosFactoryDAO() {
-    }
-    ProductosFactoryDAO.get = function (tipo) {
+// el tipo de persistencia es elegido en apis.ts
+class CarritoFactoryDAO {
+    static get(tipo) {
         switch (tipo) {
-            case TipoPersistencia.fileSystem:
-                console.log("Soy Factory y es el FS");
-                return new fileSystem_1.ProductosFSDAO();
-            case TipoPersistencia.sqlite:
-                console.log("Soy el factory y es sqlite");
-                return new sqlite_1.ProductosSQLiteDAO();
-            case TipoPersistencia.memory:
-                console.log("Soy el factory y es memory");
-                return new memory_1.ProductosMemoryDAO();
-            case TipoPersistencia.mysql:
-                console.log("Soy el factory y es mysql");
-                return new mySQL_1.ProductosMYSQLDAO();
-            case TipoPersistencia.mongodbLocal:
-                console.log("Soy el factory y es mongo local");
-                return new mongodb_1.ProductosMongoDAO(true);
+            // case TipoPersistencia.fileSystem:
+            //     console.log("Soy Factory y es el FS");
+            //     return new CarritoFSDAO();
+            // case TipoPersistencia.sqlite:
+            //     console.log("Soy el factory y es sqlite");
+            //     return new CarritoSQLiteDAO();
+            //     case TipoPersistencia.memory:
+            //         console.log("Soy el factory y es memory");
+            //         return new CarritoMemoryDAO();
+            //     case TipoPersistencia.mysql:
+            //         console.log("Soy el factory y es mysql");
+            //         return new CarritoMYSQLDAO()
+            //     case TipoPersistencia.mongodbLocal:
+            //             console.log("Soy el factory y es mongo local");
+            //             return new CarritoMongoDAO(true);
             case TipoPersistencia.mongodbAtlas:
                 console.log("Soy el factory y es mongo Atlas");
-                return new mongodb_1.ProductosMongoDAO(false);
-            case TipoPersistencia.firebase:
-                console.log("Soy el factory y es firebase");
-                return new firebase_1.ProductosFirebaseDAO();
+                return new mongodb_1.CarritoMongoDAO(false);
+            //     case TipoPersistencia.firebase:
+            //             console.log("Soy el factory y es firebase");
+            //             return new CarritoFirebaseDAO();
         }
-    };
-    return ProductosFactoryDAO;
-}());
-exports.ProductosFactoryDAO = ProductosFactoryDAO;
+    }
+}
+exports.CarritoFactoryDAO = CarritoFactoryDAO;

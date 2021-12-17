@@ -1,0 +1,72 @@
+objetos mínimos a pasar por los endpoints
+
+POST
+http://localhost:8080/api/login/register
+
+{
+"name": "hola",
+"email": "ignaciokakazu1@gmail.com",
+"password": "123456789",
+"passwordConfirmation": "123456789",
+"tel": "1126369364"
+}
+
+Desde el front
+http://localhost:8080/admin/register
+
+
+POST
+http://localhost:8080/api/login/auth
+
+{
+"email": "ignaciokakazu1@gmail.com",
+"password": "123456789"
+}
+
+Devuelve el id del carrito y el id del usuario
+
+POST
+http://localhost:8080/api/carrito/agregar
+Agrega de a una unidad
+
+{
+"_id": "6195cf783e680e2461cc4d8d", 
+"user": "61924f8b74ebb19a086840d0",
+"producto": {
+    "_id": "614a81044110e52a0702bf81", 
+    "nombre": "OsobucoModif",
+    "descripcion": "Descripcion osobuco",
+    "codigo": "Oso",
+    "foto": "foto",
+    "precio": 50,
+    "stock": 10,
+    "timestamp": "Tue Sep 21 2021 22:04:04 GMT-0300 (hora estándar de Argentina)"
+}
+}
+
+Con lo que devuelve del endpoint, se pasa al checkout
+
+POST
+checkout
+
+{
+    "_id": "6195ddd37baeadaab834e038",
+    "user": "619131a484829786020660ae",
+    "timestamp": "2021-11-18-02-00-03-AM",
+    "producto": [
+        {
+            "_id": "614a81044110e52a0702bf81",
+            "nombre": "OsobucoModif",
+            "descripcion": "Descripcion osobuco",
+            "codigo": "Oso",
+            "foto": "foto",
+            "precio": 50,
+            "cantidad": 3,
+            "timestamp": "2021-11-18-02-03-42-AM"
+        }
+    ],
+    "abierto": true
+}
+
+
+http://tercera-pre.herokuapp.com/

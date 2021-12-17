@@ -1,0 +1,8 @@
+Performance:
+fork y cluster
+pm2
+nginx
+compression
+
+
+logger

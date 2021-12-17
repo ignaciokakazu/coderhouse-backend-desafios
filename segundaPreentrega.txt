@@ -2,7 +2,22 @@ Hacer
 * Error Handler
 * Pasar Carrito a las persistencias
 * Agregar Intefaces (ver en el afterSegunda entrega)
-* Agregar Faker para 
+* Agregar Faker cuando inicializa la BD
+* JOI
+* Cookies/Factory
+* Login Facebook/Twitter Factory
+* Pruebas unitarias
+
+
+* Subir avatar con Multer - ver
+* Enviar email y un mensaje de whatsapp al admin con el checkout. También enviarle un SMS al usuario
+* Modo cluster por constante global
+* Heroku
+* Artillery
+
+* Documentacion en clase 38
+* Morgan en clase 38
+
 
 Métodos del DAO
 
@@ -28,4 +43,13 @@ deleteProducto(id:number) -> delete
 updateProducto(id: number, producto) ->
 
 
+
+COSAS IMPORTANTES:
+passport
+passportFacebook
+mongodb /mongoose
+mysql
+sqlite
+.envExample
+los status de errores
 

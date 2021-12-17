@@ -1,0 +1,7 @@
+1. Arreglar todos los problemas que tengan los paquetes. npm audit fix
+2. Las dev-Dependencies tienen que ir en dependencies. Copiar y pegar
+3. en npm run start: npm install && node ./dist/app.js
+4. Mongo DB tiene que tener una sola conexión
+
+
+heroku logs --app=nombre de la app

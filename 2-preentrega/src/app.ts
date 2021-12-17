@@ -1,33 +1,16 @@
-import express from 'express';
-import mainRouter from './router/index.js';
-import handlebars from 'express-handlebars';
-import path from 'path';
+import myServer from './services/server';
 import config from './config/config';
-
-const app = express();
-
+import {infoLogger, peligroLogger} from './services/logger';
+import {apiLogin} from './apis/login';
 const port = config.PORT;
-app.listen(port, ()=> {console.log(`SERVER UP ${port}`)});
 
-app.use(express.json())
-app.use(express.urlencoded({extended: true}))
 
-/*public*/
-const publicFolderPath = path.resolve(__dirname, '../public');
-app.use(express.static(publicFolderPath))
+// apiLogin.get('ignaciokakazu1@gmail.com')
+//     .then((result) => {console.log(result)})
 
-/* Handlebars */
-app.set('view engine', 'handlebars');
-const layoutsPath = path.resolve(__dirname, '../views/layouts');
-const defaultPath = path.resolve(__dirname, '../views/layouts/index.handlebars');
+// apiLogin.getByEmail('ignaciokakazu1@gmail.com')
+//     .then((result) => {console.log(result)})
 
-app.engine(
-    'handlebars',
-    handlebars({
-      layoutsDir: layoutsPath,
-      defaultLayout: defaultPath,
-    })
-  );
-
-app.use('/', mainRouter);
+myServer.listen(port, ()=> { infoLogger.info(`SERVER UP ${port}`)});   
+myServer.on('error', (err:any)=> { peligroLogger.warn(`Error en server ${err.message}`)})
 

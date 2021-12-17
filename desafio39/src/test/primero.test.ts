@@ -2,9 +2,7 @@ import { doesNotMatch, strict as assert } from 'assert';
 // import {ax} from '../services/axios.test';
 import axios from 'axios';
 import {axiosFunc} from './axios';
-import supertest from 'supertest';
-import myServer from '../services/server';
-
+import {Productos} from '../controllers/ClassProductos'
 
 describe('prueba con axios', ()=> {
 
@@ -12,16 +10,16 @@ describe('prueba con axios', ()=> {
     //     expect(1).toBe(2);
     // })
 
-    it('pruebo los endpoints con supertest', async ()=> {
-        const api = supertest(myServer);
-        return await api.get('/api/productos/listar');
+    // it('pruebo los endpoints con supertest', async ()=> {
+    //     const api = supertest(myServer);
+    //     return await api.get('/api/productos/listar');
         
-    })
+    // })
 
     it('pruebo los endpoints GET de productos', async ()=> {
         
         //prepare
-        const url = ['/api/productos/listar', '/api/productos/listar/1'];
+        const url = ['/api/productos/listar', '/api/productos/listar/1', '/api/hola'];
 
         for (let i=0;i<url.length;i++){
           //mock de datos
@@ -45,6 +43,11 @@ describe('prueba con axios', ()=> {
           expect(result).toEqual(expectedValue);
           
         }
+    })
+
+    it('pruebo la clase producto', async ()=> {
+      const productos = await Productos.getProductosAll();
+      console.log(productos);
     })
 
     it('pruebo los endpoints POST y UPDATE de productos', async ()=> {

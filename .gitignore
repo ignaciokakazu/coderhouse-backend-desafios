@@ -26,3 +26,8 @@ firebase.json
 config.ts
 build
 .env
+PM2
+recordatorios
+dist
+build
+eslint

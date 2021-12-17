@@ -1,0 +1,2 @@
+npm i eslint
+node_modelus/.bin/eslint --init

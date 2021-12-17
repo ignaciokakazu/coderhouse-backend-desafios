@@ -1,7 +1,7 @@
 import express from 'express';
 import {Request, Response, NextFunction} from 'express';
-import { Login } from '../controllers/ClassLogin.js';
-import {Productos} from '../controllers/ClassProductos.js';
+import { Login } from '../controllers/ClassLogin';
+import {Productos} from '../controllers/ClassProductos';
 //import {middleAdm} from './middleware.js';
 
 const router = express.Router();
@@ -20,11 +20,12 @@ router.get('/listar/:id', Productos.getProductosById);
 //     admin = Login.validacion(user, password);
 // }
 
-router.post('/login', (req, res) => {
-    admin = Login.validacion(req.body)
-    console.log(admin)
-    admin? res.json({ url: "http://localhost:8080/admin/index" }) : res.json({url: "http://localhost:8080/admin/error"});
-});
+// router.post('/login', (req, res) => {
+//     admin = Login.validacion(req.body)
+//     console.log(admin)
+//     admin? res.json({ url: "http://localhost:8080/admin/index" }) : res.json({url: "http://localhost:8080/admin/error"});
+// });
+
 
 router.delete('/borrar/:id', Productos.deleteProducto);
 

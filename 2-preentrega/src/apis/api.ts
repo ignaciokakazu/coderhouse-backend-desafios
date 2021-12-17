@@ -4,11 +4,13 @@ import {ProductosFactoryDAO} from '../models/productos.factory';
 import {TipoPersistencia} from '../models/productos.factory';
 import {CarritoFactoryDAO} from '../models/carrito.factory';
 import {ProductoInterface} from '../models/productos.interfaces';
+
+import {NewCarritoInterface} from '../models/carrito.interfaces';
 /**
  * Con esta variable elegimos el tipo de persistencia
  */
 // const tipo = TipoPersistencia.sqlite;
-const tipo = TipoPersistencia.fileSystem;
+const tipo = TipoPersistencia.mongodbAtlas;
 
 class capaAPI { //incluye productos y carrito
   private productos: any;
@@ -41,7 +43,7 @@ class capaAPI { //incluye productos y carrito
    async updateProducto(id:number, data:any) {
     return this.productos.updateProducto(id, data);
    }
-
+   
    //carrito
 
    async getCarritoAll() {
@@ -52,12 +54,20 @@ class capaAPI { //incluye productos y carrito
     return this.carrito.getCarritoById(id);
    }
 
-   async deleteCarritoById(id:number) {
-    return this.carrito.deleteProducto(id);
+   async addCarritoPrueba() {
+     return this.carrito.addCarritoPrueba();
    }
 
-   async deleteCarritoAll() {
-    return this.carrito.deleteCarritoAll();
+  //  async setCarrito(data) {
+  //    return this.carrito.setCarrito(data);
+  //  }
+
+   async setCarritoNuevo(data:NewCarritoInterface) {
+    return this.carrito.setCarritoNuevo(data);
+  }
+
+   async deleteCarritoById(id:number) {
+    return this.carrito.deleteCarritoById(id);
    }
 
 }

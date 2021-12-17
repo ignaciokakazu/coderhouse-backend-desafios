@@ -14,7 +14,7 @@ socketProducts(io);
 
 /* FORK O CLUSTER */
 const argv = minimist(process.argv.slice(2));
-const modo = argv._[2] ? argv._[2].replace('SERVER=', '') : "CLUSTER";
+const modo = argv.server;
 // export const PORT = argv.puerto || 8080;
 console.log(modo);
 

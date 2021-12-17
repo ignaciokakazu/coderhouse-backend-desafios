@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductosFactoryDAO = exports.TipoPersistencia = void 0;
-var fileSystem_1 = require("./DAO/productos/fileSystem");
-var sqlite_1 = require("./DAO/productos/sqlite");
-var memory_1 = require("./DAO/productos/memory");
-var mySQL_1 = require("./DAO/productos/mySQL");
-var mongodb_1 = require("./DAO/productos/mongodb");
-var firebase_1 = require("./DAO/productos/firebase");
+const fileSystem_1 = require("./DAO/productos/fileSystem");
+const sqlite_1 = require("./DAO/productos/sqlite");
+const memory_1 = require("./DAO/productos/memory");
+const mySQL_1 = require("./DAO/productos/mySQL");
+const mongodb_1 = require("./DAO/productos/mongodb");
+const firebase_1 = require("./DAO/productos/firebase");
 var TipoPersistencia;
 (function (TipoPersistencia) {
     TipoPersistencia["fileSystem"] = "FS";
@@ -18,10 +18,8 @@ var TipoPersistencia;
     TipoPersistencia["firebase"] = "FBA";
 })(TipoPersistencia = exports.TipoPersistencia || (exports.TipoPersistencia = {}));
 // el tipo de persistencia es elegido en apis/productos.ts
-var ProductosFactoryDAO = /** @class */ (function () {
-    function ProductosFactoryDAO() {
-    }
-    ProductosFactoryDAO.get = function (tipo) {
+class ProductosFactoryDAO {
+    static get(tipo) {
         switch (tipo) {
             case TipoPersistencia.fileSystem:
                 console.log("Soy Factory y es el FS");
@@ -45,7 +43,6 @@ var ProductosFactoryDAO = /** @class */ (function () {
                 console.log("Soy el factory y es firebase");
                 return new firebase_1.ProductosFirebaseDAO();
         }
-    };
-    return ProductosFactoryDAO;
-}());
+    }
+}
 exports.ProductosFactoryDAO = ProductosFactoryDAO;

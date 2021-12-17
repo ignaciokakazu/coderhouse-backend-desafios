@@ -1,6 +1,5 @@
 import express from 'express';
-import {Carrito} from '../controllers/ClassCarrito.js';
-import {Request, Response} from 'express'
+import {Carrito} from '../controllers/ClassCarrito';
 
 const router = express.Router();
 
@@ -23,16 +22,20 @@ router.post('/agregar/:id_producto', Carrito.addCarritoById)
 //     res.json(await Carrito.deleteCarritoByIdProducto(req.params.id_producto))
 // })
 
-router.delete('/borrar/todo', Carrito.deleteCarritoAll);
+router.post('/agregarPrueba', Carrito.addCarritoPrueba);
+
+router.delete('/borrar/todo', Carrito.deleteCarritoById);
 // async (req:Request, res:Response)=> {
 //     res.json(await Carrito.deleteCarritoAll());
 // })
 
-router.delete('/borrar/:id', Carrito.deleteCarritoById);
+//router.delete('/borrar/:id', Carrito.deleteCarritoById);
 // async (req: Request,res:Response)=> {
 //     res.json(await Carrito.deleteCarritoById(Number(req.params.id)))
 // })
 
-
+router.get('/', (req, res)=> {
+    res.render('crud')
+})
 
 export default router;

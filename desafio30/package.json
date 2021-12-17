@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "./dist/app.js",
   "scripts": {
-    "start": "npm run build && node ./dist/app.js'",
-    "start:prod": "npm run build && pm2 start dist/app.js --watch'",
+    "start": "npm run build && node ./dist/app.js",
+    "start:prod": "npm run build && pm2 start dist/app.js --watch",
     "build": "tsc",
     "dev": "nodemon dist/app.js",
     "migrate:db": "npx knex migrate:latest",

@@ -8,40 +8,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Productos = void 0;
-// import { nextTick } from 'process';
-var productos_1 = require("../apis/productos");
-var ClassProductos = /** @class */ (function () {
+const api_1 = require("../apis/api");
+class ClassProductos {
     //private lista: ProductoInterface[];
-    function ClassProductos() {
+    constructor() {
     }
     // checkProduct(req:Request, res:Response, next: NextFunction) {
     //     const msg:string = this.validacion(req.body);
@@ -51,110 +23,66 @@ var ClassProductos = /** @class */ (function () {
     //         next()
     //     }
     // }
-    ClassProductos.prototype.getProductosAll = function (req, res) {
-        return __awaiter(this, void 0, void 0, function () {
-            var lista, error_1;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        _a.trys.push([0, 2, , 3]);
-                        return [4 /*yield*/, productos_1.productosAPI.getProductosAll()];
-                    case 1:
-                        lista = _a.sent();
-                        res.json(lista);
-                        return [3 /*break*/, 3];
-                    case 2:
-                        error_1 = _a.sent();
-                        console.log(error_1.message);
-                        res.json({ error: error_1.message });
-                        return [3 /*break*/, 3];
-                    case 3: return [2 /*return*/];
-                }
-            });
+    getProductosAll(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const lista = yield api_1.api.getProductosAll();
+                res.json(lista);
+            }
+            catch (error) {
+                console.log(error.message);
+                res.json({ error: error.message });
+            }
         });
-    };
-    ClassProductos.prototype.getProductosById = function (req, res) {
-        return __awaiter(this, void 0, void 0, function () {
-            var lista, error_2;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        _a.trys.push([0, 2, , 3]);
-                        return [4 /*yield*/, productos_1.productosAPI.getProductosById(Number(req.params.id))];
-                    case 1:
-                        lista = _a.sent();
-                        if (lista.length) {
-                            res.json(lista);
-                        }
-                        else {
-                            res.json({ error: "No se encuentra el producto" });
-                        }
-                        return [3 /*break*/, 3];
-                    case 2:
-                        error_2 = _a.sent();
-                        res.json({ error: error_2.message });
-                        return [3 /*break*/, 3];
-                    case 3: return [2 /*return*/];
+    }
+    getProductosById(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const lista = yield api_1.api.getProductosById(Number(req.params.id));
+                if (lista.length) {
+                    res.json(lista);
                 }
-            });
-        });
-    };
-    ClassProductos.prototype.insertProducto = function (req, res) {
-        return __awaiter(this, void 0, void 0, function () {
-            var obj, respuesta;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        obj = req.body;
-                        return [4 /*yield*/, productos_1.productosAPI.insertProducto(obj)];
-                    case 1:
-                        respuesta = _a.sent();
-                        res.json(respuesta);
-                        return [2 /*return*/];
+                else {
+                    res.json({ error: "No se encuentra el producto" });
                 }
-            });
+            }
+            catch (error) {
+                res.json({ error: error.message });
+            }
         });
-    };
-    ClassProductos.prototype.deleteProducto = function (req, res) {
-        return __awaiter(this, void 0, void 0, function () {
-            var id;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        if (isNaN(Number(req.params.id))) {
-                            id = req.params.id;
-                        }
-                        else {
-                            id = Number(req.params.id);
-                        }
-                        return [4 /*yield*/, productos_1.productosAPI.deleteProducto(id)];
-                    case 1:
-                        _a.sent();
-                        res.json({ id: id });
-                        return [2 /*return*/];
-                }
-            });
+    }
+    insertProducto(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            //agregar try-catch;
+            const obj = req.body;
+            const respuesta = yield api_1.api.insertProducto(obj);
+            res.json(respuesta);
         });
-    };
-    ClassProductos.prototype.updateProducto = function (req, res) {
-        return __awaiter(this, void 0, void 0, function () {
-            var id, data;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        id = Number(req.params.id);
-                        data = req.body;
-                        //acá tengo que validar, antes de mandar
-                        return [4 /*yield*/, productos_1.productosAPI.updateProducto(id, data)];
-                    case 1:
-                        //acá tengo que validar, antes de mandar
-                        _a.sent();
-                        res.json({ id: id });
-                        return [2 /*return*/];
-                }
-            });
+    }
+    deleteProducto(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            //acá tengo que validar, antes de mandar
+            let id;
+            if (isNaN(Number(req.params.id))) {
+                id = req.params.id;
+            }
+            else {
+                id = Number(req.params.id);
+            }
+            yield api_1.api.deleteProducto(id);
+            res.json({ id: id });
         });
-    };
+    }
+    updateProducto(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            let id;
+            id = Number(req.params.id);
+            const data = req.body;
+            //acá tengo que validar, antes de mandar
+            yield api_1.api.updateProducto(id, data);
+            res.json({ id: id });
+        });
+    }
     // async addProducto(req: Request, res: Response) {
     //     try {
     //         this.lista = await db.read("productos")
@@ -244,62 +172,61 @@ var ClassProductos = /** @class */ (function () {
     //         return {error: error.message};
     //     }
     // }
-    ClassProductos.prototype.validacion = function (req) {
-        var msg = "";
+    validacion(req) {
+        let msg = "";
         if (typeof (req.nombre) != 'string') {
-            msg += "Nombre debe ser texto. Nombre " + req.nombre + ". ";
+            msg += `Nombre debe ser texto. Nombre ${req.nombre}. `;
         }
         ;
         if (!req.nombre) {
-            msg += "Nombre es un dato requerido.";
+            msg += `Nombre es un dato requerido.`;
         }
         ;
         if (typeof (req.descripcion) != 'string') {
-            msg += "Descripci\u00F3n debe ser texto. Descripci\u00F3n " + req.descripcion + ". ";
+            msg += `Descripción debe ser texto. Descripción ${req.descripcion}. `;
         }
         ;
         if (!req.descripcion) {
-            msg += "Descripci\u00F3n es un dato requerido. ";
+            msg += `Descripción es un dato requerido. `;
         }
         ;
         if (!req.codigo) {
-            msg += "C\u00F3digo es un dato requerido. ";
+            msg += `Código es un dato requerido. `;
         }
         ;
         if (!req.foto) {
-            msg += "Foto es un dato requerido. ";
+            msg += `Foto es un dato requerido. `;
         }
         ;
         if (typeof (req.foto) != 'string') {
-            msg += "Foto debe ser texto. Foto " + req.foto + ". ";
+            msg += `Foto debe ser texto. Foto ${req.foto}. `;
         }
         ;
         if (isNaN(req.precio)) {
-            msg += "Precio debe ser num\u00E9rico. Precio " + req.precio + ". ";
+            msg += `Precio debe ser numérico. Precio ${req.precio}. `;
         }
         ;
         if (!req.precio) {
-            msg += "Precio es un dato requerido. ";
+            msg += `Precio es un dato requerido. `;
         }
         ;
         if (!req.stock) {
-            msg += "Stock es un dato requerido. ";
+            msg += `Stock es un dato requerido. `;
         }
         ;
         if (req.precio < 0) {
             msg += 'Precio no puede ser negativo. ';
         }
         if (isNaN(req.stock)) {
-            msg += "Stock debe ser num\u00E9rico. Stock " + req.stock + ". ";
+            msg += `Stock debe ser numérico. Stock ${req.stock}. `;
         }
         ;
         if (req.stock < 0) {
             msg += 'Stock no puede ser negativo. ';
         }
         return msg;
-    };
-    return ClassProductos;
-}());
+    }
+}
 /*
 {
     "user": {"user": "admin",

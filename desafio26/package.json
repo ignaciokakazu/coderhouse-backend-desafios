@@ -2,9 +2,9 @@
   "name": "desafio23-tsc",
   "version": "1.0.0",
   "description": "",
-  "main": "./dist/app.js",
+  "main": "dist/app.js",
   "scripts": {
-    "start": "node '.\\dist\\app.js'",
+    "start": "node dist/app.js",
     "build": ".\\node_modules\\.bin\\tsc",
     "dev": "nodemon dist/app.js",
     "migrate:db": "npx knex migrate:latest",
